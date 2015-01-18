@@ -1,14 +1,41 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
-	<meta charset="UTF-8">
-	<title>Untitled Document</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Matthew Thompson's Web Presence</title>
 
+    <link rel="icon" type="image/png" href="/assetts/img/favicon.ico">
+
+    <!-- Bootstrap -->
+    <link href="/assetts/libs/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/assetts/libs/css/bootstrap-theme.min.css" rel="stylesheet">
+    <link href="/assetts/libs/css/custom.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
 </head>
-<body>
 
-	<h1>Sorry, this site is still under construction. I hope to have a live version up soon!</h1>
-    <img src="assetts/img/men_at_work.gif">
+<body ng-app="mtPersonal" ng-cloak="">
 
+    <div ng-controller="mtNavbarCtrl" ng-include="'/app/core/partials/navbar.html'"></div>
+
+    <div ng-include="'/app/core/partials/under-construction.html'"></div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="/assetts/libs/js/bootstrap.min.js"></script>
+    <script src="/assetts/libs/js/angular.js"></script>
+    <script src="/assetts/libs/js/angular-route.js"></script>
+    <script src="/app/app.js"></script>
+    <script src="/app/core/controllers/mtNavbarCtrl.js"></script>
 </body>
+
 </html>
