@@ -11,11 +11,16 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="#home">Home</a>
+                <li ng-class="{active: isActive('/home')}"><a href="#home">Home</a>
                 </li>
-                <li><a href="#about">About Matthew</a>
+                <li ng-class="{active: isActive('/about')}"><a href="#about">About Matthew</a>
                 </li>
-                <li><a href="/assetts/doc/resume.pdf">Résumé</a>
+                <li ng-class="{active: isActive('/resume')}" class="dropdown">
+                    <a href="#resume" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Resume <span class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a href="/assetts/doc/resume.pdf" download="matthew-thompson-resume.pdf">Download</a>
+                        </li>
+                    </ul>
                 </li>
             </ul>
         </div>

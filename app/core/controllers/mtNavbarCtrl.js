@@ -1,5 +1,7 @@
-app.controller('mtNavbarCtrl', ['$scope', function ($scope) {
-
+app.controller('mtNavbarCtrl', ['$scope', '$location', function ($scope, $location) {
+    $scope.isActive = function (viewLocation) {
+        return viewLocation === $location.path();
+    };
 }]);
 
 app.directive('mtNavbar', function() {
