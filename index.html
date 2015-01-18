@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="mtPersonal">
 
 <head>
     <meta charset="utf-8">
@@ -22,20 +22,23 @@
     <![endif]-->
 </head>
 
-<body ng-app="mtPersonal" ng-cloak="">
+<body ng-cloak="">
 
     <div ng-controller="mtNavbarCtrl" ng-include="'/app/core/partials/navbar.html'"></div>
 
-    <div ng-include="'/app/core/partials/under-construction.html'"></div>
+    <div ng-view></div>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="/assetts/libs/js/bootstrap.min.js"></script>
-    <script src="/assetts/libs/js/angular.js"></script>
-    <script src="/assetts/libs/js/angular-route.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.7/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.7/angular-route.js"></script>
     <script src="/app/app.js"></script>
+    <script src="/app/core/controllers/mtAboutCtrl.js"></script>
     <script src="/app/core/controllers/mtNavbarCtrl.js"></script>
+    <script src="/app/core/controllers/mtUnderConstructionCtrl.js"></script>
 </body>
 
 </html>
