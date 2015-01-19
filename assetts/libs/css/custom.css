@@ -1,9 +1,18 @@
 body {
     /* Offset body to adjust for fixed-top navbar */
     padding-top: 58px;
+    height: 100%;
 }
-
+.pdfResume {
+    position: absolute;
+    padding-top: 58px;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
 /* Limit hover dropdown to md-size and larger */
+
 @media (min-width: 768px) {
     ul.nav li.dropdown:hover > ul.dropdown-menu {
         display: block;
