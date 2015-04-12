@@ -47,7 +47,7 @@ body {
     white-space: nowrap;
 }
 
-@media (max-width: 500px) {
+@media (max-width: 768px) {
     .navbar-default .navbar-brand {
         font-size: 20px;
     }
