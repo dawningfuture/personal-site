@@ -1,8 +1,10 @@
 body {
     /* Offset body to adjust for fixed-top navbar */
+
     padding-top: 58px;
     height: 100%;
 }
+
 .pdfResume {
     position: absolute;
     padding-top: 58px;
@@ -25,14 +27,15 @@ body {
 .navbar-brand {
     font-size: 30px;
 }
+
 .about {
     padding-bottom: 20px;
 }
 
 .img-vhcenter {
-    float:none;
-    display:table-cell;
-    vertical-align:middle;
+    float: none;
+    display: table-cell;
+    vertical-align: middle;
     align-content: center;
 }
 
@@ -42,4 +45,10 @@ body {
 
 .no-wrap {
     white-space: nowrap;
+}
+
+@media (max-width: 500px) {
+    .navbar-default .navbar-brand {
+        font-size: 20px;
+    }
 }
