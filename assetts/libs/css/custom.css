@@ -25,3 +25,21 @@ body {
 .navbar-brand {
     font-size: 30px;
 }
+.about {
+    padding-bottom: 20px;
+}
+
+.img-vhcenter {
+    float:none;
+    display:table-cell;
+    vertical-align:middle;
+    align-content: center;
+}
+
+.contact-jumbotron {
+    line-height: 140%;
+}
+
+.no-wrap {
+    white-space: nowrap;
+}

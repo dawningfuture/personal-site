@@ -3,23 +3,32 @@ var app = angular.module('mtPersonal', ['ngRoute']);
 app.config(['$routeProvider',
     function ($routeProvider) {
         $routeProvider.
-        when('/home', {
-            title: 'Matthew Thompson\'s Personal Web Presence',
-            templateUrl: '/app/core/partials/under-construction.html',
-            controller: 'mtUnderConstructionCtrl'
+        when('/', {
+            title: 'Matthew Thompson',
+            templateUrl: '/app/core/partials/main.html',
+            controller: 'mtMainCtrl'
         }).
         when('/about', {
-            title: 'About Matthew Thompson',
+            title: 'About | Matthew Thompson',
             templateUrl: '/app/core/partials/about.html',
-            controller: 'mtAboutCtrl'
+        }).
+        when('/contact', {
+            title: 'Contact | Matthew Thompson',
+            templateUrl: '/app/core/partials/contact.html',
         }).
         when('/resume', {
-            title: 'Resume',
+            title: 'Resume | Matthew Thompson',
             templateUrl: '/app/core/partials/resume.html',
-            controller: 'mtResumeCtrl'
+        }).
+        when('/projects', {
+            title: 'Projects | Matthew Thompson',
+            templateUrl: '/app/core/partials/projects.html'
+        }).
+        when('/under-construction', {
+            templateUrl: '/app/core/partials/under-construction.html',
         }).
         otherwise({
-            redirectTo: '/home'
+            redirectTo: '/'
         });
     }]);
 app.run(['$rootScope', '$route',
