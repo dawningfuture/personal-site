@@ -1,3 +1,3 @@
-app.controller('mtResumeCtrl', ['$scope', function($scope) {
+app.controller('mtMainCtrl', ['$scope', function ($scope) {
 
 }]);
