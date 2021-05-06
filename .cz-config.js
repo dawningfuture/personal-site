@@ -27,12 +27,11 @@ module.exports = {
     { value: "WIP", name: "WIP:      Work in progress" },
   ],
 
-  scopes: [
-    // { name: "accounts" },
-    // { name: "admin" },
-    // { name: "exampleScope" },
-    // { name: "changeMe" },
-  ],
+  // { name: "accounts" },
+  // { name: "admin" },
+  // { name: "exampleScope" },
+  // { name: "changeMe" },
+  scopes: [],
 
   allowTicketNumber: true,
   isTicketNumberRequired: true,
@@ -53,9 +52,9 @@ module.exports = {
   // override the messages, defaults are as follows
   messages: {
     type: "Select the type of change that you're committing:",
-    // scope: "\nDenote the SCOPE of this change (optional):",
+    scope: "\nDenote the SCOPE of this change (optional):",
     // used if allowCustomScopes is true
-    // customScope: "Denote the SCOPE of this change:",
+    customScope: "Denote the SCOPE of this change:",
     subject: "Write a SHORT, IMPERATIVE tense description of the change:\n",
     body:
       'Provide a LONGER description of the change (optional). Use "|" to break new line:\n',
@@ -68,7 +67,7 @@ module.exports = {
   allowCustomScopes: false,
   allowBreakingChanges: ["feat", "fix"],
   // skip any questions you want
-  skipQuestions: ["body"],
+  skipQuestions: ["body", "scope"],
 
   // limit subject length
   subjectLimit: 100,
