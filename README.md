@@ -33,7 +33,7 @@ I'm going to start by articularing the overall goal of the project.
 
 As my personal site, I want to be able to express who I am, not only in the site's content, but in the process of creating it. That'll be the initial requirement:
 
-> Use the site's repository to tell the story of who I am as a developer, as much as the content of the site
+> 1) Use the site's repository to tell the story of who I am as a developer, as much as the content of the site
 
 Some criteria I'll use to measure the success for this requirement:
 
@@ -43,7 +43,7 @@ Some criteria I'll use to measure the success for this requirement:
 
 Once I know what I'm going to do, I want to show my passion for implementing tasks well. That'll make for a good second requirement:
 
-> Take the time to be the best developer I can be through the practices I use
+> 2: Take the time to be the best developer I can be through the practices I use
 
 I love using criteria to know how well I'm achieving a goal; some criteria for this requirement will be:
 
