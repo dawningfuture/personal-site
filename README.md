@@ -35,7 +35,7 @@ As my personal site, I want to be able to express who I am, not only in the site
 
 > Use the site's repository to tell the story of who I am as a developer, as much as the content of the site
 
-Some metrics I'll use to measure the success for this requirement:
+Some criteria I'll use to measure the success for this requirement:
 
 -   Well documented development practices
 -   Changelogs that tell the story of how the project came to be
@@ -45,7 +45,7 @@ Once I know what I'm going to do, I want to show my passion for implementing tas
 
 > Take the time to be the best developer I can be through the practices I use
 
-I love using metrics to know how well I'm achieving a goal; some metrics for this requirement will be:
+I love using criteria to know how well I'm achieving a goal; some criteria for this requirement will be:
 
 -   Robust testing
 -   Readbility and commenting
@@ -55,7 +55,7 @@ Finally, I want to show not only who I am as a developer, but who I am as a pers
 
 > Let the site reflect who I am, not just how I develop
 
-I think the metrics for this one are pretty fun:
+I think the criteria for this one are pretty fun:
 
 -   Be constructively weird
 -   Make the audience laugh
