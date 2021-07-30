@@ -3,7 +3,6 @@ import { Route, RouterModule } from '@angular/router';
 
 interface AppRouteData {
   sidenavLink: {
-    icon: string;
     label: string;
     order: number; // NOTE (July 30, 2021): 0-indexed descending sort order
   };
@@ -22,7 +21,6 @@ export const appRoutes: AppRoute[] = [
       ),
     data: {
       sidenavLink: {
-        icon: '',
         label: 'Mission',
         order: 1,
       },
@@ -36,7 +34,6 @@ export const appRoutes: AppRoute[] = [
       ),
     data: {
       sidenavLink: {
-        icon: '',
         label: 'Code',
         order: 2,
       },
@@ -50,7 +47,6 @@ export const appRoutes: AppRoute[] = [
       ),
     data: {
       sidenavLink: {
-        icon: '',
         label: 'Dance',
         order: 3,
       },
@@ -64,7 +60,6 @@ export const appRoutes: AppRoute[] = [
       ),
     data: {
       sidenavLink: {
-        icon: '',
         label: 'Contact',
         order: 4,
       },
@@ -78,7 +73,6 @@ export const appRoutes: AppRoute[] = [
       ),
     data: {
       sidenavLink: {
-        icon: '',
         label: 'Home',
         order: 0,
       },
