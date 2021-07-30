@@ -1,9 +1,0 @@
-@use "variables";
-
-.ps-sidenav-container {
-  position: absolute;
-  top: variables.$NAVBAR_HEIGHT;
-  bottom: 0;
-  left: 0;
-  right: 0;
-}
