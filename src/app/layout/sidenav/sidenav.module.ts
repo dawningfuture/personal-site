@@ -8,10 +8,15 @@ import { EffectsModule } from '@ngrx/effects';
 import { StoreModule } from '@ngrx/store';
 import { SidenavButtonComponent } from './sidenav-button/sidenav-button.component';
 import { SidenavDrawerComponent } from './sidenav-drawer/sidenav-drawer.component';
+import { SidenavLinkComponent } from './sidenav-link/sidenav-link.component';
 import { SidenavComponent } from './sidenav.component';
 import { SidenavEffects } from './state/effects/sidenav.effects';
 import * as fromSidenav from './state/reducers/sidenav.reducer';
 
+/**
+ * NOTE (July 30, 2021): These imports have been extracted into an exported
+ * `const` Array so that they can be imported in tests
+ */
 export const sidenavImports = [
   CommonModule,
   RouterModule,
@@ -19,17 +24,19 @@ export const sidenavImports = [
   MatIconModule,
   MatSidenavModule,
 ];
+
 @NgModule({
   declarations: [
     SidenavComponent,
     SidenavDrawerComponent,
     SidenavButtonComponent,
+    SidenavLinkComponent,
   ],
   imports: [
     ...sidenavImports,
     StoreModule.forFeature(fromSidenav.featureKey, fromSidenav.reducer),
     EffectsModule.forFeature([SidenavEffects]),
   ],
-  exports: [SidenavComponent, SidenavButtonComponent],
+  exports: [SidenavComponent],
 })
 export class SidenavModule {}

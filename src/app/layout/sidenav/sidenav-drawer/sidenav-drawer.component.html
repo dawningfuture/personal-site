@@ -1,1 +1,7 @@
-<div class="ps-sidenav-drawer-container">Hello</div>
+<div class="ps-sidenav-drawer-container">
+  <ps-sidenav-link
+    *ngFor="let sidenavLink of sidenavLinks"
+    [icon]="sidenavLink.icon"
+    [label]="sidenavLink.label"
+  ></ps-sidenav-link>
+</div>
