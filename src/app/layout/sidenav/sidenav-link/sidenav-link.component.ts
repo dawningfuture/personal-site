@@ -7,6 +7,7 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class SidenavLinkComponent implements OnInit {
   @Input() label = '';
+  @Input() path?: string;
 
   constructor() {}
 

@@ -1,6 +1,10 @@
-<div class="ps-sidenav-drawer-container">
+<div class="ps-sidenav-drawer-container" fxLayout="column">
   <ps-sidenav-link
+    fxFlex="100px"
+    fxLayout="column"
+    fxLayoutAlign="center"
     *ngFor="let sidenavLink of sidenavLinks"
     [label]="sidenavLink.label"
+    [path]="sidenavLink.path"
   ></ps-sidenav-link>
 </div>
