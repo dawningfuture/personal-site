@@ -1,7 +1,7 @@
 import { TestBed } from '@angular/core/testing';
 import { provideMockActions } from '@ngrx/effects/testing';
 import { Observable } from 'rxjs';
-
+import { appImports } from 'src/app/app.module';
 import { RouterEffects } from './router.effects';
 
 describe('RouterEffects', () => {
@@ -10,10 +10,8 @@ describe('RouterEffects', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [
-        RouterEffects,
-        provideMockActions(() => actions$)
-      ]
+      imports: [...appImports],
+      providers: [RouterEffects, provideMockActions(() => actions$)],
     });
 
     effects = TestBed.inject(RouterEffects);

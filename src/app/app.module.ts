@@ -12,6 +12,10 @@ import { LayoutModule } from './layout/layout.module';
 import { RouterEffects } from './state/effects/router.effects';
 import { reducers } from './state/reducers';
 
+/**
+ * NOTE (July 31, 2021): These imports have been extracted into an exported
+ * `const` Array so that they can be imported in tests
+ */
 export const appImports = [
   BrowserAnimationsModule,
   AppRoutingModule,
