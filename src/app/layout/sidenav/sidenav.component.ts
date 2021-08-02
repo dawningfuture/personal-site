@@ -1,4 +1,10 @@
-import { Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
+import {
+  Component,
+  OnDestroy,
+  OnInit,
+  ViewChild,
+  ViewEncapsulation,
+} from '@angular/core';
 import { MatSidenav } from '@angular/material/sidenav';
 import { ofType } from '@ngrx/effects';
 import { ActionsSubject, Store } from '@ngrx/store';
@@ -11,16 +17,17 @@ import * as SidenavActions from './state/actions/sidenav.actions';
   selector: 'ps-sidenav',
   templateUrl: './sidenav.component.html',
   styleUrls: ['./sidenav.component.scss'],
+  encapsulation: ViewEncapsulation.None,
 })
 export class SidenavComponent implements OnInit, OnDestroy {
   @ViewChild('sidenav') sidenav!: MatSidenav;
 
   private destroyed$ = new Subject<void>();
 
-  constructor(private actions: ActionsSubject, private store: Store<State>) {}
+  constructor(private actions$: ActionsSubject, private store: Store<State>) {}
 
   ngOnInit(): void {
-    this.actions
+    this.actions$
       .pipe(
         ofType(SidenavActions.toggleSidenav),
         takeUntil(this.destroyed$),
@@ -30,6 +37,16 @@ export class SidenavComponent implements OnInit, OnDestroy {
         const open = this.sidenav.opened;
 
         this.store.dispatch(SidenavActions.toggledSidenav({ open }));
+      });
+
+    this.actions$
+      .pipe(
+        ofType(SidenavActions.closeSidenav),
+        takeUntil(this.destroyed$),
+        mergeMap(() => from(this.sidenav.close()))
+      )
+      .subscribe(() => {
+        this.store.dispatch(SidenavActions.closedSidenav());
       });
   }
 

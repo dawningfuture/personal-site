@@ -8,3 +8,7 @@ export const toggledSidenav = createAction(
   '[Sidenav] Toggled',
   props<{ open: boolean }>()
 );
+
+export const closeSidenav = createAction('[Sidenav] Close');
+
+export const closedSidenav = createAction('[Sidenav] Closed');
