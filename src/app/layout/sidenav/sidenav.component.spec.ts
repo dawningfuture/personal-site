@@ -1,5 +1,4 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { RouterTestingModule } from '@angular/router/testing';
 import { appImports } from 'src/app/app.module';
 import { SidenavButtonComponent } from 'src/app/layout/sidenav/sidenav-button/sidenav-button.component';
 import { SidenavDrawerComponent } from 'src/app/layout/sidenav/sidenav-drawer/sidenav-drawer.component';
@@ -13,7 +12,7 @@ describe('SidenavComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [...appImports, ...sidenavImports, RouterTestingModule],
+      imports: [...appImports, ...sidenavImports],
       declarations: [
         SidenavComponent,
         SidenavButtonComponent,
