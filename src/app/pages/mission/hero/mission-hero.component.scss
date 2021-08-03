@@ -2,7 +2,7 @@
 @use 'images';
 
 .ps-mission-hero {
-  @include images.ps-hero-background("/assets/mission-page-background.jpg");
+  @include images.ps-hero-background("/assets/mission-hero-background.jpg");
 
   .headline {
     &-top {

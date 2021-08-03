@@ -1,14 +1,2 @@
-@use 'material';
-@use 'text';
-@use 'images';
-
 .ps-mission-page {
-  .content {
-    &-panel-left {
-    }
-
-    &-panel-right {
-      background-color: material.$ps-primary-default;
-    }
-  }
 }
