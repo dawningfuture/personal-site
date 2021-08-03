@@ -1,8 +1,9 @@
 @use "text";
 @use "images";
+@use "buttons";
 
 .ps-home-page-container {
-  @include images.hero-background("/assets/home-page-background.jpg");
+  @include images.ps-hero-background("/assets/home-page-background.jpg");
 
   .headline {
     &-gt-xs {
@@ -14,6 +15,7 @@
     }
   }
 
-  .cta-button {
+  .call-to-action-button {
+    @include buttons.ps-call-to-action;
   }
 }

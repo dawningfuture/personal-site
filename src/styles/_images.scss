@@ -1,4 +1,4 @@
-@mixin hero-background($url) {
+@mixin ps-hero-background($url) {
   background-image: url(#{$url});
   background-repeat: no-repeat;
   background-position-y: bottom;

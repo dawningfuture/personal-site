@@ -4,7 +4,7 @@
 
 .ps-mission-page-container {
   .headline {
-    @include images.hero-background("/assets/mission-page-background.jpg");
+    @include images.ps-hero-background("/assets/mission-page-background.jpg");
 
     &-top {
       &-gt-xs {
