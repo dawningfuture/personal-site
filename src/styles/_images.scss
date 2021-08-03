@@ -1,0 +1,8 @@
+@mixin hero-background($url) {
+  background-image: url(#{$url});
+  background-repeat: no-repeat;
+  background-position-y: bottom;
+  background-position-x: center;
+  background-size: cover;
+  filter: drop-shadow(0px 3px 10px rgb(92, 92, 92, 0.87));
+}

@@ -1,19 +1,16 @@
+@use "text";
+@use "images";
+
 .ps-home-page-container {
-  background: url("/assets/home-page-background.jpg") no-repeat bottom center
-    fixed;
-  height: 100%;
-  position: relative;
+  @include images.hero-background("/assets/home-page-background.jpg");
 
   .headline {
-    text-align: center;
-    color: #ffffff;
-    font-size: 4em;
-    line-height: 1.25;
-    text-shadow: 0px 3px 3px #5a5a5a;
-    position: absolute;
-    top: 20%;
-    bottom: 0;
-    left: 0;
-    right: 0;
+    &-gt-xs {
+      @include text.ps-headline-4;
+    }
+
+    &-xs {
+      @include text.ps-headline-3;
+    }
   }
 }

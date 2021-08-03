@@ -4,9 +4,11 @@ import { RouterModule } from '@angular/router';
 import { LayoutComponent } from './layout.component';
 import { SidenavModule } from './sidenav/sidenav.module';
 
+export const layoutImports = [SidenavModule];
+
 @NgModule({
   declarations: [LayoutComponent],
-  imports: [CommonModule, RouterModule, SidenavModule],
+  imports: [CommonModule, RouterModule, ...layoutImports],
   exports: [LayoutComponent],
 })
 export class LayoutModule {}

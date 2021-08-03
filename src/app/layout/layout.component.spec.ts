@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { appImports } from 'src/app/app.module';
-import { SidenavModule } from 'src/app/layout/sidenav/sidenav.module';
+import { layoutImports } from 'src/app/layout/layout.module';
 import { LayoutComponent } from './layout.component';
 
 describe('LayoutComponent', () => {
@@ -10,7 +10,7 @@ describe('LayoutComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [LayoutComponent],
-      imports: [...appImports, SidenavModule],
+      imports: [...appImports, ...layoutImports],
     }).compileComponents();
   });
 

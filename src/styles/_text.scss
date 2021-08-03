@@ -1,0 +1,38 @@
+@use 'material';
+@use '~@angular/material' as mat;
+
+@mixin ps-headline-4 {
+  @include mat.typography-level(material.$ps-typography, "display-4");
+  text-shadow: 0px 3px 3px #5a5a5a;
+  text-align: center;
+  color: #ffffff;
+}
+
+@mixin ps-headline-3 {
+  @include mat.typography-level(material.$ps-typography, "display-3");
+  text-shadow: 0px 3px 3px #5a5a5a;
+  text-align: center;
+  color: #ffffff;
+}
+
+@mixin ps-headline-2 {
+  @include mat.typography-level(material.$ps-typography, "display-2");
+  text-shadow: 0px 3px 3px #5a5a5a;
+  text-align: center;
+  color: #ffffff;
+}
+
+@mixin ps-headline-1 {
+  @include mat.typography-level(material.$ps-typography, "display-1");
+  text-shadow: 0px 3px 3px #5a5a5a;
+  text-align: center;
+  color: #ffffff;
+}
+
+@mixin ps-text-primary {
+  color: material.$ps-primary-default;
+}
+
+@mixin ps-text-accent {
+  color: material.$ps-accent-default;
+}
