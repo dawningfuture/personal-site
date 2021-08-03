@@ -57,16 +57,16 @@ export const appRoutes: AppRoute[] = [
     },
   },
   {
-    path: 'contact',
+    path: 'connect',
     loadChildren: () =>
-      import('./pages/contact/contact-page.module').then(
-        (module) => module.ContactPageModule
+      import('./pages/connect/connect-page.module').then(
+        (module) => module.ConnectPageModule
       ),
     data: {
       sidenavLink: {
-        label: 'Contact',
+        label: 'Connect',
         order: 4,
-        path: '/contact',
+        path: '/connect',
       },
     },
   },
