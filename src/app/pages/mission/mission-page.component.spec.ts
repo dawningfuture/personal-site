@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { MissionHeroComponent } from 'src/app/pages/mission/hero/mission-hero.component';
 import { MissionPageComponent } from './mission-page.component';
 
 describe('MissionPageComponent', () => {
@@ -8,9 +8,8 @@ describe('MissionPageComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ MissionPageComponent ]
-    })
-    .compileComponents();
+      declarations: [MissionPageComponent, MissionHeroComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {

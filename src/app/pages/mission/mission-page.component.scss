@@ -2,31 +2,7 @@
 @use 'text';
 @use 'images';
 
-.ps-mission-page-container {
-  .headline {
-    @include images.ps-hero-background("/assets/mission-page-background.jpg");
-
-    &-top {
-      &-gt-xs {
-        @include text.ps-headline-2;
-      }
-
-      &-xs {
-        @include text.ps-headline-1;
-      }
-    }
-
-    &-bottom {
-      &-gt-xs {
-        @include text.ps-headline-4;
-      }
-
-      &-xs {
-        @include text.ps-headline-3;
-      }
-    }
-  }
-
+.ps-mission-page {
   .content {
     &-panel-left {
     }

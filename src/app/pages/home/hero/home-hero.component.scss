@@ -1,0 +1,16 @@
+@use "text";
+@use "images";
+
+.ps-home-hero {
+  @include images.ps-hero-background("/assets/home-page-background.jpg");
+
+  .headline {
+    &-gt-xs {
+      @include text.ps-headline-4;
+    }
+
+    &-xs {
+      @include text.ps-headline-3;
+    }
+  }
+}
