@@ -2,7 +2,7 @@
 @use 'images';
 
 .ps-connect-hero {
-  @include images.ps-hero-background("/assets/connect-hero-background.jpg");
+  @include images.ps-hero-background("//media.matthewthompson.us/personal-site/connect-hero-background.jpg");
 
   .headline {
     &-top {
