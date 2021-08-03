@@ -1,0 +1,28 @@
+@use "text";
+@use "images";
+
+.ps-dance-hero {
+  .headline {
+    position: relative;
+
+    &-top {
+      &-gt-xs {
+        @include text.ps-headline-2;
+      }
+
+      &-xs {
+        @include text.ps-headline-1;
+      }
+    }
+
+    &-bottom {
+      &-gt-xs {
+        @include text.ps-headline-4;
+      }
+
+      &-xs {
+        @include text.ps-headline-3;
+      }
+    }
+  }
+}

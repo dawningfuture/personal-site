@@ -1,10 +1,94 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { Route, RouterModule } from '@angular/router';
 
-const routes: Routes = [];
+interface AppRouteData {
+  sidenavLink: {
+    label: string;
+    order: number; // NOTE (July 30, 2021): 0-indexed descending sort order
+    path: string;
+  };
+}
+
+interface AppRoute extends Route {
+  data?: AppRouteData;
+}
+
+export const appRoutes: AppRoute[] = [
+  {
+    path: 'mission',
+    loadChildren: () =>
+      import('./pages/mission/mission-page.module').then(
+        (module) => module.MissionPageModule
+      ),
+    data: {
+      sidenavLink: {
+        label: 'Mission',
+        order: 1,
+        path: '/mission',
+      },
+    },
+  },
+  {
+    path: 'code',
+    loadChildren: () =>
+      import('./pages/code/code-page.module').then(
+        (module) => module.CodePageModule
+      ),
+    data: {
+      sidenavLink: {
+        label: 'Code',
+        order: 2,
+        path: '/code',
+      },
+    },
+  },
+  {
+    path: 'dance',
+    loadChildren: () =>
+      import('./pages/dance/dance-page.module').then(
+        (module) => module.DancePageModule
+      ),
+    data: {
+      sidenavLink: {
+        label: 'Dance',
+        order: 3,
+        path: '/dance',
+      },
+    },
+  },
+  {
+    path: 'connect',
+    loadChildren: () =>
+      import('./pages/connect/connect-page.module').then(
+        (module) => module.ConnectPageModule
+      ),
+    data: {
+      sidenavLink: {
+        label: 'Connect',
+        order: 4,
+        path: '/connect',
+      },
+    },
+  },
+  {
+    path: '',
+    loadChildren: () =>
+      import('./pages/home/home-page.module').then(
+        (module) => module.HomePageModule
+      ),
+    data: {
+      sidenavLink: {
+        label: 'Home',
+        order: 0,
+        path: '/',
+      },
+    },
+  },
+  { path: '**', redirectTo: '' },
+];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  imports: [RouterModule.forRoot(appRoutes)],
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
