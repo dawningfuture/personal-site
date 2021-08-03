@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import * as SidenavActions from 'src/app/state/features/sidenav/actions/sidenav.actions';
-import { State } from 'src/app/state/features/sidenav/reducers/sidenav.reducer';
+import { State } from 'src/app/state/reducers';
 
 @Component({
   selector: 'ps-sidenav-link',

@@ -1,0 +1,28 @@
+@use 'text';
+@use 'images';
+
+.ps-mission-hero {
+  @include images.ps-hero-background("/assets/mission-hero-background.jpg");
+
+  .headline {
+    &-top {
+      &-gt-xs {
+        @include text.ps-headline-2;
+      }
+
+      &-xs {
+        @include text.ps-headline-1;
+      }
+    }
+
+    &-bottom {
+      &-gt-xs {
+        @include text.ps-headline-4;
+      }
+
+      &-xs {
+        @include text.ps-headline-3;
+      }
+    }
+  }
+}
