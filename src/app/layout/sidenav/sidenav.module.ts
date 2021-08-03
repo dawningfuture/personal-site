@@ -5,14 +5,10 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { RouterModule } from '@angular/router';
-import { EffectsModule } from '@ngrx/effects';
-import { StoreModule } from '@ngrx/store';
-import { SidenavButtonComponent } from './sidenav-button/sidenav-button.component';
-import { SidenavDrawerComponent } from './sidenav-drawer/sidenav-drawer.component';
-import { SidenavLinkComponent } from './sidenav-link/sidenav-link.component';
+import { SidenavButtonComponent } from './button/sidenav-button.component';
+import { SidenavDrawerComponent } from './drawer/sidenav-drawer.component';
+import { SidenavLinkComponent } from './link/sidenav-link.component';
 import { SidenavComponent } from './sidenav.component';
-import { SidenavEffects } from './state/effects/sidenav.effects';
-import * as fromSidenav from './state/reducers/sidenav.reducer';
 
 /**
  * NOTE (July 30, 2021): These imports have been extracted into an exported
@@ -34,11 +30,7 @@ export const sidenavImports = [
     SidenavButtonComponent,
     SidenavLinkComponent,
   ],
-  imports: [
-    ...sidenavImports,
-    StoreModule.forFeature(fromSidenav.featureKey, fromSidenav.reducer),
-    EffectsModule.forFeature([SidenavEffects]),
-  ],
+  imports: sidenavImports,
   exports: [SidenavComponent],
 })
 export class SidenavModule {}

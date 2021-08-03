@@ -1,4 +1,4 @@
-<div class="ps-home-page-container" fxFlexFill fxLayout="column">
+<div class="ps-home-page-container" fxFlexFill fxLayout="column" fxLayoutGap>
   <div fxFlex="1 0 auto"></div>
   <div
     fxFlex="0 1 auto"
@@ -7,5 +7,16 @@
   >
     Hello, I'm Matthew.
   </div>
-  <div fxFlex="2 0 auto"></div>
+  <div fxFlex="2 0 auto">
+    <div fxLayout="row" fxLayoutAlign="center">
+      <button
+        fxFlex="0 1 auto"
+        mat-raised-button
+        color="accent"
+        class="cta-button"
+      >
+        Let's Meet
+      </button>
+    </div>
+  </div>
 </div>
