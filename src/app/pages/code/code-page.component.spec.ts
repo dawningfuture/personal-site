@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { CodeHeroComponent } from 'src/app/pages/code/hero/code-hero.component';
 import { CodePageComponent } from './code-page.component';
 
 describe('CodePageComponent', () => {
@@ -8,9 +8,8 @@ describe('CodePageComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CodePageComponent ]
-    })
-    .compileComponents();
+      declarations: [CodePageComponent, CodeHeroComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {
