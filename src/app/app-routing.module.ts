@@ -5,6 +5,7 @@ interface AppRouteData {
   sidenavLink: {
     label: string;
     order: number; // NOTE (July 30, 2021): 0-indexed descending sort order
+    path: string;
   };
 }
 
@@ -23,6 +24,7 @@ export const appRoutes: AppRoute[] = [
       sidenavLink: {
         label: 'Mission',
         order: 1,
+        path: '/mission',
       },
     },
   },
@@ -36,6 +38,7 @@ export const appRoutes: AppRoute[] = [
       sidenavLink: {
         label: 'Code',
         order: 2,
+        path: '/code',
       },
     },
   },
@@ -49,6 +52,7 @@ export const appRoutes: AppRoute[] = [
       sidenavLink: {
         label: 'Dance',
         order: 3,
+        path: '/dance',
       },
     },
   },
@@ -62,6 +66,7 @@ export const appRoutes: AppRoute[] = [
       sidenavLink: {
         label: 'Contact',
         order: 4,
+        path: '/contact',
       },
     },
   },
@@ -75,6 +80,7 @@ export const appRoutes: AppRoute[] = [
       sidenavLink: {
         label: 'Home',
         order: 0,
+        path: '/',
       },
     },
   },

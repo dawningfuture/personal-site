@@ -13,8 +13,16 @@ export const initialState: State = {
 
 export const reducer = createReducer(
   initialState,
-  on(Actions.toggleSidenav, (state) => ({
+  on(Actions.toggled, (state, action) => ({
     ...state,
-    open: !state.open,
+    open: action.open,
+  })),
+  on(Actions.opened, (state) => ({
+    ...state,
+    open: true,
+  })),
+  on(Actions.closed, (state) => ({
+    ...state,
+    open: false,
   }))
 );

@@ -13,9 +13,7 @@ export class RouterEffects {
     return this.actions$.pipe(
       ofType(routerNavigatedAction),
       map(() => this.store.select(selectSidenavOpen)),
-      mergeMap((sidenavOpen) =>
-        sidenavOpen ? [SidenavActions.closeSidenav()] : []
-      )
+      mergeMap((sidenavOpen) => (sidenavOpen ? [SidenavActions.close()] : []))
     );
   });
 

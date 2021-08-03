@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { LayoutGapStyleBuilder } from '@angular/flex-layout';
-import { PsLayoutGapStyleBuilder } from 'src/app/shared/style-builders/layout-gap.style-builder';
+import { PsLayoutGapStyleBuilder } from 'src/app/core/style-builders/layout-gap.style-builder';
 
 @NgModule({
   providers: [
@@ -10,4 +10,4 @@ import { PsLayoutGapStyleBuilder } from 'src/app/shared/style-builders/layout-ga
     },
   ],
 })
-export class SharedModule {}
+export class CoreModule {}
