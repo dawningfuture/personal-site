@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
-import { SharedModule } from 'src/app/shared/shared.module';
+import { CoreModule } from 'src/app/core/core.module';
 import { StateModule } from 'src/app/state/state.module';
 import { environment } from '../environments/environment';
 import { AppRoutingModule } from './app-routing.module';
@@ -16,7 +16,7 @@ import { LayoutModule } from './layout/layout.module';
 export const appImports = [
   BrowserAnimationsModule,
   AppRoutingModule,
-  SharedModule,
+  CoreModule,
   StateModule,
 ];
 @NgModule({
