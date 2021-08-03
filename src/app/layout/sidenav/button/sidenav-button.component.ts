@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
+import * as SidenavActions from 'src/app/state/features/sidenav/actions/sidenav.actions';
 import { State } from 'src/app/state/reducers';
-import * as SidenavActions from '../state/actions/sidenav.actions';
 
 @Component({
   selector: 'ps-sidenav-button',
@@ -14,6 +14,6 @@ export class SidenavButtonComponent implements OnInit {
   ngOnInit(): void {}
 
   onClick(): void {
-    this.store.dispatch(SidenavActions.clickedSidenavButton());
+    this.store.dispatch(SidenavActions.clickedButton());
   }
 }

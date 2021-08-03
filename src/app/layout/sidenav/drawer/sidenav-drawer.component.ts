@@ -9,12 +9,7 @@ import { appRoutes } from 'src/app/app-routing.module';
 export class SidenavDrawerComponent implements OnInit {
   sidenavLinks = appRoutes
     .flatMap((appRoute) =>
-      appRoute.data?.sidenavLink
-        ? {
-            ...appRoute.data.sidenavLink,
-            path: appRoute.path,
-          }
-        : []
+      appRoute.data?.sidenavLink ? appRoute.data.sidenavLink : []
     )
     .sort((a, b) => (a.order > b.order ? 1 : -1));
 

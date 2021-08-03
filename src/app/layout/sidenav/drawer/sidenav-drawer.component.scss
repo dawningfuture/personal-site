@@ -2,5 +2,5 @@
 @use "~@angular/material/button/button-base";
 
 .ps-sidenav-drawer-container {
-  margin-top: calc(2 * #{variables.$padding} + #{button-base.$fab-size});
+  margin-top: calc(2 * #{variables.$ps-padding} + #{button-base.$fab-size});
 }

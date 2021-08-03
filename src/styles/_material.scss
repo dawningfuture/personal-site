@@ -1,0 +1,53 @@
+@use '~@angular/material' as mat;
+
+$ps-typography: mat.define-typography-config(
+  $font-family: "Montserrat",
+);
+
+@include mat.core($ps-typography);
+
+$ps-primary: mat.define-palette(mat.$blue-palette);
+$ps-accent: mat.define-palette(mat.$light-green-palette, A200, A100, A700);
+$ps-warn: mat.define-palette(mat.$red-palette);
+
+$ps-theme: mat.define-light-theme(
+  (
+    color: (
+      primary: $ps-primary,
+      accent: $ps-accent,
+      warn: $ps-warn,
+    ),
+    typography: $ps-typography,
+  )
+);
+
+@include mat.all-component-themes($ps-theme);
+
+// ********************
+// VARIABLES AND MIXINS
+// ********************
+
+// **********
+// TYPOGRAPHY
+// **********
+@mixin ps-display-4 {
+  @include mat.typography-level($ps-typography, "display-4");
+}
+
+@mixin ps-display-3 {
+  @include mat.typography-level($ps-typography, "display-3");
+}
+
+@mixin ps-display-2 {
+  @include mat.typography-level($ps-typography, "display-2");
+}
+
+@mixin ps-display-1 {
+  @include mat.typography-level($ps-typography, "display-1");
+}
+
+// ******
+// COLORS
+// ******
+$ps-primary-default: mat.get-color-from-palette($ps-primary, "default");
+$ps-accent-default: mat.get-color-from-palette($ps-accent, "default");

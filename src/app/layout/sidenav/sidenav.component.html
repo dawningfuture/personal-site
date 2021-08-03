@@ -1,7 +1,11 @@
 <ps-sidenav-button></ps-sidenav-button>
 
-<mat-sidenav-container class="ps-sidenav-container">
-  <mat-sidenav #sidenav mode="over">
+<mat-sidenav-container
+  class="ps-sidenav-container"
+  fxFlexFill
+  (backdropClick)="onBackdropClick()"
+>
+  <mat-sidenav #sidenav mode="over" [disableClose]="true">
     <ps-sidenav-drawer></ps-sidenav-drawer>
   </mat-sidenav>
   <mat-sidenav-content>
