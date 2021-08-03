@@ -1,0 +1,14 @@
+<div class="ps-dance-video" fxFlexFill>
+  <video
+    #psDanceVideo
+    fxFlexFill
+    class="dance-video"
+    src="//media.matthewthompson.us/dance-hero-background.mp4"
+    loop
+    muted
+    autoplay
+    (canplay)="onCanPlay()"
+    (playing)="onPlaying()"
+    (waiting)="onWaiting()"
+  ></video>
+</div>

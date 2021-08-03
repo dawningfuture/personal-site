@@ -1,5 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { DanceHeroComponent } from 'src/app/pages/dance/hero/dance-hero.component';
+import { DanceVideoComponent } from 'src/app/pages/dance/video/dance-video.component';
 import { DancePageComponent } from './dance-page.component';
 
 describe('DancePageComponent', () => {
@@ -8,9 +9,12 @@ describe('DancePageComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ DancePageComponent ]
-    })
-    .compileComponents();
+      declarations: [
+        DancePageComponent,
+        DanceHeroComponent,
+        DanceVideoComponent,
+      ],
+    }).compileComponents();
   });
 
   beforeEach(() => {
