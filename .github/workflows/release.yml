@@ -1,4 +1,4 @@
-name: Create Relese
+name: Create Release
 
 on:
   workflow_dispatch:
@@ -30,7 +30,7 @@ jobs:
           npm version ${{ github.event.inputs.version }} --no-git-tag-version
           git add -A
           git commit -m "create release ${{ github.event.inputs.version }}"
-          git push
+          git push --set-upstream origin release/1.0.2
 
       - name: Update develop
         run: |
