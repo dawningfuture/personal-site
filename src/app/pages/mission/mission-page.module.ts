@@ -5,6 +5,10 @@ import { MissionPageRoutingModule } from 'src/app/pages/mission/mission-page-rou
 import { MissionHeroComponent } from './hero/mission-hero.component';
 import { MissionPageComponent } from './mission-page.component';
 
+/**
+ * NOTE (July 30, 2021): These imports have been extracted into an exported
+ * `const` Array so that they can be imported in tests
+ */
 export const missionPageImports = [FlexLayoutModule];
 
 @NgModule({

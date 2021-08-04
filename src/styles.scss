@@ -1,4 +1,9 @@
-@import "material";
+@use '~@angular/material' as mat;
+@use "material";
+
+@include mat.core(material.$ps-typography);
+
+@include mat.all-component-themes(material.$ps-theme);
 
 html,
 body {

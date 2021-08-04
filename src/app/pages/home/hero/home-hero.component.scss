@@ -2,7 +2,7 @@
 @use "images";
 
 .ps-home-hero {
-  @include images.ps-hero-background("/assets/home-hero-background.jpg");
+  @include images.ps-hero-background("//media.matthewthompson.us/personal-site/home-hero-background.jpg");
 
   .headline {
     &-gt-xs {

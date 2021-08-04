@@ -2,7 +2,7 @@
 @use 'images';
 
 .ps-code-hero {
-  @include images.ps-hero-background("/assets/code-hero-background.jpg");
+  @include images.ps-hero-background("//media.matthewthompson.us/personal-site/code-hero-background.jpg");
 
   .headline {
     &-top {

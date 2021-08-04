@@ -19,6 +19,7 @@ export const appImports = [
   CoreModule,
   StateModule,
 ];
+
 @NgModule({
   declarations: [AppComponent],
   imports: [
