@@ -1,9 +1,9 @@
-name: Upload App To S3
+name: Deploy To S3
 
 on:
   push:
     branches:
-      - "#3/releases"
+      - "delivery"
 
 jobs:
   deploy:
