@@ -1,5 +1,5 @@
 @mixin ps-hero-background($url) {
-  background-image: url(#{$url});
+  background-image: url($url);
   background-repeat: no-repeat;
   background-position-y: bottom;
   background-position-x: center;

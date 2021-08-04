@@ -5,6 +5,10 @@ import { ConnectPageRoutingModule } from 'src/app/pages/connect/connect-page-rou
 import { ConnectPageComponent } from './connect-page.component';
 import { ConnectHeroComponent } from './hero/connect-hero.component';
 
+/**
+ * NOTE (July 30, 2021): These imports have been extracted into an exported
+ * `const` Array so that they can be imported in tests
+ */
 export const connectPageImports = [FlexLayoutModule];
 
 @NgModule({

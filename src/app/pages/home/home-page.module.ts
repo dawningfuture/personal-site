@@ -7,6 +7,10 @@ import { HomeCtaButtonComponent } from './cta-button/home-cta-button.component';
 import { HomeHeroComponent } from './hero/home-hero.component';
 import { HomePageComponent } from './home-page.component';
 
+/**
+ * NOTE (July 30, 2021): These imports have been extracted into an exported
+ * `const` Array so that they can be imported in tests
+ */
 export const homePageImports = [FlexLayoutModule, MatButtonModule];
 
 @NgModule({
