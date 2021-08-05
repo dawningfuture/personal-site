@@ -1,6 +1,7 @@
 name: Deploy Staging To S3
 
 on:
+  create
   push:
     branches:
       - "staging/*"
@@ -8,6 +9,7 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    if: ${{ contains(github.ref, 'refs/heads/staging/') }}
     steps:
       - name: Checkout
         uses: actions/checkout@v1
