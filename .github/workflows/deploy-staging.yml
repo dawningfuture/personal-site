@@ -27,12 +27,12 @@ jobs:
       - name: NPM Install
         run: npm install
 
-      - name: Extract version
-        id: extract_version
-        uses: Saionaro/extract-package-version@v1.0.6
-
       - name: Build App
         run: npm run build:staging
 
-      - name: Deploy static site to S3 bucket
+      - name: Extract Version
+        id: extract_version
+        uses: Saionaro/extract-package-version@v1.0.6
+
+      - name: Deploy App to S3 Bucket
         run: aws s3 sync ./dist/personal-site/ s3://staging.matthewthompson.us/${{ steps.extract_version.outputs.version }} --delete
