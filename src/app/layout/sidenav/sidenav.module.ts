@@ -4,6 +4,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSidenavModule } from '@angular/material/sidenav';
+import { SharedModule } from 'src/app/shared/shared.module';
 import { SidenavButtonComponent } from './button/sidenav-button.component';
 import { SidenavDrawerComponent } from './drawer/sidenav-drawer.component';
 import { SidenavLinkComponent } from './link/sidenav-link.component';
@@ -19,6 +20,7 @@ export const sidenavImports = [
   MatIconModule,
   MatSidenavModule,
   FlexLayoutModule,
+  SharedModule,
 ];
 
 @NgModule({

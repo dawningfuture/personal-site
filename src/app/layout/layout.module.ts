@@ -4,6 +4,10 @@ import { RouterModule } from '@angular/router';
 import { LayoutComponent } from './layout.component';
 import { SidenavModule } from './sidenav/sidenav.module';
 
+/**
+ * NOTE (July 30, 2021): These imports have been extracted into an exported
+ * `const` Array so that they can be imported in tests
+ */
 export const layoutImports = [SidenavModule];
 
 @NgModule({

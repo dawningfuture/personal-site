@@ -1,0 +1,12 @@
+@use "text";
+@use "material";
+@use "variables";
+
+.ps-version {
+  .version-text {
+    @include material.ps-title;
+    @include text.ps-text-primary;
+    text-align: center;
+    padding: variables.$ps-padding;
+  }
+}
