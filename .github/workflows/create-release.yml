@@ -33,7 +33,7 @@ jobs:
 
       - name: Create Staging Branch
         run: |
-          git checkout -b release/${{ github.event.inputs.version }}
+          git checkout -b staging/${{ github.event.inputs.version }}
           git push --set-upstream origin staging/${{ github.event.inputs.version }}
 
       - name: Update develop
