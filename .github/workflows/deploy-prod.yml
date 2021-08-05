@@ -1,4 +1,4 @@
-name: Deploy To S3
+name: Deploy Prod To S3
 
 on:
   push:
@@ -27,8 +27,23 @@ jobs:
       - name: NPM Install
         run: npm install
 
-      - name: Build app
+      - name: Build App
         run: npm run build:prod
 
-      - name: Deploy static site to S3 bucket
+      - name: Deploy App to S3 Bucket
         run: aws s3 sync ./dist/personal-site/ s3://matthewthompson.us --delete
+
+      - name: Configure Git
+        run: |
+          git config --global user.name 'Github Actions'
+          git config --global user.email 'dawningfuture@users.noreply.github.com'
+          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/$GITHUB_REPOSITORY
+
+      - name: Extract Version
+        id: extract_version
+        uses: Saionaro/extract-package-version@v1.0.6
+
+      - name: Tag Version
+        run: |
+          git tag v${{ steps.extract_version.outputs.version }}
+          git push origin v${{ steps.extract_version.outputs.version }}

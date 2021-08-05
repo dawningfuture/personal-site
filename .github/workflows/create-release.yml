@@ -4,11 +4,11 @@ on:
   workflow_dispatch:
     inputs:
       version:
-        description: "Version number"
+        description: "Version number (major.minor.patch)"
         required: true
 
 jobs:
-  craete_release:
+  create_release:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -22,15 +22,19 @@ jobs:
 
       - name: Create Release Branch
         run: |
-          git checkout develop
           git checkout -b release/${{ github.event.inputs.version }}
 
       - name: Bump Version
         run: |
           npm version ${{ github.event.inputs.version }} --no-git-tag-version
           git add -A
-          git commit -m "create release ${{ github.event.inputs.version }}"
-          git push --set-upstream origin release/1.0.2
+          git commit -m "version bump ${{ github.event.inputs.version }}"
+          git push --set-upstream origin release/${{ github.event.inputs.version }}
+
+      - name: Create Staging Branch
+        run: |
+          git checkout -b staging/${{ github.event.inputs.version }}
+          git push --set-upstream origin staging/${{ github.event.inputs.version }}
 
       - name: Update develop
         run: |
