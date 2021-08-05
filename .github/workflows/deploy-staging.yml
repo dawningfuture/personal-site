@@ -1,7 +1,7 @@
 name: Deploy Staging To S3
 
 on:
-  create
+  create:
   push:
     branches:
       - "staging/*"
