@@ -12,7 +12,7 @@ import { map } from 'rxjs/operators';
 @Injectable({
   providedIn: 'root',
 })
-export class PageBackgroundLoadResolverService implements Resolve<SafeUrl> {
+export class PageBackgroundResolverService implements Resolve<SafeUrl> {
   constructor(
     private httpClient: HttpClient,
     private sanitizer: DomSanitizer
