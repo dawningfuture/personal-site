@@ -1,0 +1,43 @@
+name: Create Release
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: "Version number (major.minor.patch)"
+        required: true
+
+jobs:
+  create_release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v1
+
+      - name: Configure Git
+        run: |
+          git config --global user.name 'Github Actions'
+          git config --global user.email 'dawningfuture@users.noreply.github.com'
+          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/$GITHUB_REPOSITORY
+
+      - name: Create Release Branch
+        run: |
+          git checkout -b release/${{ github.event.inputs.version }}
+
+      - name: Bump Version
+        run: |
+          npm version ${{ github.event.inputs.version }} --no-git-tag-version
+          git add -A
+          git commit -m "version bump ${{ github.event.inputs.version }}"
+          git push --set-upstream origin release/${{ github.event.inputs.version }}
+
+      - name: Create Staging Branch
+        run: |
+          git checkout -b staging/${{ github.event.inputs.version }}
+          git push --set-upstream origin staging/${{ github.event.inputs.version }}
+
+      - name: Update develop
+        run: |
+          git checkout develop
+          git merge release/${{ github.event.inputs.version }}
+          git push
