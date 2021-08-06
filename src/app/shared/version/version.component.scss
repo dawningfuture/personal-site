@@ -4,8 +4,8 @@
 
 .ps-version {
   .version-text {
-    @include material.ps-title;
-    @include text.ps-text-primary;
+    @include material.title;
+    @include text.text-primary;
     text-align: center;
     padding: variables.$ps-padding;
   }

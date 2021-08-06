@@ -1,16 +1,23 @@
 @use "text";
 @use "images";
+@use "position";
 
 .ps-home-hero {
-  @include images.ps-hero-background("//media.matthewthompson.us/personal-site/home-hero-background.jpg");
+  position: relative;
+
+  .image {
+    @include images.hero-background;
+  }
 
   .headline {
+    @include position.absolute-fill;
+
     &-gt-xs {
-      @include text.ps-headline-4;
+      @include text.headline-4;
     }
 
     &-xs {
-      @include text.ps-headline-3;
+      @include text.headline-3;
     }
   }
 }

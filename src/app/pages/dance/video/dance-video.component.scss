@@ -1,9 +1,7 @@
+@use "position";
+
 .ps-dance-video {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
+  @include position.absolute-fill;
 
   .dance-video {
     object-fit: cover;
