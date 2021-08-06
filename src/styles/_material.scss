@@ -26,23 +26,23 @@ $ps-theme: mat.define-light-theme(
 // **********
 // TYPOGRAPHY
 // **********
-@mixin ps-display-4 {
+@mixin display-4 {
   @include mat.typography-level($ps-typography, "display-4");
 }
 
-@mixin ps-display-3 {
+@mixin display-3 {
   @include mat.typography-level($ps-typography, "display-3");
 }
 
-@mixin ps-display-2 {
+@mixin display-2 {
   @include mat.typography-level($ps-typography, "display-2");
 }
 
-@mixin ps-display-1 {
+@mixin display-1 {
   @include mat.typography-level($ps-typography, "display-1");
 }
 
-@mixin ps-title {
+@mixin title {
   @include mat.typography-level($ps-typography, "title");
 }
 

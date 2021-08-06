@@ -1,9 +1,9 @@
-<div class="ps-dance-video" fxFlexFill>
+<div class="ps-dance-video">
   <video
     #psDanceVideo
-    fxFlexFill
+    fxFill
     class="dance-video"
-    src="//media.matthewthompson.us/personal-site/dance-hero-background.mp4"
+    [src]="danceVideoUrl$ | async"
     loop
     muted
     autoplay

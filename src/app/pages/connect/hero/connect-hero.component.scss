@@ -1,27 +1,34 @@
-@use 'text';
-@use 'images';
+@use "text";
+@use "images";
+@use "position";
 
 .ps-connect-hero {
-  @include images.ps-hero-background("//media.matthewthompson.us/personal-site/connect-hero-background.jpg");
+  position: relative;
+
+  .background-image {
+    @include images.hero-background;
+  }
 
   .headline {
+    @include position.absolute-fill;
+
     &-top {
       &-gt-xs {
-        @include text.ps-headline-2;
+        @include text.headline-2;
       }
 
       &-xs {
-        @include text.ps-headline-1;
+        @include text.headline-1;
       }
     }
 
     &-bottom {
       &-gt-xs {
-        @include text.ps-headline-4;
+        @include text.headline-4;
       }
 
       &-xs {
-        @include text.ps-headline-3;
+        @include text.headline-3;
       }
     }
   }
