@@ -1,37 +1,37 @@
 @use 'material';
 
-@mixin ps-headline-4 {
-  @include material.ps-display-4;
+@mixin headline-4 {
+  @include material.display-4;
   text-shadow: 0px 3px 3px #5a5a5a;
   text-align: center;
   color: #ffffff;
 }
 
-@mixin ps-headline-3 {
-  @include material.ps-display-3;
+@mixin headline-3 {
+  @include material.display-3;
   text-shadow: 0px 3px 3px #5a5a5a;
   text-align: center;
   color: #ffffff;
 }
 
-@mixin ps-headline-2 {
-  @include material.ps-display-2;
+@mixin headline-2 {
+  @include material.display-2;
   text-shadow: 0px 3px 3px #5a5a5a;
   text-align: center;
   color: #ffffff;
 }
 
-@mixin ps-headline-1 {
-  @include material.ps-display-1;
+@mixin headline-1 {
+  @include material.display-1;
   text-shadow: 0px 3px 3px #5a5a5a;
   text-align: center;
   color: #ffffff;
 }
 
-@mixin ps-text-primary {
+@mixin text-primary {
   color: material.$ps-primary-default;
 }
 
-@mixin ps-text-accent {
+@mixin text-accent {
   color: material.$ps-accent-default;
 }

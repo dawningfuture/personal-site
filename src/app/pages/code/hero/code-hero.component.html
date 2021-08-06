@@ -1,18 +1,22 @@
-<div class="ps-code-hero" fxFlexFill fxLayout="column">
-  <div fxFlex></div>
-  <div
-    fxFlex="0 1 auto"
-    ngClass.gt-xs="headline-top-gt-xs"
-    ngClass.xs="headline-top-xs"
-  >
-    I make joyful things
+<div class="ps-code-hero" fxFill>
+  <img fxFill class="background-image" [src]="backgroundImageUrl$ | async" />
+
+  <div class="headline" fxLayout="column">
+    <div fxFlex></div>
+    <div
+      fxFlex="0 1 auto"
+      ngClass.gt-xs="headline-top-gt-xs"
+      ngClass.xs="headline-top-xs"
+    >
+      I make joyful things
+    </div>
+    <div
+      fxFlex="0 1 auto"
+      ngClass.gt-xs="headline-bottom-gt-xs"
+      ngClass.xs="headline-bottom-xs"
+    >
+      With Code.
+    </div>
+    <div fxFlex></div>
   </div>
-  <div
-    fxFlex="0 1 auto"
-    ngClass.gt-xs="headline-bottom-gt-xs"
-    ngClass.xs="headline-bottom-xs"
-  >
-    With Code.
-  </div>
-  <div fxFlex></div>
 </div>

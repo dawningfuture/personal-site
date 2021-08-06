@@ -1,8 +1,8 @@
 @use "material";
 @use "variables";
 
-@mixin ps-call-to-action {
-  @include material.ps-display-1;
+@mixin call-to-action {
+  @include material.display-1;
   padding: variables.$ps-padding;
   border-radius: 10px;
 }
