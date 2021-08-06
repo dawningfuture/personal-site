@@ -23,12 +23,9 @@ export class PageBackgroundLoadResolverService implements Resolve<SafeUrl> {
     state: RouterStateSnapshot
   ): Observable<SafeUrl> {
     return this.httpClient
-      .get(
-        'https://media.matthewthompson.us/personal-site/dance-hero-background.mp4',
-        {
-          responseType: 'blob',
-        }
-      )
+      .get(route.data.heroBackgroundUrl, {
+        responseType: 'blob',
+      })
       .pipe(
         map((imageBlob) =>
           this.sanitizer.bypassSecurityTrustUrl(URL.createObjectURL(imageBlob))
