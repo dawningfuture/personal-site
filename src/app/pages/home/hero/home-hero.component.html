@@ -1,9 +1,5 @@
 <div class="ps-home-hero" fxFill>
-  <img
-    fxFill
-    class="image"
-    src="//media.matthewthompson.us/personal-site/home-hero-background.jpg"
-  />
+  <img fxFill class="background-image" [src]="backgroundImageUrl$ | async" />
 
   <div class="headline" fxLayout="column" fxLayoutGap>
     <div fxFlex></div>

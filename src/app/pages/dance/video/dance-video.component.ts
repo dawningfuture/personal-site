@@ -3,10 +3,12 @@ import {
   Component,
   ElementRef,
   OnDestroy,
+  OnInit,
   ViewChild,
 } from '@angular/core';
-import { Subject } from 'rxjs';
-import { takeUntil } from 'rxjs/operators';
+import { ActivatedRoute } from '@angular/router';
+import { Observable, Subject } from 'rxjs';
+import { map, takeUntil } from 'rxjs/operators';
 import {
   DanceVideoStatuses,
   DanceVideoStore,
@@ -18,21 +20,32 @@ import {
   styleUrls: ['./dance-video.component.scss'],
   providers: [DanceVideoStore],
 })
-export class DanceVideoComponent implements AfterViewInit, OnDestroy {
+export class DanceVideoComponent implements OnInit, AfterViewInit, OnDestroy {
+  danceVideoUrl$!: Observable<string>;
+
   @ViewChild('psDanceVideo') danceVideo!: ElementRef<HTMLVideoElement>;
 
   private destroyed$ = new Subject<void>();
 
-  constructor(private danceVideoStore: DanceVideoStore) {}
+  constructor(
+    private danceVideoStore: DanceVideoStore,
+    private route: ActivatedRoute
+  ) {}
 
-  ngAfterViewInit(): void {
-    this.danceVideo.nativeElement.muted = true;
+  ngOnInit(): void {
+    this.danceVideoUrl$ = this.route.data.pipe(
+      map((data) => data.heroBackgroundUrl)
+    );
 
     this.danceVideoStore.play$
       .pipe(takeUntil(this.destroyed$))
       .subscribe(() => {
         this.danceVideo.nativeElement.play();
       });
+  }
+
+  ngAfterViewInit(): void {
+    this.danceVideo.nativeElement.muted = true;
   }
 
   ngOnDestroy(): void {

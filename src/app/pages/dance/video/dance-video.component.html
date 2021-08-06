@@ -3,7 +3,7 @@
     #psDanceVideo
     fxFill
     class="dance-video"
-    src="//media.matthewthompson.us/personal-site/dance-hero-background.mp4"
+    [src]="danceVideoUrl$ | async"
     loop
     muted
     autoplay

@@ -1,9 +1,5 @@
 <div class="ps-code-hero" fxFill>
-  <img
-    fxFill
-    class="image"
-    src="//media.matthewthompson.us/personal-site/code-hero-background.jpg"
-  />
+  <img fxFill class="background-image" [src]="backgroundImageUrl$ | async" />
 
   <div class="headline" fxLayout="column">
     <div fxFlex></div>
