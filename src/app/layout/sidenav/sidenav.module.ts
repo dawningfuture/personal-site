@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatButtonModule } from '@angular/material/button';
+import { MatDividerModule } from '@angular/material/divider';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { SharedModule } from 'src/app/shared/shared.module';
@@ -19,6 +20,7 @@ export const sidenavImports = [
   MatButtonModule,
   MatIconModule,
   MatSidenavModule,
+  MatDividerModule,
   FlexLayoutModule,
   SharedModule,
 ];
@@ -30,7 +32,7 @@ export const sidenavImports = [
     SidenavButtonComponent,
     SidenavLinkComponent,
   ],
-  imports: sidenavImports,
+  imports: [...sidenavImports],
   exports: [SidenavComponent],
 })
 export class SidenavModule {}
