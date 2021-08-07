@@ -9,6 +9,10 @@
     <ps-sidenav-drawer></ps-sidenav-drawer>
   </mat-sidenav>
   <mat-sidenav-content>
+    <ps-initialization-indicator
+      *ngIf="!(hasNavigated$ | async)"
+    ></ps-initialization-indicator>
+
     <ng-container *ngIf="hasNavigated$ | async">
       <ps-sidenav-button></ps-sidenav-button>
       <router-outlet></router-outlet>

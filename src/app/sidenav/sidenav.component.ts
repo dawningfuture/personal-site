@@ -11,7 +11,7 @@ import { ofType } from '@ngrx/effects';
 import { routerNavigatedAction } from '@ngrx/router-store';
 import { ActionsSubject, Store } from '@ngrx/store';
 import { from, Observable, Subject } from 'rxjs';
-import { map, take, takeUntil } from 'rxjs/operators';
+import { map, startWith, takeUntil } from 'rxjs/operators';
 import { State } from 'src/app/state/reducers';
 import * as SidenavActions from '../state/features/sidenav/actions/sidenav.actions';
 
@@ -34,7 +34,7 @@ export class SidenavComponent implements OnInit, AfterViewInit, OnDestroy {
     this.hasNavigated$ = this.actions$.pipe(
       ofType(routerNavigatedAction),
       map(() => true),
-      take(1)
+      startWith(false)
     );
   }
 
