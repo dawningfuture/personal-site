@@ -1,9 +1,9 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { appImports } from 'src/app/app.module';
-import { SidenavButtonComponent } from 'src/app/layout/sidenav/button/sidenav-button.component';
-import { SidenavDrawerComponent } from 'src/app/layout/sidenav/drawer/sidenav-drawer.component';
-import { SidenavLinkComponent } from 'src/app/layout/sidenav/link/sidenav-link.component';
-import { sidenavImports } from 'src/app/layout/sidenav/sidenav.module';
+import { SidenavButtonComponent } from 'src/app/sidenav/button/sidenav-button.component';
+import { SidenavDrawerComponent } from 'src/app/sidenav/drawer/sidenav-drawer.component';
+import { SidenavLinkComponent } from 'src/app/sidenav/link/sidenav-link.component';
+import { sidenavImports } from 'src/app/sidenav/sidenav.module';
 import { SidenavComponent } from './sidenav.component';
 
 describe('SidenavComponent', () => {
