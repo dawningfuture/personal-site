@@ -5,7 +5,7 @@ import { NavigationIndicatorComponent } from './navigation-indicator/navigation-
 import { VersionComponent } from './version/version.component';
 
 /**
- * NOTE (July 30, 2021): These imports have been extracted into an exported
+ * NOTE: These imports have been extracted into an exported
  * `const` Array so that they can be imported in tests
  */
 export const sharedImports = [MatProgressBarModule];

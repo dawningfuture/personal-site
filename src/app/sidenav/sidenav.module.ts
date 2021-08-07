@@ -13,7 +13,7 @@ import { SidenavLinkComponent } from './link/sidenav-link.component';
 import { SidenavComponent } from './sidenav.component';
 
 /**
- * NOTE (July 30, 2021): These imports have been extracted into an exported
+ * NOTE: These imports have been extracted into an exported
  * `const` Array so that they can be imported in tests
  */
 export const sidenavImports = [

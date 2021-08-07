@@ -8,7 +8,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 /**
- * NOTE (July 31, 2021): These imports have been extracted into an exported
+ * NOTE: These imports have been extracted into an exported
  * `const` Array so that they can be imported in tests
  */
 export const appImports = [
