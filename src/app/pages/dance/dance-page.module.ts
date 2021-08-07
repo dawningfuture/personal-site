@@ -11,6 +11,7 @@ import { DanceVideoComponent } from './video/dance-video.component';
  * `const` Array so that they can be imported in tests
  */
 export const dancePageImports = [FlexLayoutModule];
+
 @NgModule({
   declarations: [DancePageComponent, DanceHeroComponent, DanceVideoComponent],
   imports: [CommonModule, DancePageRoutingModule, ...dancePageImports],

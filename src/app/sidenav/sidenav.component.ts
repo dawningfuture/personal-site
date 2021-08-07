@@ -11,7 +11,7 @@ import { ActionsSubject, Store } from '@ngrx/store';
 import { from, Subject } from 'rxjs';
 import { map, takeUntil } from 'rxjs/operators';
 import { State } from 'src/app/state/reducers';
-import * as SidenavActions from '../../state/features/sidenav/actions/sidenav.actions';
+import * as SidenavActions from '../state/features/sidenav/actions/sidenav.actions';
 
 @Component({
   selector: 'ps-sidenav',
