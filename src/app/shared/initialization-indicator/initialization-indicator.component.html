@@ -1,0 +1,17 @@
+<div class="ps-initialization-indicator" fxFill>
+  <div
+    *ngIf="showHeadline$ | async"
+    @fadeIn
+    class="headline"
+    fxLayout="column"
+    fxLayoutAlign="center"
+  >
+    <div
+      fxFlex="0 1 auto"
+      ngClass.xs="headline-xs"
+      ngClass.gt-xs="headline-gt-xs"
+    >
+      One sec...
+    </div>
+  </div>
+</div>

@@ -1,4 +1,6 @@
+import { animate, style, transition, trigger } from '@angular/animations';
 import {
+  AfterViewInit,
   Component,
   OnDestroy,
   OnInit,
@@ -7,26 +9,49 @@ import {
 } from '@angular/core';
 import { MatSidenav } from '@angular/material/sidenav';
 import { ofType } from '@ngrx/effects';
+import { routerNavigatedAction } from '@ngrx/router-store';
 import { ActionsSubject, Store } from '@ngrx/store';
-import { from, Subject } from 'rxjs';
-import { map, takeUntil } from 'rxjs/operators';
+import { from, Observable, Subject } from 'rxjs';
+import { map, startWith, takeUntil } from 'rxjs/operators';
 import { State } from 'src/app/state/reducers';
-import * as SidenavActions from '../../state/features/sidenav/actions/sidenav.actions';
+import * as SidenavActions from '../state/features/sidenav/actions/sidenav.actions';
 
 @Component({
   selector: 'ps-sidenav',
   templateUrl: './sidenav.component.html',
   styleUrls: ['./sidenav.component.scss'],
   encapsulation: ViewEncapsulation.None,
+  animations: [
+    trigger('slideOut', [
+      transition(':leave', [
+        animate(
+          '500ms ease-out',
+          style({
+            transform: 'translateY(100%)',
+          })
+        ),
+      ]),
+    ]),
+  ],
 })
-export class SidenavComponent implements OnInit, OnDestroy {
+export class SidenavComponent implements OnInit, AfterViewInit, OnDestroy {
   @ViewChild('sidenav') sidenav!: MatSidenav;
+
+  hasNavigated$!: Observable<boolean>;
 
   private destroyed$ = new Subject<void>();
 
   constructor(private actions$: ActionsSubject, private store: Store<State>) {}
 
   ngOnInit(): void {
+    this.hasNavigated$ = this.actions$.pipe(
+      ofType(routerNavigatedAction),
+      map(() => true),
+      startWith(false)
+    );
+  }
+
+  ngAfterViewInit(): void {
     this.actions$
       .pipe(
         ofType(SidenavActions.toggle),

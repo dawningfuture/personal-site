@@ -4,7 +4,7 @@ import { Route, RouterModule } from '@angular/router';
 interface AppRouteData {
   sidenavLink: {
     label: string;
-    order: number; // NOTE (July 30, 2021): 0-indexed descending sort order
+    order: number; // NOTE: 0-indexed descending sort order
     path: string;
   };
   heroBackgroundUrl: string;
@@ -60,7 +60,7 @@ export const appRoutes: AppRoute[] = [
         path: '/dance',
       },
       heroBackgroundUrl:
-        'https://media.matthewthompson.us/personal-site/dance-hero-background.mp4',
+        'https://media.matthewthompson.us/personal-site/dance-hero-background/dance-hero-background.m3u8',
     },
   },
   {
