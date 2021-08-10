@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { PageBackgroundResolverService } from 'src/app/core/resolvers/page-background-resolver.service';
+import { HeroBackgroundImageResolverService } from 'src/app/core/hero-background-image-resolver/hero-background-image-resolver.service';
 import { CodePageComponent } from 'src/app/pages/code/code-page.component';
 
 const routes: Routes = [
@@ -8,7 +8,7 @@ const routes: Routes = [
     path: '',
     component: CodePageComponent,
     resolve: {
-      heroBackgroundUrl: PageBackgroundResolverService,
+      heroBackgroundUrl: HeroBackgroundImageResolverService,
     },
   },
 ];
