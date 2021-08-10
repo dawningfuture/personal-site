@@ -4,7 +4,7 @@ import { Route, RouterModule } from '@angular/router';
 interface AppRouteData {
   sidenavLink: {
     label: string;
-    order: number; // NOTE (July 30, 2021): 0-indexed descending sort order
+    order: number; // NOTE: 0-indexed descending sort order
     path: string;
   };
   heroBackgroundUrl: string;

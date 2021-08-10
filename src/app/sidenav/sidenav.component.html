@@ -1,7 +1,5 @@
 <ps-navigation-indicator></ps-navigation-indicator>
 
-<ps-sidenav-button></ps-sidenav-button>
-
 <mat-sidenav-container
   class="ps-sidenav-container"
   fxFill
@@ -11,6 +9,13 @@
     <ps-sidenav-drawer></ps-sidenav-drawer>
   </mat-sidenav>
   <mat-sidenav-content>
-    <ng-content></ng-content>
+    <ps-initialization-indicator
+      *ngIf="!(hasNavigated$ | async)"
+    ></ps-initialization-indicator>
+
+    <ng-container *ngIf="hasNavigated$ | async">
+      <ps-sidenav-button></ps-sidenav-button>
+      <router-outlet></router-outlet>
+    </ng-container>
   </mat-sidenav-content>
 </mat-sidenav-container>

@@ -2,6 +2,11 @@
   .mat-drawer {
     background-color: rgba(255, 255, 255, 0.87);
   }
+
+  .mat-drawer-content {
+    position: initial;
+  }
+
   .mat-drawer-backdrop.mat-drawer-shown {
     background-color: transparent;
   }
