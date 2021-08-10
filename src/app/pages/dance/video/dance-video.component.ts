@@ -6,9 +6,9 @@ import {
   OnInit,
   ViewChild,
 } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { Observable, Subject } from 'rxjs';
-import { map, takeUntil } from 'rxjs/operators';
+import { Subject } from 'rxjs';
+import { takeUntil } from 'rxjs/operators';
+import { HeroBackgroundVideoLoaderService } from 'src/app/core/hero-background-video-loader/hero-background-video-loader.service';
 import {
   DanceVideoStatuses,
   DanceVideoStore,
@@ -21,22 +21,16 @@ import {
   providers: [DanceVideoStore],
 })
 export class DanceVideoComponent implements OnInit, AfterViewInit, OnDestroy {
-  danceVideoUrl$!: Observable<string>;
-
   @ViewChild('psDanceVideo') danceVideo!: ElementRef<HTMLVideoElement>;
 
   private destroyed$ = new Subject<void>();
 
   constructor(
     private danceVideoStore: DanceVideoStore,
-    private route: ActivatedRoute
+    private backgroundVideoLoader: HeroBackgroundVideoLoaderService
   ) {}
 
   ngOnInit(): void {
-    this.danceVideoUrl$ = this.route.data.pipe(
-      map((data) => data.heroBackgroundUrl)
-    );
-
     this.danceVideoStore.play$
       .pipe(takeUntil(this.destroyed$))
       .subscribe(() => {
@@ -46,15 +40,15 @@ export class DanceVideoComponent implements OnInit, AfterViewInit, OnDestroy {
 
   ngAfterViewInit(): void {
     this.danceVideo.nativeElement.muted = true;
+
+    this.backgroundVideoLoader.attachBackground(this.danceVideo.nativeElement);
   }
 
   ngOnDestroy(): void {
+    this.backgroundVideoLoader.detachBackground();
+
     this.destroyed$.next();
     this.destroyed$.complete();
-  }
-
-  onCanPlay(): void {
-    this.danceVideoStore.setStatus(DanceVideoStatuses.PAUSED);
   }
 
   onPlaying(): void {

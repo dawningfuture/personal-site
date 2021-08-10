@@ -9,12 +9,12 @@ import { map } from 'rxjs/operators';
   styleUrls: ['./connect-hero.component.scss'],
 })
 export class ConnectHeroComponent implements OnInit {
-  backgroundImageUrl$!: Observable<string>;
+  backgroundUrl$!: Observable<string>;
 
   constructor(private route: ActivatedRoute) {}
 
   ngOnInit(): void {
-    this.backgroundImageUrl$ = this.route.data.pipe(
+    this.backgroundUrl$ = this.route.data.pipe(
       map((data) => data.heroBackgroundUrl)
     );
   }

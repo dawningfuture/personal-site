@@ -31,7 +31,7 @@
             "tsConfig": "tsconfig.app.json",
             "assets": ["src/favicon.ico", "src/assets"],
             "styles": ["src/styles.scss"],
-            "scripts": [],
+            "scripts": ["node_modules/hls.js/dist/hls.light.js"],
             "vendorChunk": true,
             "extractLicenses": false,
             "buildOptimizer": false,
@@ -102,7 +102,7 @@
             "stylePreprocessorOptions": {
               "includePaths": ["src/styles"]
             },
-            "scripts": []
+            "scripts": ["node_modules/hls.js/dist/hls.light.js"]
           }
         },
         "lint": {
