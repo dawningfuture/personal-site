@@ -1,3 +1,4 @@
+import { animate, style, transition, trigger } from '@angular/animations';
 import {
   AfterViewInit,
   Component,
@@ -20,6 +21,18 @@ import * as SidenavActions from '../state/features/sidenav/actions/sidenav.actio
   templateUrl: './sidenav.component.html',
   styleUrls: ['./sidenav.component.scss'],
   encapsulation: ViewEncapsulation.None,
+  animations: [
+    trigger('slideOut', [
+      transition(':leave', [
+        animate(
+          '500ms ease-out',
+          style({
+            transform: 'translateY(100%)',
+          })
+        ),
+      ]),
+    ]),
+  ],
 })
 export class SidenavComponent implements OnInit, AfterViewInit, OnDestroy {
   @ViewChild('sidenav') sidenav!: MatSidenav;
