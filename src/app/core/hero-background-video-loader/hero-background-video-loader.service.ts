@@ -7,7 +7,7 @@ import { map, take } from 'rxjs/operators';
 @Injectable({
   providedIn: 'root',
 })
-export class BackgroundVideoLoaderService implements CanActivate {
+export class HeroBackgroundVideoLoaderService implements CanActivate {
   private hls = new Hls({
     startFragPrefetch: true,
   });

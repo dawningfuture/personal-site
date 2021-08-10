@@ -8,7 +8,7 @@ import {
 } from '@angular/core';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
-import { BackgroundVideoLoaderService } from 'src/app/core/background-video-loader/background-video-loader.service';
+import { HeroBackgroundVideoLoaderService } from 'src/app/core/hero-background-video-loader/hero-background-video-loader.service';
 import {
   DanceVideoStatuses,
   DanceVideoStore,
@@ -27,7 +27,7 @@ export class DanceVideoComponent implements OnInit, AfterViewInit, OnDestroy {
 
   constructor(
     private danceVideoStore: DanceVideoStore,
-    private backgroundVideoLoader: BackgroundVideoLoaderService
+    private backgroundVideoLoader: HeroBackgroundVideoLoaderService
   ) {}
 
   ngOnInit(): void {
