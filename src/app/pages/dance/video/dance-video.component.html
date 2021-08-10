@@ -3,12 +3,10 @@
     #psDanceVideo
     fxFill
     class="dance-video"
-    [src]="danceVideoUrl$ | async"
     loop
     muted
     autoplay
     playsinline
-    (canplay)="onCanPlay()"
     (playing)="onPlaying()"
     (waiting)="onWaiting()"
   ></video>

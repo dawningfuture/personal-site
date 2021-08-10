@@ -60,7 +60,7 @@ export const appRoutes: AppRoute[] = [
         path: '/dance',
       },
       heroBackgroundUrl:
-        'https://media.matthewthompson.us/personal-site/dance-hero-background.mp4',
+        'https://media.matthewthompson.us/personal-site/dance-hero-background/dance-hero-background.m3u8',
     },
   },
   {
