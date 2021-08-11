@@ -34,9 +34,13 @@ export class HeroVideoService extends VideoService {
 
   /**
    * Sets the video element and immediately loads the source to
-   * enable autoplay for heroes
+   * enable autoplay for Heroes
    */
   loadVideo(el: HTMLVideoElement): void {
+    // NOTE: Even though `muted` attribute is set on the `<video>` element
+    // in Heroes, it has to be reset here to allow autoplay
+    el.muted = true;
+
     if (this.useHlsjs()) {
       this.hlsjsVideo.setVideo(el);
     } else {

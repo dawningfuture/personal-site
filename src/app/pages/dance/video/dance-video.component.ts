@@ -6,8 +6,6 @@ import {
   OnInit,
   ViewChild,
 } from '@angular/core';
-import { SafeUrl } from '@angular/platform-browser';
-import { Observable } from 'rxjs';
 import { HeroVideoService } from 'src/app/hero/hero-video.service';
 
 @Component({
@@ -18,15 +16,11 @@ import { HeroVideoService } from 'src/app/hero/hero-video.service';
 export class DanceVideoComponent implements OnInit, AfterViewInit, OnDestroy {
   @ViewChild('psDanceVideo') danceVideo!: ElementRef<HTMLVideoElement>;
 
-  url$!: Observable<SafeUrl>;
-
   constructor(private heroVideo: HeroVideoService) {}
 
   ngOnInit(): void {}
 
   ngAfterViewInit(): void {
-    this.danceVideo.nativeElement.muted = true;
-
     this.heroVideo.loadVideo(this.danceVideo.nativeElement);
   }
 
