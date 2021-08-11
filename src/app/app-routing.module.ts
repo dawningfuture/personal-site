@@ -7,7 +7,14 @@ interface AppRouteData {
     order: number; // NOTE: 0-indexed descending sort order
     path: string;
   };
-  heroBackgroundUrl: string;
+  hero: {
+    imageUrl?: string;
+    video?: {
+      mp4Url: string;
+      hlsTsUrl: string;
+      hlsFmp4Url: string;
+    };
+  };
 }
 
 interface AppRoute extends Route {
@@ -27,8 +34,10 @@ export const appRoutes: AppRoute[] = [
         order: 1,
         path: '/mission',
       },
-      heroBackgroundUrl:
-        'https://media.matthewthompson.us/personal-site/mission-hero-background.jpg',
+      hero: {
+        imageUrl:
+          'https://media.matthewthompson.us/personal-site/mission-hero-background.jpg',
+      },
     },
   },
   {
@@ -43,8 +52,10 @@ export const appRoutes: AppRoute[] = [
         order: 2,
         path: '/code',
       },
-      heroBackgroundUrl:
-        'https://media.matthewthompson.us/personal-site/code-hero-background.jpg',
+      hero: {
+        imageUrl:
+          'https://media.matthewthompson.us/personal-site/code-hero-background.jpg',
+      },
     },
   },
   {
@@ -59,8 +70,17 @@ export const appRoutes: AppRoute[] = [
         order: 3,
         path: '/dance',
       },
-      heroBackgroundUrl:
-        'https://media.matthewthompson.us/personal-site/dance-hero-background/dance-hero-background.m3u8',
+      hero: {
+        video: {
+          mp4Url:
+            'https://media.matthewthompson.us/personal-site/dance-hero-background/dance-hero-background.mp4',
+          hlsTsUrl:
+            'https://media.matthewthompson.us/personal-site/dance-hero-background/ts/dance-hero-background.m3u8',
+
+          hlsFmp4Url:
+            'https://media.matthewthompson.us/personal-site/dance-hero-background/fmp4/dance-hero-background.m3u8',
+        },
+      },
     },
   },
   {
@@ -75,8 +95,10 @@ export const appRoutes: AppRoute[] = [
         order: 4,
         path: '/connect',
       },
-      heroBackgroundUrl:
-        'https://media.matthewthompson.us/personal-site/connect-hero-background.jpg',
+      hero: {
+        imageUrl:
+          'https://media.matthewthompson.us/personal-site/connect-hero-background.jpg',
+      },
     },
   },
   {
@@ -91,8 +113,10 @@ export const appRoutes: AppRoute[] = [
         order: 0,
         path: '/',
       },
-      heroBackgroundUrl:
-        'https://media.matthewthompson.us/personal-site/home-hero-background.jpg',
+      hero: {
+        imageUrl:
+          'https://media.matthewthompson.us/personal-site/home-hero-background.jpg',
+      },
     },
   },
   { path: '**', redirectTo: '' },

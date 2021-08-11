@@ -5,8 +5,8 @@
 .ps-mission-hero {
   position: relative;
 
-  .background-image {
-    @include images.hero-background;
+  .image {
+    @include images.hero-image;
   }
 
   .headline {

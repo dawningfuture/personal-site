@@ -9,13 +9,11 @@ import { map } from 'rxjs/operators';
   styleUrls: ['./home-hero.component.scss'],
 })
 export class HomeHeroComponent implements OnInit {
-  backgroundUrl$!: Observable<string>;
+  imageUrl$!: Observable<string>;
 
   constructor(private route: ActivatedRoute) {}
 
   ngOnInit(): void {
-    this.backgroundUrl$ = this.route.data.pipe(
-      map((data) => data.heroBackgroundUrl)
-    );
+    this.imageUrl$ = this.route.data.pipe(map((data) => data.heroImageUrl));
   }
 }
