@@ -11,7 +11,8 @@ interface AppRouteData {
     imageUrl?: string;
     video?: {
       mp4Url: string;
-      hlsUrl: string;
+      hlsTsUrl: string;
+      hlsFmp4Url: string;
     };
   };
 }
@@ -72,9 +73,12 @@ export const appRoutes: AppRoute[] = [
       hero: {
         video: {
           mp4Url:
-            'https://media.matthewthompson.us/personal-site/dance-hero-background/dance-hero-background.m3u8',
-          hlsUrl:
-            'https://media.matthewthompson.us/personal-site/dance-hero-background/dance-hero-background.m3u8',
+            'https://media.matthewthompson.us/personal-site/dance-hero-background/dance-hero-background.mp4',
+          hlsTsUrl:
+            'https://media.matthewthompson.us/personal-site/dance-hero-background/ts/dance-hero-background.m3u8',
+
+          hlsFmp4Url:
+            'https://media.matthewthompson.us/personal-site/dance-hero-background/fmp4/dance-hero-background.m3u8',
         },
       },
     },

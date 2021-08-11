@@ -2,21 +2,26 @@ import { Injectable } from '@angular/core';
 import * as Bowser from 'bowser';
 
 export enum BrowserNames {
-  IOS = 'ios',
+  SAFARI = 'Safari',
+}
+
+export enum PlatformTypes {
+  MOBILE = 'mobile',
 }
 
 @Injectable({
   providedIn: 'root',
 })
 export class BrowserDetectorService {
-  static browsers = Bowser.BROWSER_MAP;
-  static platforms = Bowser.PLATFORMS_MAP;
-
   private parser = Bowser.getParser(window.navigator.userAgent);
 
   constructor() {}
 
   isBrowserName(browserName: BrowserNames): boolean {
-    return this.parser.getBrowserName(true) === browserName;
+    return this.parser.getBrowserName() === browserName;
+  }
+
+  isPlatformType(platformType: PlatformTypes): boolean {
+    return this.parser.getPlatformType() === platformType;
   }
 }

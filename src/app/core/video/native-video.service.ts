@@ -17,6 +17,10 @@ export class NativeVideoService {
   }
 
   destroy(): void {
+    if (this.videoEl) {
+      this.videoEl.src = '';
+    }
+
     this.videoEl = undefined;
   }
 }

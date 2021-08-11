@@ -17,9 +17,8 @@ export class HeroVideoService extends VideoService {
   }
 
   /**
-   *
-   * @param config
-   * @returns
+   * Overloads `init` to prefetch video to prevent stalled video
+   * on navigation
    */
   init(config: VideoConfig): Observable<boolean> {
     super.init(config);
@@ -34,7 +33,8 @@ export class HeroVideoService extends VideoService {
   }
 
   /**
-   *
+   * Sets the video element and immediately loads the source to
+   * enable autoplay for heroes
    */
   loadVideo(el: HTMLVideoElement): void {
     if (this.useHlsjs()) {
@@ -44,14 +44,12 @@ export class HeroVideoService extends VideoService {
 
       const sourceUrl = this.getSourceUrl();
 
-      if (this.config) {
-        this.nativeVideo.loadSource(sourceUrl);
-      }
+      this.nativeVideo.loadSource(sourceUrl);
     }
   }
 
   /**
-   * Overload `destroy` to use `detachMedia` instead of `destroy`
+   * Overloads `destroy` to use `detachMedia` instead of `destroy`
    * when using hls.js
    */
   destroy(): void {

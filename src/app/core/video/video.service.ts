@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import {
   BrowserDetectorService,
   BrowserNames,
+  PlatformTypes,
 } from 'src/app/core/browser-detector.service';
 import { HlsjsVideoService } from 'src/app/core/video/hlsjs-video.service';
 import { NativeVideoService } from 'src/app/core/video/native-video.service';
@@ -10,7 +11,8 @@ import { environment } from 'src/environments/environment';
 export interface VideoConfig {
   source: {
     mp4Url: string;
-    hlsUrl: string;
+    hlsTsUrl: string;
+    hlsFmp4Url: string;
   };
 }
 
@@ -36,7 +38,7 @@ export class VideoService {
     }
   }
 
-  loadSource() {
+  loadSource(): void {
     const sourceUrl = this.getSourceUrl();
 
     if (this.useHlsjs()) {
@@ -58,17 +60,20 @@ export class VideoService {
     return (
       HlsjsVideoService.isSupported &&
       environment.useHlsjs &&
-      !!this.config?.source.hlsUrl
+      !!this.config?.source.hlsTsUrl
     );
   }
 
   protected getSourceUrl(): string {
     if (this.useHlsjs()) {
-      return this.config?.source.hlsUrl || '';
+      return this.config?.source.hlsTsUrl || '';
     }
 
-    if (this.browserDetector.isBrowserName(BrowserNames.IOS)) {
-      return this.config?.source.hlsUrl || '';
+    if (
+      this.browserDetector.isBrowserName(BrowserNames.SAFARI) &&
+      this.browserDetector.isPlatformType(PlatformTypes.MOBILE)
+    ) {
+      return this.config?.source.hlsFmp4Url || '';
     }
 
     return this.config?.source.mp4Url || '';

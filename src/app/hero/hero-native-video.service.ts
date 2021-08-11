@@ -2,11 +2,20 @@ import { Injectable } from '@angular/core';
 import { Observable, race, Subject } from 'rxjs';
 import { take, tap } from 'rxjs/operators';
 import { NativeVideoService } from 'src/app/core/video/native-video.service';
+import { VisibilityService } from 'src/app/core/visibility.service';
 
 @Injectable()
 export class HeroNativeVideoService extends NativeVideoService {
-  constructor() {
+  constructor(private visibility: VisibilityService) {
     super();
+
+    this.visibility.visibile$.subscribe(() => {
+      if (this.videoEl) {
+        this.videoEl.currentTime = 0;
+
+        this.videoEl.play();
+      }
+    });
   }
 
   prefetch(url: string): Observable<void> {
