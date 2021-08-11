@@ -25,7 +25,7 @@ import * as SidenavActions from '../state/features/sidenav/actions/sidenav.actio
     trigger('slideOut', [
       transition(':leave', [
         animate(
-          '500ms ease-out',
+          '400ms ease-in',
           style({
             transform: 'translateY(100%)',
           })

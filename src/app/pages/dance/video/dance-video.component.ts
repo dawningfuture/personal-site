@@ -8,7 +8,7 @@ import {
 } from '@angular/core';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
-import { HeroBackgroundVideoLoaderService } from 'src/app/core/hero-background-video-loader/hero-background-video-loader.service';
+import { HeroHlsjsVideoService } from 'src/app/hero/hero-hlsjs-video.service';
 import {
   DanceVideoStatuses,
   DanceVideoStore,
@@ -27,7 +27,7 @@ export class DanceVideoComponent implements OnInit, AfterViewInit, OnDestroy {
 
   constructor(
     private danceVideoStore: DanceVideoStore,
-    private backgroundVideoLoader: HeroBackgroundVideoLoaderService
+    private heroHlsjsVideo: HeroHlsjsVideoService
   ) {}
 
   ngOnInit(): void {
@@ -41,11 +41,11 @@ export class DanceVideoComponent implements OnInit, AfterViewInit, OnDestroy {
   ngAfterViewInit(): void {
     this.danceVideo.nativeElement.muted = true;
 
-    this.backgroundVideoLoader.attachBackground(this.danceVideo.nativeElement);
+    this.heroHlsjsVideo.attachMedia(this.danceVideo.nativeElement);
   }
 
   ngOnDestroy(): void {
-    this.backgroundVideoLoader.detachBackground();
+    this.heroHlsjsVideo.detachMedia();
 
     this.destroyed$.next();
     this.destroyed$.complete();

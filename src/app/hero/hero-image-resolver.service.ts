@@ -5,10 +5,8 @@ import { ActivatedRouteSnapshot, Resolve } from '@angular/router';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-@Injectable({
-  providedIn: 'root',
-})
-export class HeroBackgroundImageResolverService implements Resolve<SafeUrl> {
+@Injectable()
+export class HeroImageResolverService implements Resolve<SafeUrl> {
   constructor(
     private httpClient: HttpClient,
     private sanitizer: DomSanitizer
@@ -16,7 +14,7 @@ export class HeroBackgroundImageResolverService implements Resolve<SafeUrl> {
 
   resolve(route: ActivatedRouteSnapshot): Observable<SafeUrl> {
     return this.httpClient
-      .get(route.data.heroBackgroundUrl, {
+      .get(route.data.hero.imageUrl, {
         responseType: 'blob',
       })
       .pipe(

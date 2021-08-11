@@ -1,16 +1,16 @@
 import { TestBed } from '@angular/core/testing';
 import { appImports } from 'src/app/app.module';
 import { coreImports } from 'src/app/core/core.module';
-import { HeroBackgroundImageResolverService } from './hero-background-image-resolver.service';
+import { HeroImageResolverService } from './hero-image-resolver.service';
 
-describe('HeroBackgroundImageResolverService', () => {
-  let service: HeroBackgroundImageResolverService;
+describe('HeroImageResolverService', () => {
+  let service: HeroImageResolverService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
       imports: [...appImports, ...coreImports],
     });
-    service = TestBed.inject(HeroBackgroundImageResolverService);
+    service = TestBed.inject(HeroImageResolverService);
   });
 
   it('should be created', () => {
