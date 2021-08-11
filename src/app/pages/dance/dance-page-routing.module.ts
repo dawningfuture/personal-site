@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HeroBackgroundVideoLoaderService } from 'src/app/core/hero-background-video-loader/hero-background-video-loader.service';
+import { HeroVideoGuard } from 'src/app/hero/hero-video.guard';
 import { DancePageComponent } from 'src/app/pages/dance/dance-page.component';
 
 const routes: Routes = [
   {
     path: '',
     component: DancePageComponent,
-    canActivate: [HeroBackgroundVideoLoaderService],
+    canActivate: [HeroVideoGuard],
   },
 ];
 

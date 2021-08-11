@@ -15,4 +15,9 @@ export interface Environment {
    * Origin from which the app must be served
    */
   origin: string;
+
+  /**
+   * Whether to use hls.js for video streaming
+   */
+  useHlsjs: boolean;
 }
