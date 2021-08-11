@@ -1,6 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 import { appImports } from 'src/app/app.module';
-import { coreImports } from 'src/app/core/core.module';
+import { heroImports } from 'src/app/hero/hero.module';
 import { HeroImageResolverService } from './hero-image-resolver.service';
 
 describe('HeroImageResolverService', () => {
@@ -8,7 +8,8 @@ describe('HeroImageResolverService', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [...appImports, ...coreImports],
+      imports: [...appImports, ...heroImports],
+      providers: [HeroImageResolverService],
     });
     service = TestBed.inject(HeroImageResolverService);
   });

@@ -1,26 +1,27 @@
 import { Injectable } from '@angular/core';
+import {
+  BrowserDetectorService,
+  BrowserNames,
+} from 'src/app/core/browser-detector.service';
 import { HlsjsVideoService } from 'src/app/core/video/hlsjs-video.service';
 import { NativeVideoService } from 'src/app/core/video/native-video.service';
 import { environment } from 'src/environments/environment';
 
 export interface VideoConfig {
-  native: {
-    url: string;
-  };
-  hls: {
-    url: string;
+  source: {
+    mp4Url: string;
+    hlsUrl: string;
   };
 }
 
-@Injectable({
-  providedIn: 'root',
-})
+@Injectable()
 export class VideoService {
   protected config?: VideoConfig;
 
   constructor(
     protected hlsjsVideo: HlsjsVideoService,
-    protected nativeVideo: NativeVideoService
+    protected nativeVideo: NativeVideoService,
+    protected browserDetector: BrowserDetectorService
   ) {}
 
   init(config: VideoConfig): void {
@@ -36,12 +37,12 @@ export class VideoService {
   }
 
   loadSource() {
-    if (this.config) {
-      if (this.useHlsjs()) {
-        this.hlsjsVideo.loadSource(this.config.hls.url);
-      } else {
-        this.nativeVideo.loadSource(this.config.native.url);
-      }
+    const sourceUrl = this.getSourceUrl();
+
+    if (this.useHlsjs()) {
+      this.hlsjsVideo.loadSource(sourceUrl);
+    } else {
+      this.nativeVideo.loadSource(sourceUrl);
     }
   }
 
@@ -57,7 +58,19 @@ export class VideoService {
     return (
       HlsjsVideoService.isSupported &&
       environment.useHlsjs &&
-      !!this.config?.hls.url
+      !!this.config?.source.hlsUrl
     );
+  }
+
+  protected getSourceUrl(): string {
+    if (this.useHlsjs()) {
+      return this.config?.source.hlsUrl || '';
+    }
+
+    if (this.browserDetector.isBrowserName(BrowserNames.IOS)) {
+      return this.config?.source.hlsUrl || '';
+    }
+
+    return this.config?.source.mp4Url || '';
   }
 }

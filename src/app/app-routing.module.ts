@@ -10,7 +10,7 @@ interface AppRouteData {
   hero: {
     imageUrl?: string;
     video?: {
-      url: string;
+      mp4Url: string;
       hlsUrl: string;
     };
   };
@@ -71,7 +71,8 @@ export const appRoutes: AppRoute[] = [
       },
       hero: {
         video: {
-          url: 'https://media.matthewthompson.us/personal-site/dance-hero-background.mp4',
+          mp4Url:
+            'https://media.matthewthompson.us/personal-site/dance-hero-background/dance-hero-background.m3u8',
           hlsUrl:
             'https://media.matthewthompson.us/personal-site/dance-hero-background/dance-hero-background.m3u8',
         },

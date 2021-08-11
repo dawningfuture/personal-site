@@ -2,9 +2,7 @@ import { Injectable } from '@angular/core';
 import Hls from 'hls.js';
 import { environment } from 'src/environments/environment';
 
-@Injectable({
-  providedIn: 'root',
-})
+@Injectable()
 export class HlsjsVideoService {
   static isSupported = Hls.isSupported();
 

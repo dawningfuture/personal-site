@@ -15,11 +15,8 @@ export class HeroVideoGuard implements CanActivate {
   canActivate(route: ActivatedRouteSnapshot): Observable<boolean> {
     return this.heroVideo
       .init({
-        native: {
-          url: route.data.hero.video.url,
-        },
-        hls: {
-          url: route.data.hero.video.hlsUrl,
+        source: {
+          ...route.data.hero.video,
         },
       })
       .pipe(

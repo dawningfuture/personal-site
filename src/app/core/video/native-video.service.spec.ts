@@ -1,12 +1,13 @@
 import { TestBed } from '@angular/core/testing';
-
 import { NativeVideoService } from './native-video.service';
 
 describe('NativeVideoService', () => {
   let service: NativeVideoService;
 
   beforeEach(() => {
-    TestBed.configureTestingModule({});
+    TestBed.configureTestingModule({
+      providers: [NativeVideoService],
+    });
     service = TestBed.inject(NativeVideoService);
   });
 
