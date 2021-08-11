@@ -4,7 +4,10 @@ import { Environment } from './environment.model';
 export const environment: Environment = {
   production: false,
   version: packageJson.version,
+  // NOTE: `origin` is only used in production to ensure the app
+  // is being served from the desired origin
   origin: '',
+  useHlsjs: true,
 };
 
 /*

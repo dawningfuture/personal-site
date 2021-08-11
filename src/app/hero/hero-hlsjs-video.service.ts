@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import Hls from 'hls.js';
-import { Observable, of, race, Subject } from 'rxjs';
+import { Observable, race, Subject } from 'rxjs';
 import { take } from 'rxjs/operators';
 import { HlsjsVideoService } from 'src/app/core/video/hlsjs-video.service';
 
@@ -13,10 +13,6 @@ export class HeroHlsjsVideoService extends HlsjsVideoService {
   }
 
   prefetch(url: string): Observable<void> {
-    if (!Hls.isSupported()) {
-      return of();
-    }
-
     const fragParsed$ = new Subject<void>();
 
     this.hls.once(Hls.Events.FRAG_PARSED, () => {
@@ -32,5 +28,9 @@ export class HeroHlsjsVideoService extends HlsjsVideoService {
     this.hls.loadSource(url);
 
     return race(fragParsed$, error$).pipe(take(1));
+  }
+
+  detachMedia(): void {
+    this.hls.detachMedia();
   }
 }

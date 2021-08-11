@@ -24,10 +24,11 @@ import * as SidenavActions from '../state/features/sidenav/actions/sidenav.actio
   animations: [
     trigger('slideOut', [
       transition(':leave', [
+        style({ opacity: 1 }),
         animate(
           '400ms ease-in',
           style({
-            transform: 'translateY(100%)',
+            opacity: 0,
           })
         ),
       ]),

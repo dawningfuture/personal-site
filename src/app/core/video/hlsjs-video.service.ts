@@ -1,21 +1,30 @@
 import { Injectable } from '@angular/core';
 import Hls from 'hls.js';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root',
 })
 export class HlsjsVideoService {
-  protected hls;
+  static isSupported = Hls.isSupported();
+
+  protected hls: Hls;
 
   constructor() {
-    this.hls = new Hls();
+    this.hls = new Hls({
+      debug: !environment.production,
+    });
   }
 
-  attachMedia(media: HTMLVideoElement): void {
-    this.hls.attachMedia(media);
+  setVideo(videoEl: HTMLVideoElement): void {
+    this.hls.attachMedia(videoEl);
   }
 
-  detachMedia(): void {
-    this.hls.detachMedia();
+  loadSource(url: string): void {
+    this.hls.loadSource(url);
+  }
+
+  destroy(): void {
+    this.hls.destroy();
   }
 }
