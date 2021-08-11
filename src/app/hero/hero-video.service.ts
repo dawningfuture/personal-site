@@ -1,17 +1,19 @@
 import { Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
+import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { NativeVideoService } from 'src/app/core/video/native-video.service';
+import { BrowserDetectorService } from 'src/app/core/browser-detector.service';
 import { VideoConfig, VideoService } from 'src/app/core/video/video.service';
 import { HeroHlsjsVideoService } from 'src/app/hero/hero-hlsjs-video.service';
+import { HeroNativeVideoService } from 'src/app/hero/hero-native-video.service';
 
 @Injectable()
 export class HeroVideoService extends VideoService {
   constructor(
     protected heroHlsjsVideo: HeroHlsjsVideoService,
-    protected nativeVideo: NativeVideoService
+    protected heroNativeVideo: HeroNativeVideoService,
+    protected browserDetectorService: BrowserDetectorService
   ) {
-    super(heroHlsjsVideo, nativeVideo);
+    super(heroHlsjsVideo, heroNativeVideo, browserDetectorService);
   }
 
   /**
@@ -22,10 +24,12 @@ export class HeroVideoService extends VideoService {
   init(config: VideoConfig): Observable<boolean> {
     super.init(config);
 
+    const sourceUrl = this.getSourceUrl();
+
     if (this.useHlsjs()) {
-      return this.heroHlsjsVideo.prefetch(config.hls.url).pipe(map(() => true));
+      return this.heroHlsjsVideo.prefetch(sourceUrl).pipe(map(() => true));
     } else {
-      return of(true);
+      return this.heroNativeVideo.prefetch(sourceUrl).pipe(map(() => true));
     }
   }
 
@@ -38,14 +42,17 @@ export class HeroVideoService extends VideoService {
     } else {
       this.nativeVideo.setVideo(el);
 
+      const sourceUrl = this.getSourceUrl();
+
       if (this.config) {
-        this.nativeVideo.loadSource(this.config?.native.url);
+        this.nativeVideo.loadSource(sourceUrl);
       }
     }
   }
 
   /**
-   * Overload `destroy`
+   * Overload `destroy` to use `detachMedia` instead of `destroy`
+   * when using hls.js
    */
   destroy(): void {
     if (this.useHlsjs()) {
