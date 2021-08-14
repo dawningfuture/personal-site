@@ -7,7 +7,7 @@ interface AppRouteData {
     order: number; // NOTE: 0-indexed descending sort order
     path: string;
   };
-  hero: {
+  hero?: {
     imageUrl?: string;
     video?: {
       mp4Url: string;
@@ -37,6 +37,20 @@ export const appRoutes: AppRoute[] = [
       hero: {
         imageUrl:
           'https://media.matthewthompson.us/personal-site/mission-hero-background.jpg',
+      },
+    },
+  },
+  {
+    path: 'blog',
+    loadChildren: () =>
+      import('./pages/blog/blog-page.module').then(
+        (module) => module.BlogPageModule
+      ),
+    data: {
+      sidenavLink: {
+        label: 'Blog',
+        order: 5,
+        path: '/blog',
       },
     },
   },

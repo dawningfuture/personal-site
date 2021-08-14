@@ -1,7 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { appImports } from 'src/app/app.module';
+import { HomeCtaButtonComponent } from 'src/app/pages/home/cta-button/home-cta-button.component';
 import { homePageImports } from 'src/app/pages/home/home-page.module';
-import { HomeCtaButtonComponent } from './home-cta-button.component';
 
 describe('HomeCtaButtonComponent', () => {
   let component: HomeCtaButtonComponent;

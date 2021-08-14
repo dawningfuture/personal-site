@@ -1,5 +1,5 @@
 import { createReducer, on } from '@ngrx/store';
-import * as Actions from '../actions/sidenav.actions';
+import * as Actions from 'src/app/sidenav/store/actions/sidenav.actions';
 
 export const featureKey = 'sidenav';
 
@@ -13,15 +13,15 @@ export const initialState: State = {
 
 export const reducer = createReducer(
   initialState,
-  on(Actions.toggled, (state, action) => ({
+  on(Actions.toggledDrawer, (state, action) => ({
     ...state,
     open: action.open,
   })),
-  on(Actions.opened, (state) => ({
+  on(Actions.openedDrawer, (state) => ({
     ...state,
     open: true,
   })),
-  on(Actions.closed, (state) => ({
+  on(Actions.closedDrawer, (state) => ({
     ...state,
     open: false,
   }))

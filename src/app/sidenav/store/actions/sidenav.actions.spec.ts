@@ -1,4 +1,4 @@
-import * as fromSidenav from './sidenav.actions';
+import * as fromSidenav from 'src/app/sidenav/store/actions/sidenav.actions';
 
 describe('clickedButton', () => {
   it('should return an action', () => {

@@ -1,5 +1,5 @@
-import * as fromSidenav from '../reducers/sidenav.reducer';
-import { selectSidenavState } from './sidenav.selectors';
+import * as fromSidenav from 'src/app/sidenav/store/reducers/sidenav.reducer';
+import { selectSidenavState } from 'src/app/sidenav/store/selectors/sidenav.selectors';
 
 describe('Sidenav Selectors', () => {
   it('should select the feature state', () => {

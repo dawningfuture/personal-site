@@ -4,9 +4,8 @@ import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { routerCancelAction, routerNavigatedAction } from '@ngrx/router-store';
 import { Store } from '@ngrx/store';
 import { filter, map, mergeMap, tap } from 'rxjs/operators';
-import * as SidenavActions from 'src/app/state/features/sidenav/actions/sidenav.actions';
-import { selectSidenavOpen } from 'src/app/state/features/sidenav/selectors/sidenav.selectors';
-import { State } from 'src/app/state/reducers';
+import * as SidenavActions from 'src/app/sidenav/store/actions/sidenav.actions';
+import { selectSidenavOpen } from 'src/app/sidenav/store/selectors/sidenav.selectors';
 
 @Injectable()
 export class RouterEffects {
@@ -14,7 +13,9 @@ export class RouterEffects {
     return this.actions$.pipe(
       ofType(routerNavigatedAction),
       map(() => this.store.select(selectSidenavOpen)),
-      mergeMap((sidenavOpen) => (sidenavOpen ? [SidenavActions.close()] : []))
+      mergeMap((sidenavOpen) =>
+        sidenavOpen ? [SidenavActions.closeDrawer()] : []
+      )
     );
   });
 
@@ -33,7 +34,7 @@ export class RouterEffects {
 
   constructor(
     private actions$: Actions,
-    private store: Store<State>,
+    private store: Store,
     private router: Router
   ) {}
 }

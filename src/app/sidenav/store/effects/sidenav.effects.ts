@@ -9,7 +9,7 @@ export class SidenavEffects {
   clickedButton$ = createEffect(() => {
     return this.actions$.pipe(
       ofType(SidenavActions.clickedButton),
-      mergeMap(() => [SidenavActions.toggle()])
+      mergeMap(() => [SidenavActions.toggleDrawer()])
     );
   });
 
@@ -28,7 +28,7 @@ export class SidenavEffects {
   clickedBackdrop$ = createEffect(() => {
     return this.actions$.pipe(
       ofType(SidenavActions.clickedBackdrop),
-      mergeMap(() => [SidenavActions.close()])
+      mergeMap(() => [SidenavActions.closeDrawer()])
     );
   });
 
