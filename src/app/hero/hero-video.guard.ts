@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRouteSnapshot, CanActivate } from '@angular/router';
 import { Observable, of } from 'rxjs';
-import { catchError } from 'rxjs/operators';
+import { catchError, map } from 'rxjs/operators';
 import { HeroVideoService } from 'src/app/hero/hero-video.service';
 
 @Injectable()
@@ -15,11 +15,10 @@ export class HeroVideoGuard implements CanActivate {
   canActivate(route: ActivatedRouteSnapshot): Observable<boolean> {
     return this.heroVideo
       .init({
-        source: {
-          ...route.data.hero.video,
-        },
+        sources: route.data.hero.videoSources,
       })
       .pipe(
+        map(() => true),
         catchError(() => {
           this.onError();
 

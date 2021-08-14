@@ -6,4 +6,18 @@ export const environment: Environment = {
   version: packageJson.version,
   origin: 'https://matthewthompson.us',
   useHlsjs: true,
+  blogPage: {
+    api: {
+      apiKey: 'AIzaSyAIdUDtlO2GOnH8GgwZRcF7fhPmuutEhQM',
+      baseUrl:
+        'https://www.googleapis.com/blogger/v3/blogs/5264029898622051207',
+      posts: {
+        path: '/posts',
+      },
+      post: {
+        path: '/post/{POST_ID}',
+        idReplacementKey: '{POST_ID}',
+      },
+    },
+  },
 };

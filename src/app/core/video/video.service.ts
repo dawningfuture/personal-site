@@ -9,7 +9,7 @@ import { NativeVideoService } from 'src/app/core/video/native-video.service';
 import { environment } from 'src/environments/environment';
 
 export interface VideoConfig {
-  source: {
+  sources: {
     mp4Url: string;
     hlsTsUrl: string;
     hlsFmp4Url: string;
@@ -60,22 +60,22 @@ export class VideoService {
     return (
       HlsjsVideoService.isSupported &&
       environment.useHlsjs &&
-      !!this.config?.source.hlsTsUrl
+      !!this.config?.sources.hlsTsUrl
     );
   }
 
   protected getSourceUrl(): string {
     if (this.useHlsjs()) {
-      return this.config?.source.hlsTsUrl || '';
+      return this.config?.sources.hlsTsUrl || '';
     }
 
     if (
       this.browserDetector.isBrowserName(BrowserNames.SAFARI) &&
       this.browserDetector.isPlatformType(PlatformTypes.MOBILE)
     ) {
-      return this.config?.source.hlsFmp4Url || '';
+      return this.config?.sources.hlsFmp4Url || '';
     }
 
-    return this.config?.source.mp4Url || '';
+    return this.config?.sources.mp4Url || '';
   }
 }

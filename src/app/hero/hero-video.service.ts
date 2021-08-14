@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
 import { BrowserDetectorService } from 'src/app/core/browser-detector.service';
 import { VideoConfig, VideoService } from 'src/app/core/video/video.service';
 import { HeroHlsjsVideoService } from 'src/app/hero/hero-hlsjs-video.service';
@@ -20,15 +19,15 @@ export class HeroVideoService extends VideoService {
    * Overloads `init` to prefetch video to prevent stalled video
    * on navigation
    */
-  init(config: VideoConfig): Observable<boolean> {
+  init(config: VideoConfig): Observable<void> {
     super.init(config);
 
     const sourceUrl = this.getSourceUrl();
 
     if (this.useHlsjs()) {
-      return this.heroHlsjsVideo.prefetch(sourceUrl).pipe(map(() => true));
+      return this.heroHlsjsVideo.prefetch(sourceUrl);
     } else {
-      return this.heroNativeVideo.prefetch(sourceUrl).pipe(map(() => true));
+      return this.heroNativeVideo.prefetch(sourceUrl);
     }
   }
 
