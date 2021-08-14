@@ -19,6 +19,9 @@ export class PsLayoutGapStyleBuilder extends LayoutGapStyleBuilder {
     styles: StyleDefinition,
     parent: LayoutGapParent
   ): void {
-    super.sideEffect(gapValue || '15px', styles, parent);
+    // NOTE: This value should be the same as the `$ps-padding` style variable
+    const defaultLayoutGap = '15px';
+
+    super.sideEffect(gapValue || defaultLayoutGap, styles, parent);
   }
 }

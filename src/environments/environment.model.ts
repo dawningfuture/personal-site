@@ -26,6 +26,13 @@ export interface Environment {
    */
   blogPage: {
     /**
+     * Tagline element `id`
+     *
+     * Used to extract a tagline from a Post's content
+     */
+    taglineElementId: string;
+
+    /**
      * Config for Blogger API
      */
     api: {

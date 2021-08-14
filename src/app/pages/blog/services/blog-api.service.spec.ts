@@ -1,5 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 import { appImports } from 'src/app/app.module';
+import { BlogPageModule } from 'src/app/pages/blog/blog-page.module';
 import { BlogApiService } from 'src/app/pages/blog/services/blog-api.service';
 
 describe('BlogApiService', () => {
@@ -7,8 +8,7 @@ describe('BlogApiService', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [...appImports],
-      providers: [BlogApiService],
+      imports: [...appImports, BlogPageModule],
     });
     service = TestBed.inject(BlogApiService);
   });

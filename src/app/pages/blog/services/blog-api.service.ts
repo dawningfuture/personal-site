@@ -1,9 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { DomSanitizer } from '@angular/platform-browser';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { BlogPost } from 'src/app/pages/blog/models/blog-post.model';
+import { BlogService } from 'src/app/pages/blog/services/blog.service';
 import { environment } from 'src/environments/environment';
 
 interface BlogPostsGetResponse {
@@ -34,7 +34,7 @@ interface BlogPostsGetResponse {
 
 @Injectable()
 export class BlogApiService {
-  constructor(private http: HttpClient, private sanitizer: DomSanitizer) {}
+  constructor(private http: HttpClient, private blog: BlogService) {}
 
   getPosts(): Observable<BlogPost[]> {
     const requestUrl = this.createRequestUrl(
@@ -47,7 +47,8 @@ export class BlogApiService {
           id: item.id,
           published: item.published,
           title: item.title,
-          content: this.sanitizer.bypassSecurityTrustHtml(item.content),
+          content: this.blog.sanitizeContent(item.content),
+          tagline: this.blog.getTaglineFromContent(item.content),
         }))
       )
     );

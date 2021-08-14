@@ -5,4 +5,5 @@ export interface BlogPost {
   published: Date;
   title: string;
   content: SafeHtml;
+  tagline?: SafeHtml;
 }

@@ -1,21 +1,21 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { appImports } from 'src/app/app.module';
 import { BlogPageModule } from 'src/app/pages/blog/blog-page.module';
-import { BlogPageComponent } from './blog-page.component';
+import { BlogPostPreviewListComponent } from './blog-post-preview-list.component';
 
-describe('BlogPageComponent', () => {
-  let component: BlogPageComponent;
-  let fixture: ComponentFixture<BlogPageComponent>;
+describe('BlogPostPreviewListComponent', () => {
+  let component: BlogPostPreviewListComponent;
+  let fixture: ComponentFixture<BlogPostPreviewListComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [...appImports, BlogPageModule],
-      declarations: [BlogPageComponent],
+      declarations: [BlogPostPreviewListComponent],
     }).compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(BlogPageComponent);
+    fixture = TestBed.createComponent(BlogPostPreviewListComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

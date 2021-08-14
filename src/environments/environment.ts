@@ -9,6 +9,7 @@ export const environment: Environment = {
   origin: '',
   useHlsjs: true,
   blogPage: {
+    taglineElementId: 'tagline',
     api: {
       apiKey: 'AIzaSyAIdUDtlO2GOnH8GgwZRcF7fhPmuutEhQM',
       baseUrl:

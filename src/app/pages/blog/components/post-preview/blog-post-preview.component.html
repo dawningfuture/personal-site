@@ -1,0 +1,20 @@
+<div *ngIf="post$ | async as post" class="ps-blog-post-preview">
+  <mat-toolbar color="primary">{{ post.title }}</mat-toolbar>
+
+  <div class="content-preview">
+    <ng-container
+      *ngTemplateOutlet="
+        post.tagline ? tagline : defaultTagline;
+        context: { $implicit: post.tagline }
+      "
+    ></ng-container>
+  </div>
+</div>
+
+<ng-template #tagline let-taglineHtml>
+  <div [innerHtml]="taglineHtml"></div>
+</ng-template>
+
+<ng-template #defaultTagline>
+  <h3>This post has no description</h3>
+</ng-template>

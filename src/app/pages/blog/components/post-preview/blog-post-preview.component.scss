@@ -1,0 +1,9 @@
+@use "variables";
+
+.ps-blog-post-preview {
+  box-shadow: variables.$ps-shadow;
+
+  .content-preview {
+    padding: variables.$ps-padding;
+  }
+}

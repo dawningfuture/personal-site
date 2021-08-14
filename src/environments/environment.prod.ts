@@ -7,6 +7,7 @@ export const environment: Environment = {
   origin: 'https://matthewthompson.us',
   useHlsjs: true,
   blogPage: {
+    taglineElementId: 'tagline',
     api: {
       apiKey: 'AIzaSyAIdUDtlO2GOnH8GgwZRcF7fhPmuutEhQM',
       baseUrl:

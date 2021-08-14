@@ -1,19 +1,19 @@
 import { TestBed } from '@angular/core/testing';
 import { appImports } from 'src/app/app.module';
 import { BlogPageModule } from 'src/app/pages/blog/blog-page.module';
-import { BlogPostsGuard } from './blog-posts.guard';
+import { BlogService } from './blog.service';
 
-describe('BlogPostsGuard', () => {
-  let guard: BlogPostsGuard;
+describe('BlogService', () => {
+  let service: BlogService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
       imports: [...appImports, BlogPageModule],
     });
-    guard = TestBed.inject(BlogPostsGuard);
+    service = TestBed.inject(BlogService);
   });
 
   it('should be created', () => {
-    expect(guard).toBeTruthy();
+    expect(service).toBeTruthy();
   });
 });

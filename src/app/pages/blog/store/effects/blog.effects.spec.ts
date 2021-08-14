@@ -2,7 +2,7 @@ import { TestBed } from '@angular/core/testing';
 import { provideMockActions } from '@ngrx/effects/testing';
 import { Observable } from 'rxjs';
 import { appImports } from 'src/app/app.module';
-import { BlogApiService } from 'src/app/pages/blog/services/blog-api.service';
+import { BlogPageModule } from 'src/app/pages/blog/blog-page.module';
 import { BlogEffects } from 'src/app/pages/blog/store/effects/blog.effects';
 
 describe('BlogEffects', () => {
@@ -11,12 +11,8 @@ describe('BlogEffects', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [...appImports],
-      providers: [
-        BlogEffects,
-        BlogApiService,
-        provideMockActions(() => actions$),
-      ],
+      imports: [...appImports, BlogPageModule],
+      providers: [BlogEffects, provideMockActions(() => actions$)],
     });
 
     effects = TestBed.inject(BlogEffects);
