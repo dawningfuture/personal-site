@@ -8,12 +8,14 @@ import { BlogPostPreviewListComponent } from 'src/app/pages/blog/components/post
 import { BlogPostPreviewComponent } from 'src/app/pages/blog/components/post-preview/blog-post-preview.component';
 import { BlogService } from 'src/app/pages/blog/services/blog.service';
 import { BlogStoreModule } from 'src/app/pages/blog/store/blog-store.module';
+import { BlogPostComponent } from './components/post/blog-post.component';
 
 @NgModule({
   declarations: [
     BlogPageComponent,
     BlogPostPreviewListComponent,
     BlogPostPreviewComponent,
+    BlogPostComponent,
   ],
   providers: [BlogService],
   imports: [

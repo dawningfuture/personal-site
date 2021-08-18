@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { BlogPost } from 'src/app/pages/blog/models/blog-post.model';
@@ -14,9 +15,19 @@ export class BlogPostPreviewComponent implements OnInit {
 
   post$!: Observable<BlogPost | undefined>;
 
-  constructor(private store: Store) {}
+  constructor(
+    private store: Store,
+    private router: Router,
+    private route: ActivatedRoute
+  ) {}
 
   ngOnInit(): void {
     this.post$ = this.store.select(selectPost(this.postId));
+  }
+
+  onClick(): void {
+    this.router.navigate(['posts', this.postId], {
+      relativeTo: this.route,
+    });
   }
 }

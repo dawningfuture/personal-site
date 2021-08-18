@@ -1,5 +1,8 @@
-<div class="ps-blog-page" fxLayout="row" fxLayoutAlign="space-around">
-  <div fxFlex.xs="100%" fxFlex.gt-xs="75%">
-    <ps-blog-post-preview-list></ps-blog-post-preview-list>
+<div class="ps-blog-page" fxLayout="column" fxLayoutGap>
+  <div fxFlex>Blog Page!</div>
+  <div fxFlex fxLayout="row" fxLayoutAlign="space-around">
+    <div fxFlex.xs="100%" fxFlex.gt-xs="75%">
+      <router-outlet></router-outlet>
+    </div>
   </div>
 </div>

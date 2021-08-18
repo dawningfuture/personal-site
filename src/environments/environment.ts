@@ -13,13 +13,21 @@ export const environment: Environment = {
     api: {
       apiKey: 'AIzaSyAIdUDtlO2GOnH8GgwZRcF7fhPmuutEhQM',
       baseUrl:
-        'https://www.googleapis.com/blogger/v3/blogs/5264029898622051207',
-      posts: {
-        path: '/posts',
-      },
-      post: {
-        path: '/post/{POST_ID}',
-        idReplacementKey: '{POST_ID}',
+        'https://www.googleapis.com/blogger/v3/blogs/5264029898622051207/',
+      paths: {
+        posts: {
+          path: 'posts/{POST_ID}',
+          replacementKey: '{POST_ID}',
+          children: {
+            comments: {
+              path: 'comments/{COMMENT_ID}',
+              replacementKey: '{COMMENT_ID}',
+            },
+          },
+        },
+        pages: {
+          path: '/pages',
+        },
       },
     },
   },

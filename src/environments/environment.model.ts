@@ -47,29 +47,48 @@ export interface Environment {
       baseUrl: string;
 
       /**
-       * Config to request all Posts
+       * Config for Blogger API paths
        */
-      posts: {
+      paths: ApiPaths<{
         /**
-         * Path to request all Posts
+         * Config to request Posts
          */
-        path: string;
-      };
+        posts: {
+          /**
+           * Path to request Posts
+           */
+          path: string;
 
-      /**
-       * Config to request a Post
-       */
-      post: {
-        /**
-         * Path to request a post
-         */
-        path: string;
+          /**
+           * Replacement key for ID in Post `path`
+           */
+          replacementKey: string;
 
-        /**
-         * Replacement key for ID in Post `path`
-         */
-        idReplacementKey: string;
-      };
+          children: {
+            comments: {
+              path: string;
+              replacementKey: string;
+            };
+          };
+        };
+
+        pages: {
+          path: string;
+        };
+      }>;
     };
   };
+}
+
+type ApiPaths<T = Record<string, ApiPath>> = T;
+
+export interface ApiPath {
+  path: string;
+
+  /**
+   * Replacement key for ID in `path`
+   */
+  replacementKey?: string;
+
+  children?: ApiPaths;
 }

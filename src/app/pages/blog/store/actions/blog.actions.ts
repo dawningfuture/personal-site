@@ -11,3 +11,15 @@ export const getBlogPostsSuccess = createAction(
 export const getBlogPostsFailure = createAction(
   '[Blog] Get Blog Posts Failure'
 );
+
+export const getBlogPost = createAction(
+  '[Blog] Get Blog Post',
+  props<{ postId: string }>()
+);
+
+export const getBlogPostSuccess = createAction(
+  '[Blog] Get Blog Post Success',
+  props<{ data: BlogPost }>()
+);
+
+export const getBlogPostFailure = createAction('[Blog] Get Blog Post Failure');

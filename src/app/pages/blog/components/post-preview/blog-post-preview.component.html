@@ -1,4 +1,8 @@
-<div *ngIf="post$ | async as post" class="ps-blog-post-preview">
+<div
+  *ngIf="post$ | async as post"
+  class="ps-blog-post-preview"
+  (click)="onClick()"
+>
   <mat-toolbar color="primary">{{ post.title }}</mat-toolbar>
 
   <div class="content-preview">

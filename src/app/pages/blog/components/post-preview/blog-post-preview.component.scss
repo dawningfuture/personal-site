@@ -2,6 +2,7 @@
 
 .ps-blog-post-preview {
   box-shadow: variables.$ps-shadow;
+  cursor: pointer;
 
   .content-preview {
     padding: variables.$ps-padding;

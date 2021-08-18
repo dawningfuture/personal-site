@@ -22,5 +22,21 @@ export class BlogEffects {
     );
   });
 
+  getBlogPost$ = createEffect(() => {
+    return this.actions$.pipe(
+      ofType(BlogActions.getBlogPost),
+      switchMap((action) =>
+        this.blogApi.getPost(action.postId).pipe(
+          mergeMap((blogPost) => [
+            BlogActions.getBlogPostSuccess({
+              data: blogPost,
+            }),
+          ]),
+          catchError(() => [BlogActions.getBlogPostFailure()])
+        )
+      )
+    );
+  });
+
   constructor(private actions$: Actions, private blogApi: BlogApiService) {}
 }
