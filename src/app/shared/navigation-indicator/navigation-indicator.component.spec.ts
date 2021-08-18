@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { appImports } from 'src/app/app.module';
-import { sharedImports } from 'src/app/shared/shared.module';
+import { SharedModule } from 'src/app/shared/shared.module';
 import { NavigationIndicatorComponent } from './navigation-indicator.component';
 
 describe('NavigationIndicatorComponent', () => {
@@ -9,7 +9,7 @@ describe('NavigationIndicatorComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [...appImports, ...sharedImports],
+      imports: [...appImports, SharedModule],
       declarations: [NavigationIndicatorComponent],
     }).compileComponents();
   });

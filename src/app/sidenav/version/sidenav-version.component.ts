@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { environment } from 'src/environments/environment';
 
 @Component({
-  selector: 'ps-version',
-  templateUrl: './version.component.html',
-  styleUrls: ['./version.component.scss'],
+  selector: 'ps-sidenav-version',
+  templateUrl: './sidenav-version.component.html',
+  styleUrls: ['./sidenav-version.component.scss'],
 })
-export class VersionComponent implements OnInit {
+export class SidenavVersionComponent implements OnInit {
   readonly version = environment.version;
 
   constructor() {}

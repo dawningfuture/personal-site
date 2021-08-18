@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { VersionComponent } from './version.component';
+import { SidenavVersionComponent } from './sidenav-version.component';
 
-describe('VersionComponent', () => {
-  let component: VersionComponent;
-  let fixture: ComponentFixture<VersionComponent>;
+describe('SidenavVersionComponent', () => {
+  let component: SidenavVersionComponent;
+  let fixture: ComponentFixture<SidenavVersionComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [VersionComponent],
+      declarations: [SidenavVersionComponent],
     }).compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(VersionComponent);
+    fixture = TestBed.createComponent(SidenavVersionComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

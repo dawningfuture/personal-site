@@ -2,7 +2,7 @@
 @use "material";
 @use "variables";
 
-.ps-version {
+.ps-sidenav-version {
   @include material.title;
   @include text.text-primary;
   text-align: center;
