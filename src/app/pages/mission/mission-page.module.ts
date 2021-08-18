@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { HeroModule } from 'src/app/hero/hero.module';
+import { HeroModule } from 'src/app/pages/hero/hero.module';
 import { MissionPageRoutingModule } from 'src/app/pages/mission/mission-page-routing.module';
 import { MissionHeroComponent } from './hero/mission-hero.component';
 import { MissionPageComponent } from './mission-page.component';

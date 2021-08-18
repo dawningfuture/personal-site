@@ -1,6 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 import { appImports } from 'src/app/app.module';
-import { heroImports } from 'src/app/hero/hero.module';
+import { heroImports } from 'src/app/pages/hero/hero.module';
 import { HeroNativeVideoService } from './hero-native-video.service';
 
 describe('HeroNativeVideoService', () => {

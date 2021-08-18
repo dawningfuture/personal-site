@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HeroVideoGuard } from 'src/app/hero/hero-video.guard';
 import { DancePageComponent } from 'src/app/pages/dance/dance-page.component';
+import { HeroVideoGuard } from 'src/app/pages/hero/hero-video.guard';
 
 const routes: Routes = [
   {

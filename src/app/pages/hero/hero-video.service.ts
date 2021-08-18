@@ -2,9 +2,9 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { BrowserDetectorService } from 'src/app/core/browser-detector.service';
-import { VideoConfig, VideoService } from 'src/app/core/video/video.service';
-import { HeroHlsjsVideoService } from 'src/app/hero/hero-hlsjs-video.service';
-import { HeroNativeVideoService } from 'src/app/hero/hero-native-video.service';
+import { HeroHlsjsVideoService } from 'src/app/pages/hero/hero-hlsjs-video.service';
+import { HeroNativeVideoService } from 'src/app/pages/hero/hero-native-video.service';
+import { VideoConfig, VideoService } from 'src/app/video/video.service';
 
 @Injectable()
 export class HeroVideoService extends VideoService {

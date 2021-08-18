@@ -6,7 +6,7 @@ import {
   OnInit,
   ViewChild,
 } from '@angular/core';
-import { HeroVideoService } from 'src/app/hero/hero-video.service';
+import { HeroVideoService } from 'src/app/pages/hero/hero-video.service';
 
 @Component({
   selector: 'ps-dance-video',

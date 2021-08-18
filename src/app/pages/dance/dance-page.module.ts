@@ -1,9 +1,9 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { HeroModule } from 'src/app/hero/hero.module';
 import { DancePageRoutingModule } from 'src/app/pages/dance/dance-page-routing.module';
 import { DanceHeroComponent } from 'src/app/pages/dance/hero/dance-hero.component';
+import { HeroModule } from 'src/app/pages/hero/hero.module';
 import { DancePageComponent } from './dance-page.component';
 import { DanceVideoComponent } from './video/dance-video.component';
 

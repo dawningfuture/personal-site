@@ -4,8 +4,8 @@ import {
   BrowserNames,
   PlatformTypes,
 } from 'src/app/core/browser-detector.service';
-import { HlsjsVideoService } from 'src/app/core/video/hlsjs-video.service';
-import { NativeVideoService } from 'src/app/core/video/native-video.service';
+import { HlsjsVideoService } from 'src/app/video/hlsjs-video.service';
+import { NativeVideoService } from 'src/app/video/native-video.service';
 import { environment } from 'src/environments/environment';
 
 export interface VideoConfig {
