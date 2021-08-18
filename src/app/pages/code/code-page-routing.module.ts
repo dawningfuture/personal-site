@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { HeroImageResolverService } from 'src/app/hero/hero-image-resolver.service';
 import { CodePageComponent } from 'src/app/pages/code/code-page.component';
-import { HeroImageResolverService } from 'src/app/pages/hero/hero-image-resolver.service';
 
 const routes: Routes = [
   {

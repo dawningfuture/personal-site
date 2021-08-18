@@ -3,7 +3,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRouteSnapshot, CanActivate } from '@angular/router';
 import { Observable, of } from 'rxjs';
 import { catchError } from 'rxjs/operators';
-import { HeroVideoService } from 'src/app/pages/hero/hero-video.service';
+import { HeroVideoService } from 'src/app/hero/hero-video.service';
 
 @Injectable()
 export class HeroVideoGuard implements CanActivate {

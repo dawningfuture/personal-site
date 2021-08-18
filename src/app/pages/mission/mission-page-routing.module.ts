@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HeroImageResolverService } from 'src/app/pages/hero/hero-image-resolver.service';
+import { HeroImageResolverService } from 'src/app/hero/hero-image-resolver.service';
 import { MissionPageComponent } from 'src/app/pages/mission/mission-page.component';
 
 const routes: Routes = [

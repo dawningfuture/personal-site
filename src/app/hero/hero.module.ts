@@ -2,11 +2,11 @@ import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
-import { HeroHlsjsVideoService } from 'src/app/pages/hero/hero-hlsjs-video.service';
-import { HeroImageResolverService } from 'src/app/pages/hero/hero-image-resolver.service';
-import { HeroNativeVideoService } from 'src/app/pages/hero/hero-native-video.service';
-import { HeroVideoGuard } from 'src/app/pages/hero/hero-video.guard';
-import { HeroVideoService } from 'src/app/pages/hero/hero-video.service';
+import { HeroHlsjsVideoService } from 'src/app/hero/hero-hlsjs-video.service';
+import { HeroImageResolverService } from 'src/app/hero/hero-image-resolver.service';
+import { HeroNativeVideoService } from 'src/app/hero/hero-native-video.service';
+import { HeroVideoGuard } from 'src/app/hero/hero-video.guard';
+import { HeroVideoService } from 'src/app/hero/hero-video.service';
 import { VideoModule } from 'src/app/video/video.module';
 
 /**
