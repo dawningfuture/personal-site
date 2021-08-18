@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { ContentContainerComponent } from './content-container.component';
+import { ContentContainerComponent } from 'src/app/shared/content-container/content-container.component';
 
 describe('ContentContainerComponent', () => {
   let component: ContentContainerComponent;

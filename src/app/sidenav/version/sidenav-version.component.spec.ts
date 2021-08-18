@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { SidenavVersionComponent } from './sidenav-version.component';
+import { SidenavVersionComponent } from 'src/app/sidenav/version/sidenav-version.component';
 
 describe('SidenavVersionComponent', () => {
   let component: SidenavVersionComponent;

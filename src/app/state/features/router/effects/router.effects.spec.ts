@@ -2,7 +2,7 @@ import { TestBed } from '@angular/core/testing';
 import { provideMockActions } from '@ngrx/effects/testing';
 import { Observable } from 'rxjs';
 import { appImports } from 'src/app/app.module';
-import { RouterEffects } from './router.effects';
+import { RouterEffects } from 'src/app/state/features/router/effects/router.effects';
 
 describe('RouterEffects', () => {
   let actions$: Observable<any>;

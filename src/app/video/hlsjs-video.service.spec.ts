@@ -1,5 +1,5 @@
 import { TestBed } from '@angular/core/testing';
-import { HlsjsVideoService } from './hlsjs-video.service';
+import { HlsjsVideoService } from 'src/app/video/hlsjs-video.service';
 
 describe('HlsjsVideoService', () => {
   let service: HlsjsVideoService;

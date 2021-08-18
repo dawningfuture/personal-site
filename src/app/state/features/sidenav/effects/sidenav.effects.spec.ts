@@ -2,8 +2,8 @@ import { TestBed } from '@angular/core/testing';
 import { provideMockActions } from '@ngrx/effects/testing';
 import { Observable } from 'rxjs';
 import { appImports } from 'src/app/app.module';
+import { SidenavEffects } from 'src/app/state/features/sidenav/effects/sidenav.effects';
 import { sidenavStoreImports } from 'src/app/state/features/sidenav/sidenav-store.module';
-import { SidenavEffects } from './sidenav.effects';
 
 describe('SidenavEffects', () => {
   let actions$: Observable<any>;

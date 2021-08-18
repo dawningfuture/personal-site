@@ -1,7 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { appImports } from 'src/app/app.module';
+import { SidenavDrawerComponent } from 'src/app/sidenav/drawer/sidenav-drawer.component';
 import { SidenavModule } from 'src/app/sidenav/sidenav.module';
-import { SidenavDrawerComponent } from './sidenav-drawer.component';
 
 describe('SidenavDrawerComponent', () => {
   let component: SidenavDrawerComponent;

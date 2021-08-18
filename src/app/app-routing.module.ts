@@ -25,7 +25,7 @@ export const appRoutes: AppRoute[] = [
   {
     path: 'mission',
     loadChildren: () =>
-      import('./pages/mission/mission-page.module').then(
+      import('./page/pages/mission/mission-page.module').then(
         (module) => module.MissionPageModule
       ),
     data: {
@@ -43,7 +43,7 @@ export const appRoutes: AppRoute[] = [
   {
     path: 'code',
     loadChildren: () =>
-      import('./pages/code/code-page.module').then(
+      import('./page/pages/code/code-page.module').then(
         (module) => module.CodePageModule
       ),
     data: {
@@ -61,7 +61,7 @@ export const appRoutes: AppRoute[] = [
   {
     path: 'dance',
     loadChildren: () =>
-      import('./pages/dance/dance-page.module').then(
+      import('./page/pages/dance/dance-page.module').then(
         (module) => module.DancePageModule
       ),
     data: {
@@ -86,7 +86,7 @@ export const appRoutes: AppRoute[] = [
   {
     path: 'connect',
     loadChildren: () =>
-      import('./pages/connect/connect-page.module').then(
+      import('./page/pages/connect/connect-page.module').then(
         (module) => module.ConnectPageModule
       ),
     data: {
@@ -104,7 +104,7 @@ export const appRoutes: AppRoute[] = [
   {
     path: '',
     loadChildren: () =>
-      import('./pages/home/home-page.module').then(
+      import('./page/pages/home/home-page.module').then(
         (module) => module.HomePageModule
       ),
     data: {

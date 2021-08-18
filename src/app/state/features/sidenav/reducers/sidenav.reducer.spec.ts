@@ -1,4 +1,7 @@
-import { initialState, reducer } from './sidenav.reducer';
+import {
+  initialState,
+  reducer,
+} from 'src/app/state/features/sidenav/reducers/sidenav.reducer';
 
 describe('Sidenav Reducer', () => {
   describe('an unknown action', () => {

@@ -1,5 +1,5 @@
 import { TestBed } from '@angular/core/testing';
-import { PsLayoutGapStyleBuilder } from './layout-gap.style-builder';
+import { PsLayoutGapStyleBuilder } from 'src/app/core/style-builders/layout-gap.style-builder';
 
 describe('PsLayoutGapStyleBuilder', () => {
   let service: PsLayoutGapStyleBuilder;

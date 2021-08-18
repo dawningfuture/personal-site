@@ -1,5 +1,5 @@
 import { TestBed } from '@angular/core/testing';
-import { NativeVideoService } from './native-video.service';
+import { NativeVideoService } from 'src/app/video/native-video.service';
 
 describe('NativeVideoService', () => {
   let service: NativeVideoService;

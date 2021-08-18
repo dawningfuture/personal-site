@@ -1,7 +1,7 @@
 import { TestBed } from '@angular/core/testing';
 import { appImports } from 'src/app/app.module';
+import { HeroHlsjsVideoService } from 'src/app/hero/hero-hlsjs-video.service';
 import { heroImports } from 'src/app/hero/hero.module';
-import { HeroHlsjsVideoService } from './hero-hlsjs-video.service';
 
 describe('HeroHlsjsVideoService', () => {
   let service: HeroHlsjsVideoService;
