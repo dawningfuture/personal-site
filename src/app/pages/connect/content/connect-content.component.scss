@@ -1,0 +1,6 @@
+@use "material";
+@use "variables";
+
+.ps-connect-content {
+  background-color: material.$ps-primary-default-color;
+}

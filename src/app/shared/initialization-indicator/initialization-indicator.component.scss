@@ -4,7 +4,7 @@
 
 .ps-initialization-indicator {
   position: relative;
-  background-color: material.$ps-primary-default;
+  background-color: material.$ps-primary-default-color;
 
   .headline {
     @include position.absolute-fill;

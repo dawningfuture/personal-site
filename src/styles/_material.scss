@@ -1,4 +1,5 @@
 @use '~@angular/material' as mat;
+@use 'sass:map';
 
 $ps-typography: mat.define-typography-config(
   $font-family: "Montserrat",
@@ -18,6 +19,8 @@ $ps-theme: mat.define-light-theme(
     typography: $ps-typography,
   )
 );
+
+$ps-background: map.get($ps-theme, background);
 
 // ********************
 // VARIABLES AND MIXINS
@@ -49,5 +52,6 @@ $ps-theme: mat.define-light-theme(
 // ******
 // COLORS
 // ******
-$ps-primary-default: mat.get-color-from-palette($ps-primary, "default");
-$ps-accent-default: mat.get-color-from-palette($ps-accent, "default");
+$ps-primary-default-color: mat.get-color-from-palette($ps-primary, "default");
+$ps-accent-default-color: mat.get-color-from-palette($ps-accent, "default");
+$ps-background-color: mat.get-color-from-palette($ps-background, background);

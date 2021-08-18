@@ -1,21 +1,21 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { appImports } from 'src/app/app.module';
 import { ConnectPageModule } from 'src/app/pages/connect/connect-page.module';
-import { ConnectHeroComponent } from './connect-hero.component';
+import { ConnectContentComponent } from './connect-content.component';
 
-describe('ConnectHeroComponent', () => {
-  let component: ConnectHeroComponent;
-  let fixture: ComponentFixture<ConnectHeroComponent>;
+describe('ConnectContentComponent', () => {
+  let component: ConnectContentComponent;
+  let fixture: ComponentFixture<ConnectContentComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [...appImports, ConnectPageModule],
-      declarations: [ConnectHeroComponent],
+      declarations: [ConnectContentComponent],
     }).compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ConnectHeroComponent);
+    fixture = TestBed.createComponent(ConnectContentComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

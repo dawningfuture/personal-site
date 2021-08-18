@@ -19,6 +19,6 @@ export class PsLayoutGapStyleBuilder extends LayoutGapStyleBuilder {
     styles: StyleDefinition,
     parent: LayoutGapParent
   ): void {
-    super.sideEffect(gapValue || '15px', styles, parent);
+    super.sideEffect(gapValue || '20px', styles, parent);
   }
 }
