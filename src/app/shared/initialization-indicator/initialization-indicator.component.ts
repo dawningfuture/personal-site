@@ -1,5 +1,5 @@
 import { animate, style, transition, trigger } from '@angular/animations';
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { of, timer } from 'rxjs';
 import { map, mergeMap } from 'rxjs/operators';
 
@@ -16,12 +16,10 @@ import { map, mergeMap } from 'rxjs/operators';
     ]),
   ],
 })
-export class InitializationIndicatorComponent implements OnInit {
+export class InitializationIndicatorComponent {
   showHeadline$ = of(false).pipe(
     mergeMap(() => timer(2000).pipe(map(() => true)))
   );
 
   constructor() {}
-
-  ngOnInit(): void {}
 }

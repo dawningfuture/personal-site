@@ -9,7 +9,6 @@ import { reducers } from 'src/app/state/reducers';
 import { environment } from 'src/environments/environment';
 
 @NgModule({
-  declarations: [],
   imports: [
     StoreModule.forRoot(reducers, {
       runtimeChecks: {

@@ -1,1 +1,8 @@
+<ps-navigation-indicator></ps-navigation-indicator>
+
+<ps-initialization-indicator
+  *ngIf="!(hasNavigated$ | async)"
+  @fadeOut
+></ps-initialization-indicator>
+
 <ps-sidenav></ps-sidenav>
