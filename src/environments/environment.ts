@@ -12,7 +12,7 @@ export const environment: Environment = {
     connect: {
       recaptchaSiteKey: '6LcUARIcAAAAAGM-W8K6BJsOpd4jJjamAVEo4ltI',
       sendConnectEmailEndpoint:
-        'https://api.matthewthompson.us/personal-site/lets-connect',
+        'https://api.matthewthompson.us/personal-site/connect',
     },
   },
 };

@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { PagePanelComponent } from './page-panel.component';
+import { PagePanelComponent } from 'src/app/page/panel/page-panel.component';
 
 describe('PagePanelComponent', () => {
   let component: PagePanelComponent;
