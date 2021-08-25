@@ -29,9 +29,9 @@
 }
 
 @mixin text-primary {
-  color: material.$ps-primary-default;
+  color: material.$ps-primary-default-color;
 }
 
 @mixin text-accent {
-  color: material.$ps-accent-default;
+  color: material.$ps-accent-default-color;
 }

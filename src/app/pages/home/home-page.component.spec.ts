@@ -1,9 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { appImports } from 'src/app/app.module';
-import { HomeCtaButtonComponent } from 'src/app/pages/home/cta-button/home-cta-button.component';
-import { HomeHeroComponent } from 'src/app/pages/home/hero/home-hero.component';
-import { homePageImports } from 'src/app/pages/home/home-page.module';
-import { HomePageComponent } from './home-page.component';
+import { HomePageComponent } from 'src/app/pages/home/home-page.component';
+import { HomePageModule } from 'src/app/pages/home/home-page.module';
 
 describe('HomePageComponent', () => {
   let component: HomePageComponent;
@@ -11,12 +9,8 @@ describe('HomePageComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [...appImports, ...homePageImports],
-      declarations: [
-        HomePageComponent,
-        HomeHeroComponent,
-        HomeCtaButtonComponent,
-      ],
+      imports: [...appImports, HomePageModule],
+      declarations: [HomePageComponent],
     }).compileComponents();
   });
 

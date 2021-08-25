@@ -1,8 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { appImports } from 'src/app/app.module';
-import { MissionHeroComponent } from 'src/app/pages/mission/hero/mission-hero.component';
-import { missionPageImports } from 'src/app/pages/mission/mission-page.module';
-import { MissionPageComponent } from './mission-page.component';
+import { MissionPageComponent } from 'src/app/pages/mission/mission-page.component';
+import { MissionPageModule } from 'src/app/pages/mission/mission-page.module';
 
 describe('MissionPageComponent', () => {
   let component: MissionPageComponent;
@@ -10,8 +9,8 @@ describe('MissionPageComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [...appImports, ...missionPageImports],
-      declarations: [MissionPageComponent, MissionHeroComponent],
+      imports: [...appImports, MissionPageModule],
+      declarations: [MissionPageComponent],
     }).compileComponents();
   });
 

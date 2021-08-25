@@ -6,26 +6,12 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { RouterModule } from '@angular/router';
-import { SharedModule } from 'src/app/shared/shared.module';
-import { SidenavButtonComponent } from './button/sidenav-button.component';
-import { SidenavDrawerComponent } from './drawer/sidenav-drawer.component';
-import { SidenavLinkComponent } from './link/sidenav-link.component';
-import { SidenavComponent } from './sidenav.component';
-
-/**
- * NOTE: These imports have been extracted into an exported
- * `const` Array so that they can be imported in tests
- */
-export const sidenavImports = [
-  CommonModule,
-  RouterModule,
-  MatButtonModule,
-  MatIconModule,
-  MatSidenavModule,
-  MatDividerModule,
-  FlexLayoutModule,
-  SharedModule,
-];
+import { SidenavButtonComponent } from 'src/app/sidenav/components/button/sidenav-button.component';
+import { SidenavDrawerComponent } from 'src/app/sidenav/components/drawer/sidenav-drawer.component';
+import { SidenavLinkComponent } from 'src/app/sidenav/components/link/sidenav-link.component';
+import { SidenavVersionComponent } from 'src/app/sidenav/components/version/sidenav-version.component';
+import { SidenavComponent } from 'src/app/sidenav/sidenav.component';
+import { SidenavStoreModule } from 'src/app/sidenav/store/sidenav-store.module';
 
 @NgModule({
   declarations: [
@@ -33,8 +19,18 @@ export const sidenavImports = [
     SidenavDrawerComponent,
     SidenavButtonComponent,
     SidenavLinkComponent,
+    SidenavVersionComponent,
   ],
-  imports: [...sidenavImports],
+  imports: [
+    CommonModule,
+    SidenavStoreModule,
+    RouterModule,
+    MatButtonModule,
+    MatIconModule,
+    MatSidenavModule,
+    MatDividerModule,
+    FlexLayoutModule,
+  ],
   exports: [SidenavComponent],
 })
 export class SidenavModule {}

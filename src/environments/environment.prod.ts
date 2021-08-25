@@ -6,4 +6,11 @@ export const environment: Environment = {
   version: packageJson.version,
   origin: 'https://matthewthompson.us',
   useHlsjs: true,
+  pages: {
+    connect: {
+      recaptchaSiteKey: '6LcUARIcAAAAAGM-W8K6BJsOpd4jJjamAVEo4ltI',
+      sendConnectEmailEndpoint:
+        'https://api.matthewthompson.us/personal-site/connect',
+    },
+  },
 };

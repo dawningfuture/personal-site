@@ -3,18 +3,12 @@ import { NgModule } from '@angular/core';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { HeroModule } from 'src/app/hero/hero.module';
 import { DancePageRoutingModule } from 'src/app/pages/dance/dance-page-routing.module';
+import { DancePageComponent } from 'src/app/pages/dance/dance-page.component';
 import { DanceHeroComponent } from 'src/app/pages/dance/hero/dance-hero.component';
-import { DancePageComponent } from './dance-page.component';
-import { DanceVideoComponent } from './video/dance-video.component';
-
-/**
- * NOTE: These imports have been extracted into an exported
- * `const` Array so that they can be imported in tests
- */
-export const dancePageImports = [FlexLayoutModule, HeroModule];
+import { DanceVideoComponent } from 'src/app/pages/dance/video/dance-video.component';
 
 @NgModule({
   declarations: [DancePageComponent, DanceHeroComponent, DanceVideoComponent],
-  imports: [CommonModule, DancePageRoutingModule, ...dancePageImports],
+  imports: [CommonModule, DancePageRoutingModule, FlexLayoutModule, HeroModule],
 })
 export class DancePageModule {}

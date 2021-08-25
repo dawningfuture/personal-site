@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
-import * as SidenavActions from 'src/app/state/features/sidenav/actions/sidenav.actions';
-import { State } from 'src/app/state/reducers';
+import * as SidenavActions from 'src/app/sidenav/store/actions/sidenav.actions';
 
 @Component({
   selector: 'ps-home-cta-button',
@@ -9,11 +8,11 @@ import { State } from 'src/app/state/reducers';
   styleUrls: ['./home-cta-button.component.scss'],
 })
 export class HomeCtaButtonComponent implements OnInit {
-  constructor(private store: Store<State>) {}
+  constructor(private store: Store) {}
 
   ngOnInit(): void {}
 
   onCtaButtonClicked(): void {
-    this.store.dispatch(SidenavActions.open());
+    this.store.dispatch(SidenavActions.openDrawer());
   }
 }

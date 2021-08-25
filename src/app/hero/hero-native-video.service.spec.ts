@@ -1,15 +1,14 @@
 import { TestBed } from '@angular/core/testing';
 import { appImports } from 'src/app/app.module';
-import { heroImports } from 'src/app/hero/hero.module';
-import { HeroNativeVideoService } from './hero-native-video.service';
+import { HeroNativeVideoService } from 'src/app/hero/hero-native-video.service';
+import { HeroModule } from 'src/app/hero/hero.module';
 
 describe('HeroNativeVideoService', () => {
   let service: HeroNativeVideoService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [...appImports, ...heroImports],
-      providers: [HeroNativeVideoService],
+      imports: [...appImports, HeroModule],
     });
     service = TestBed.inject(HeroNativeVideoService);
   });

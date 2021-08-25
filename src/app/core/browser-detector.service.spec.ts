@@ -1,5 +1,5 @@
 import { TestBed } from '@angular/core/testing';
-import { BrowserDetectorService } from './browser-detector.service';
+import { BrowserDetectorService } from 'src/app/core/browser-detector.service';
 
 describe('BrowserDetectorService', () => {
   let service: BrowserDetectorService;

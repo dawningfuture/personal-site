@@ -1,9 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { appImports } from 'src/app/app.module';
-import { dancePageImports } from 'src/app/pages/dance/dance-page.module';
-import { DanceHeroComponent } from 'src/app/pages/dance/hero/dance-hero.component';
-import { DanceVideoComponent } from 'src/app/pages/dance/video/dance-video.component';
-import { DancePageComponent } from './dance-page.component';
+import { DancePageComponent } from 'src/app/pages/dance/dance-page.component';
+import { DancePageModule } from 'src/app/pages/dance/dance-page.module';
 
 describe('DancePageComponent', () => {
   let component: DancePageComponent;
@@ -11,12 +9,8 @@ describe('DancePageComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [...appImports, ...dancePageImports],
-      declarations: [
-        DancePageComponent,
-        DanceHeroComponent,
-        DanceVideoComponent,
-      ],
+      imports: [...appImports, DancePageModule],
+      declarations: [DancePageComponent],
     }).compileComponents();
   });
 

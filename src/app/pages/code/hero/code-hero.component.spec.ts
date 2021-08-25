@@ -1,7 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { appImports } from 'src/app/app.module';
-import { codePageImports } from 'src/app/pages/code/code-page.module';
-import { CodeHeroComponent } from './code-hero.component';
+import { CodePageModule } from 'src/app/pages/code/code-page.module';
+import { CodeHeroComponent } from 'src/app/pages/code/hero/code-hero.component';
 
 describe('CodeHeroComponent', () => {
   let component: CodeHeroComponent;
@@ -9,7 +9,7 @@ describe('CodeHeroComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [...appImports, ...codePageImports],
+      imports: [...appImports, CodePageModule],
       declarations: [CodeHeroComponent],
     }).compileComponents();
   });
