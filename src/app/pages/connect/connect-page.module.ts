@@ -7,6 +7,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { HeroModule } from 'src/app/hero/hero.module';
 import { PageModule } from 'src/app/page/page.module';
 import { ConnectContentComponent } from 'src/app/pages/connect/components/content/connect-content.component';
@@ -37,6 +38,7 @@ import { ConnectPageStoreModule } from 'src/app/pages/connect/store/connect-page
     MatButtonModule,
     MatInputModule,
     MatDividerModule,
+    MatProgressBarModule,
     HttpClientModule,
   ],
 })
