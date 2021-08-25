@@ -2,14 +2,7 @@
 @use "material";
 
 .ps-connect-form {
-  box-shadow: variables.$ps-shadow;
-  background-color: material.$ps-background-color;
-
-  .form-section {
-    padding: variables.$ps-padding;
-
-    &-header {
-      @include material.title;
-    }
+  .headline {
+    @include material.headline;
   }
 }

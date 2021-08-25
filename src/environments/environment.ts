@@ -8,6 +8,12 @@ export const environment: Environment = {
   // is being served from the desired origin
   origin: '',
   useHlsjs: true,
+  pages: {
+    connect: {
+      sendLetsConnectEmailEndpoint:
+        'https://api.matthewthompson.us/personal-site/lets-connect',
+    },
+  },
 };
 
 /*

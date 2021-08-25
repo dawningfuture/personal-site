@@ -45,8 +45,8 @@ $ps-background: map.get($ps-theme, background);
   @include mat.typography-level($ps-typography, "display-1");
 }
 
-@mixin title {
-  @include mat.typography-level($ps-typography, "title");
+@mixin headline {
+  @include mat.typography-level($ps-typography, "headline");
 }
 
 // ******

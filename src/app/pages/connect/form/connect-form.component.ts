@@ -1,11 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import {
+  ConnectService,
+  LetsConnectEmail,
+} from 'src/app/pages/connect/services/connect.service';
 
 enum ConnectFormControls {
   NAME = 'name',
   ORGANIZATION = 'organization',
   EMAIL = 'email',
   MESSAGE = 'message',
+  RECAPTCHA_SUCCESSFUL = 'recaptchaSuccessful',
 }
 
 enum ConnectFormPlaceholders {
@@ -34,7 +39,10 @@ export class ConnectFormComponent implements OnInit {
   placeholders = ConnectFormPlaceholders;
   errorMessages = ConnectFormErrorMessages;
 
-  constructor(private formBuilder: FormBuilder) {
+  constructor(
+    private formBuilder: FormBuilder,
+    private connect: ConnectService
+  ) {
     this.form = this.formBuilder.group({
       [ConnectFormControls.NAME]: this.formBuilder.control('', [
         Validators.required,
@@ -47,12 +55,36 @@ export class ConnectFormComponent implements OnInit {
       [ConnectFormControls.MESSAGE]: this.formBuilder.control('', [
         Validators.required,
       ]),
+      [ConnectFormControls.RECAPTCHA_SUCCESSFUL]: this.formBuilder.control(
+        false,
+        [Validators.requiredTrue]
+      ),
     });
   }
 
   ngOnInit(): void {}
 
   onSubmit(): void {
-    console.log('submit');
+    const email: LetsConnectEmail = {
+      [ConnectFormControls.NAME]: this.form.get(ConnectFormControls.NAME)
+        ?.value,
+      [ConnectFormControls.ORGANIZATION]: this.form.get(
+        ConnectFormControls.ORGANIZATION
+      )?.value,
+      [ConnectFormControls.EMAIL]: this.form.get(ConnectFormControls.EMAIL)
+        ?.value,
+      [ConnectFormControls.MESSAGE]: this.form.get(ConnectFormControls.MESSAGE)
+        ?.value,
+    };
+
+    this.connect.sendLetsConnectEmail(email);
+  }
+
+  onCaptchaSuccess(): void {
+    this.form.get(ConnectFormControls.RECAPTCHA_SUCCESSFUL)?.setValue(true);
+  }
+
+  onCaptchaFailure(): void {
+    this.form.get(ConnectFormControls.RECAPTCHA_SUCCESSFUL)?.setValue(false);
   }
 }

@@ -6,4 +6,10 @@ export const environment: Environment = {
   version: packageJson.version,
   origin: 'https://matthewthompson.us',
   useHlsjs: true,
+  pages: {
+    connect: {
+      sendLetsConnectEmailEndpoint:
+        'https://api.matthewthompson.us/personal-site/lets-connect',
+    },
+  },
 };

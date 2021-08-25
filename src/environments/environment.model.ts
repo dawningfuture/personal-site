@@ -20,4 +20,19 @@ export interface Environment {
    * Whether to use hls.js for video streaming
    */
   useHlsjs: boolean;
+
+  /**
+   * Page-specific configurations
+   */
+  pages: {
+    /**
+     * Connect page configuration
+     */
+    connect: {
+      /**
+       * API endpoint to send Let's Connect Email
+       */
+      sendLetsConnectEmailEndpoint: string;
+    };
+  };
 }
