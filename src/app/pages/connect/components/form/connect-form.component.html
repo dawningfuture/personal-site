@@ -79,15 +79,16 @@
       <mat-divider fxFlex></mat-divider>
 
       <div fxFlex fxLayout="row" fxLayoutAlign="center">
-        <div
-          #captcha
-          class="g-recaptcha"
-          id="grecaptcha"
-          fxFlex="0 1 auto"
-        ></div>
+        <div #recaptcha class="g-recaptcha" fxFlex="0 1 auto"></div>
       </div>
 
-      <div fxFlex fxLayout="row">
+      <mat-divider fxFlex></mat-divider>
+
+      <div
+        fxFlex
+        fxLayout="row"
+        *ngIf="!(submitting$ | async); else submittingTmp"
+      >
         <button
           type="submit"
           mat-raised-button
@@ -101,6 +102,10 @@
     </form>
   </ng-container>
 </div>
+
+<ng-template #submittingTmp>
+  <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+</ng-template>
 
 <ng-template #submittedTmp>
   <div @slideFadeIn class="submitted" fxLayout="column" fxLayoutGap>

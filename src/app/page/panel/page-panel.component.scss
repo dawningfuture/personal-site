@@ -2,7 +2,6 @@
 @use "material";
 
 .ps-page-panel {
-  padding: variables.$ps-padding;
   box-shadow: variables.$ps-shadow;
   background-color: material.$ps-background-color;
 }

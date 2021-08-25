@@ -20,10 +20,10 @@ import {
 } from '@angular/forms';
 import { Actions, ofType } from '@ngrx/effects';
 import { Store } from '@ngrx/store';
-import { Observable, Subject } from 'rxjs';
-import { map, startWith, takeUntil } from 'rxjs/operators';
+import { merge, Observable, Subject } from 'rxjs';
+import { map, startWith, takeUntil, tap } from 'rxjs/operators';
+import { RecaptchaService } from 'src/app/core/recaptcha.service';
 import * as ConnectPageActions from 'src/app/pages/connect/store/actions/connect-page.actions';
-import { environment } from 'src/environments/environment';
 
 enum ConnectFormControls {
   NAME = 'name',
@@ -100,15 +100,16 @@ export class ConnectFormComponent implements AfterViewInit, OnDestroy {
   placeholders = ConnectFormPlaceholders;
   errorMessages = ConnectFormErrorMessages;
 
-  private grecaptcha: any = (window as any).grecaptcha;
-  @ViewChild('captcha') captcha!: ElementRef<HTMLDivElement>;
+  @ViewChild('recaptcha') recaptchaEl!: ElementRef<HTMLDivElement>;
 
   submitted$: Observable<boolean>;
+  submitting$: Observable<boolean>;
 
   private destroyed$ = new Subject<void>();
 
   constructor(
     private formBuilder: FormBuilder,
+    private recaptcha: RecaptchaService,
     private store: Store,
     private actions$: Actions
   ) {
@@ -132,29 +133,38 @@ export class ConnectFormComponent implements AfterViewInit, OnDestroy {
     this.submitted$ = this.actions$.pipe(
       ofType(ConnectPageActions.sendConnectEmailSuccess),
       map(() => true),
-      startWith(false)
+      startWith(false),
+      takeUntil(this.destroyed$)
     );
 
-    this.actions$
-      .pipe(
-        ofType(ConnectPageActions.sendConnectEmailSuccess),
-        takeUntil(this.destroyed$)
+    this.submitting$ = merge(
+      this.actions$.pipe(
+        ofType(ConnectPageActions.sendConnectEmail),
+        tap(() => this.onSubmitRequest()),
+        map(() => true)
+      ),
+      this.actions$.pipe(
+        ofType(
+          ConnectPageActions.sendConnectEmailSuccess,
+          ConnectPageActions.sendConnectEmailFailure
+        ),
+        tap(() => this.onSubmitResponse()),
+        map(() => false)
       )
-      .subscribe(() => this.reset());
+    ).pipe(startWith(false), takeUntil(this.destroyed$));
   }
 
   ngAfterViewInit(): void {
-    if (this.grecaptcha) {
-      this.grecaptcha.render(this.captcha.nativeElement, {
-        sitekey: environment.pages.connect.recaptchaSiteKey,
-        callback: this.onCaptchaSuccessCallback.bind(this),
-        'expired-callback': this.onCaptchaExpiredCallback.bind(this),
-        'error-callback': this.onCaptchaErrorCallback.bind(this),
-      });
-    }
+    this.recaptcha.render(this.recaptchaEl.nativeElement, {
+      callback: this.onCaptchaSuccess.bind(this),
+      'expired-callback': this.onCaptchaExpired.bind(this),
+      'error-callback': this.onCaptchaError.bind(this),
+    });
   }
 
   ngOnDestroy(): void {
+    this.recaptcha.reset();
+
     this.destroyed$.next();
     this.destroyed$.complete();
   }
@@ -179,20 +189,23 @@ export class ConnectFormComponent implements AfterViewInit, OnDestroy {
     );
   }
 
-  private onCaptchaSuccessCallback(): void {
+  private onSubmitRequest(): void {
+    this.form.disable();
+  }
+
+  private onSubmitResponse(): void {
+    this.form.enable();
+  }
+
+  private onCaptchaSuccess(): void {
     this.form.get(ConnectFormControls.RECAPTCHA_SUCCESS)?.setValue(true);
   }
 
-  private onCaptchaExpiredCallback(): void {
+  private onCaptchaExpired(): void {
     this.form.get(ConnectFormControls.RECAPTCHA_SUCCESS)?.setValue(false);
   }
 
-  private onCaptchaErrorCallback(): void {
+  private onCaptchaError(): void {
     this.form.get(ConnectFormControls.RECAPTCHA_SUCCESS)?.setValue(false);
-  }
-
-  private reset(): void {
-    this.formGroup.resetForm();
-    this.grecaptcha.reset();
   }
 }

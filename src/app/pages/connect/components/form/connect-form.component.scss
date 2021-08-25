@@ -2,6 +2,8 @@
 @use "material";
 
 .ps-connect-form {
+  padding: variables.$ps-padding;
+
   .headline {
     @include material.headline;
   }
