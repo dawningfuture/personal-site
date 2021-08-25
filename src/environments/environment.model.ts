@@ -20,4 +20,24 @@ export interface Environment {
    * Whether to use hls.js for video streaming
    */
   useHlsjs: boolean;
+
+  /**
+   * Page-specific configurations
+   */
+  pages: {
+    /**
+     * Connect page configuration
+     */
+    connect: {
+      /**
+       * reCAPTCHA API (site) key
+       */
+      recaptchaSiteKey: string;
+
+      /**
+       * API endpoint to send Connect Email
+       */
+      sendConnectEmailEndpoint: string;
+    };
+  };
 }

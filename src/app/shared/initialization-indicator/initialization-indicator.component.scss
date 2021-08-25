@@ -1,20 +1,14 @@
 @use "text";
 @use "material";
-@use "position";
 
 .ps-initialization-indicator {
-  position: relative;
-  background-color: material.$ps-primary-default;
+  background-color: material.$ps-primary-default-color;
 
-  .headline {
-    @include position.absolute-fill;
+  .headline-gt-xs {
+    @include text.headline-4;
+  }
 
-    &-gt-xs {
-      @include text.headline-4;
-    }
-
-    &-xs {
-      @include text.headline-3;
-    }
+  .headline-xs {
+    @include text.headline-3;
   }
 }

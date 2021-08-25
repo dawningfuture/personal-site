@@ -1,0 +1,20 @@
+@use "variables";
+@use "material";
+
+.ps-connect-form {
+  .headline {
+    @include material.headline;
+  }
+
+  .submitted {
+    text-align: center;
+
+    &-headline {
+      @include material.display-2;
+    }
+
+    &-body {
+      @include material.body-2;
+    }
+  }
+}

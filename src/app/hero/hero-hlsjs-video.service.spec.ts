@@ -1,15 +1,14 @@
 import { TestBed } from '@angular/core/testing';
 import { appImports } from 'src/app/app.module';
-import { heroImports } from 'src/app/hero/hero.module';
-import { HeroHlsjsVideoService } from './hero-hlsjs-video.service';
+import { HeroHlsjsVideoService } from 'src/app/hero/hero-hlsjs-video.service';
+import { HeroModule } from 'src/app/hero/hero.module';
 
 describe('HeroHlsjsVideoService', () => {
   let service: HeroHlsjsVideoService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [...appImports, ...heroImports],
-      providers: [HeroHlsjsVideoService],
+      imports: [...appImports, HeroModule],
     });
     service = TestBed.inject(HeroHlsjsVideoService);
   });

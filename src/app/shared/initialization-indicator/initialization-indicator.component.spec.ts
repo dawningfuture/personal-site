@@ -1,7 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { appImports } from 'src/app/app.module';
-import { sharedImports } from 'src/app/shared/shared.module';
-import { InitializationIndicatorComponent } from './initialization-indicator.component';
+import { InitializationIndicatorComponent } from 'src/app/shared/initialization-indicator/initialization-indicator.component';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 describe('InitializationIndicatorComponent', () => {
   let component: InitializationIndicatorComponent;
@@ -9,7 +9,7 @@ describe('InitializationIndicatorComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [...appImports, ...sharedImports],
+      imports: [...appImports, SharedModule],
       declarations: [InitializationIndicatorComponent],
     }).compileComponents();
   });

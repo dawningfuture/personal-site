@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Observable, race, Subject } from 'rxjs';
 import { take, tap } from 'rxjs/operators';
-import { NativeVideoService } from 'src/app/core/video/native-video.service';
 import { VisibilityService } from 'src/app/core/visibility.service';
+import { NativeVideoService } from 'src/app/video/native-video.service';
 
 @Injectable()
 export class HeroNativeVideoService extends NativeVideoService {

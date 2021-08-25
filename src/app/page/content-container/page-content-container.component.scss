@@ -1,0 +1,5 @@
+@use 'variables';
+
+.ps-page-content-container {
+  padding: variables.$ps-padding;
+}

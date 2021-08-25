@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import Hls from 'hls.js';
 import { Observable, race, Subject } from 'rxjs';
 import { take } from 'rxjs/operators';
-import { HlsjsVideoService } from 'src/app/core/video/hlsjs-video.service';
+import { HlsjsVideoService } from 'src/app/video/hlsjs-video.service';
 
 @Injectable()
 export class HeroHlsjsVideoService extends HlsjsVideoService {
