@@ -8,7 +8,8 @@ export const environment: Environment = {
   useHlsjs: true,
   pages: {
     connect: {
-      sendLetsConnectEmailEndpoint:
+      recaptchaSiteKey: '6LcUARIcAAAAAGM-W8K6BJsOpd4jJjamAVEo4ltI',
+      sendConnectEmailEndpoint:
         'https://api.matthewthompson.us/personal-site/lets-connect',
     },
   },

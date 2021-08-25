@@ -3,6 +3,7 @@
 
 $ps-typography: mat.define-typography-config(
   $font-family: "Montserrat",
+  $body-2: mat.define-typography-level(18px),
 );
 
 $ps-primary: mat.define-palette(mat.$blue-palette);
@@ -47,6 +48,10 @@ $ps-background: map.get($ps-theme, background);
 
 @mixin headline {
   @include mat.typography-level($ps-typography, "headline");
+}
+
+@mixin body-2 {
+  @include mat.typography-level($ps-typography, "body-2");
 }
 
 // ******

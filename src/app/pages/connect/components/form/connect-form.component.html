@@ -1,0 +1,120 @@
+<div class="ps-connect-form" @container>
+  <ng-container *ngIf="!(submitted$ | async); else submittedTmp">
+    <form
+      @slideFadeOut
+      [formGroup]="form"
+      fxLayout="column"
+      fxLayoutGap
+      (ngSubmit)="onSubmit()"
+    >
+      <div fxFlex fxLayout.xs="column" fxLayout.gt-xs="row" fxLayoutGap>
+        <div fxFlex fxLayout="column" fxLayoutGap>
+          <div fxFlex class="headline">A bit about you</div>
+
+          <mat-divider fxFlex></mat-divider>
+
+          <mat-form-field fxFlex>
+            <input
+              matInput
+              [formControlName]="controls.NAME"
+              [placeholder]="placeholders.NAME"
+              required
+            />
+
+            <mat-error *ngIf="form.get(controls.NAME)?.errors?.required">{{
+              errorMessages.NAME_REQUIRED
+            }}</mat-error>
+          </mat-form-field>
+
+          <mat-form-field fxFlex>
+            <input
+              matInput
+              [formControlName]="controls.ORGANIZATION"
+              [placeholder]="placeholders.ORGANIZATION"
+            />
+          </mat-form-field>
+
+          <mat-form-field fxFlex>
+            <input
+              matInput
+              [formControlName]="controls.EMAIL"
+              [placeholder]="placeholders.EMAIL"
+              required
+            />
+
+            <mat-error *ngIf="form.get(controls.EMAIL)?.errors?.required">{{
+              errorMessages.EMAIL_REQUIRED
+            }}</mat-error>
+
+            <mat-error *ngIf="form.get(controls.EMAIL)?.errors?.email">{{
+              errorMessages.EMAIL_INVALID
+            }}</mat-error>
+          </mat-form-field>
+        </div>
+
+        <mat-divider [vertical]="true"></mat-divider>
+
+        <div fxFlex fxLayout="column" fxLayoutGap>
+          <div fxFlex class="headline">How can I help?</div>
+
+          <mat-divider fxFlex></mat-divider>
+
+          <mat-form-field fxFlex>
+            <textarea
+              matInput
+              [formControlName]="controls.MESSAGE"
+              [placeholder]="placeholders.MESSAGE"
+              required
+              cdkTextareaAutosize
+              cdkAutosizeMinRows="10"
+            ></textarea>
+
+            <mat-error *ngIf="form.get(controls.MESSAGE)?.errors?.required">{{
+              errorMessages.MESSAGE_REQUIRED
+            }}</mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+
+      <mat-divider fxFlex></mat-divider>
+
+      <div fxFlex fxLayout="row" fxLayoutAlign="center">
+        <div
+          #captcha
+          class="g-recaptcha"
+          id="grecaptcha"
+          fxFlex="0 1 auto"
+        ></div>
+      </div>
+
+      <div fxFlex fxLayout="row">
+        <button
+          type="submit"
+          mat-raised-button
+          color="accent"
+          fxFlex="1 0 auto"
+          [disabled]="!form.valid"
+        >
+          Reach out
+        </button>
+      </div>
+    </form>
+  </ng-container>
+</div>
+
+<ng-template #submittedTmp>
+  <div @slideFadeIn class="submitted" fxLayout="column" fxLayoutGap>
+    <div class="submitted-headline" fxFlex>...and now, you have.</div>
+    <mat-divider fxFlex></mat-divider>
+    <div class="submitted-body" fxFlex>
+      Experiencing connection is what makes me happiest in life - so sincerely,
+      thank you for reaching out. My system will get your message to me, and you
+      should receive a confirmation email soon. I'll do my best to follow up as
+      quick as I can.
+    </div>
+    <div class="submitted-body" fxFlex>
+      Until then, thank you for having made my day this much better.
+    </div>
+    <div class="submitted-body" fxFlex>- Matthew</div>
+  </div>
+</ng-template>

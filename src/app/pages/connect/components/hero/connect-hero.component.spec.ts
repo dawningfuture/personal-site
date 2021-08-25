@@ -1,7 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { appImports } from 'src/app/app.module';
+import { ConnectHeroComponent } from 'src/app/pages/connect/components/hero/connect-hero.component';
 import { ConnectPageModule } from 'src/app/pages/connect/connect-page.module';
-import { ConnectHeroComponent } from 'src/app/pages/connect/hero/connect-hero.component';
 
 describe('ConnectHeroComponent', () => {
   let component: ConnectHeroComponent;

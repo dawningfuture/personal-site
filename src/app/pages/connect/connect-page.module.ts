@@ -7,15 +7,15 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { HeroModule } from 'src/app/hero/hero.module';
 import { PageModule } from 'src/app/page/page.module';
+import { ConnectContentComponent } from 'src/app/pages/connect/components/content/connect-content.component';
+import { ConnectFormComponent } from 'src/app/pages/connect/components/form/connect-form.component';
+import { ConnectHeroComponent } from 'src/app/pages/connect/components/hero/connect-hero.component';
 import { ConnectPageRoutingModule } from 'src/app/pages/connect/connect-page-routing.module';
 import { ConnectPageComponent } from 'src/app/pages/connect/connect-page.component';
-import { ConnectContentComponent } from 'src/app/pages/connect/content/connect-content.component';
-import { ConnectFormComponent } from 'src/app/pages/connect/form/connect-form.component';
-import { ConnectHeroComponent } from 'src/app/pages/connect/hero/connect-hero.component';
-import { ConnectService } from 'src/app/pages/connect/services/connect.service';
+import { ConnectPageService } from 'src/app/pages/connect/services/connect-page.service';
+import { ConnectPageStoreModule } from 'src/app/pages/connect/store/connect-page-store.module';
 
 @NgModule({
   declarations: [
@@ -24,10 +24,11 @@ import { ConnectService } from 'src/app/pages/connect/services/connect.service';
     ConnectContentComponent,
     ConnectFormComponent,
   ],
-  providers: [ConnectService],
+  providers: [ConnectPageService],
   imports: [
     CommonModule,
     ConnectPageRoutingModule,
+    ConnectPageStoreModule,
     FlexLayoutModule,
     HeroModule,
     PageModule,
@@ -36,7 +37,6 @@ import { ConnectService } from 'src/app/pages/connect/services/connect.service';
     MatButtonModule,
     MatInputModule,
     MatDividerModule,
-    MatSnackBarModule,
     HttpClientModule,
   ],
 })

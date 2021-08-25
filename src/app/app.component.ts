@@ -22,7 +22,7 @@ import { map, startWith } from 'rxjs/operators';
           zIndex: 2,
         }),
         animate(
-          '400ms ease-out',
+          '500ms ease-out',
           style({
             opacity: 0,
           })

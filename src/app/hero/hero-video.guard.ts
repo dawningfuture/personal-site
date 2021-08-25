@@ -29,8 +29,6 @@ export class HeroVideoGuard implements CanActivate {
 
   private onError(): void {
     // tslint:disable-next-line: quotemark
-    this.matSnackBar.open("Sorry, I couldn't show you the Dance page", 'Ok', {
-      duration: 5000,
-    });
+    this.matSnackBar.open("Sorry, I couldn't show you the Dance page", 'Ok');
   }
 }

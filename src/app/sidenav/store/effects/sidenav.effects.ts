@@ -9,41 +9,40 @@ import { selectSidenavOpen } from 'src/app/sidenav/store/selectors/sidenav.selec
 
 @Injectable()
 export class SidenavEffects {
-  clickedButton$ = createEffect(() => {
-    return this.actions$.pipe(
+  clickedButton$ = createEffect(() =>
+    this.actions$.pipe(
       ofType(SidenavActions.clickedButton),
       mergeMap(() => [SidenavActions.toggleDrawer()])
-    );
-  });
+    )
+  );
 
   clickedLink$ = createEffect(
-    () => {
-      return this.actions$.pipe(
+    () =>
+      this.actions$.pipe(
         ofType(SidenavActions.clickedLink),
         tap((action) => this.router.navigateByUrl(action.path))
-      );
-    },
+      ),
     {
       dispatch: false,
     }
   );
 
-  clickedBackdrop$ = createEffect(() => {
-    return this.actions$.pipe(
+  clickedBackdrop$ = createEffect(() =>
+    this.actions$.pipe(
       ofType(SidenavActions.clickedBackdrop),
       mergeMap(() => [SidenavActions.closeDrawer()])
-    );
-  });
+    )
+  );
 
-  routerNavigated$ = createEffect(() => {
-    return this.actions$.pipe(
+  routerNavigated$ = createEffect(() =>
+    this.actions$.pipe(
       ofType(routerNavigatedAction),
       map(() => this.store.select(selectSidenavOpen)),
       mergeMap((sidenavOpen) =>
         sidenavOpen ? [SidenavActions.closeDrawer()] : []
       )
-    );
-  });
+    )
+  );
 
   constructor(
     private actions$: Actions,

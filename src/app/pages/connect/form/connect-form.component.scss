@@ -1,8 +1,0 @@
-@use "variables";
-@use "material";
-
-.ps-connect-form {
-  .headline {
-    @include material.headline;
-  }
-}

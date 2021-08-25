@@ -30,9 +30,14 @@ export interface Environment {
      */
     connect: {
       /**
-       * API endpoint to send Let's Connect Email
+       * reCAPTCHA API (site) key
        */
-      sendLetsConnectEmailEndpoint: string;
+      recaptchaSiteKey: string;
+
+      /**
+       * API endpoint to send Connect Email
+       */
+      sendConnectEmailEndpoint: string;
     };
   };
 }
