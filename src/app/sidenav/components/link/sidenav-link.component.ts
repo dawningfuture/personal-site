@@ -1,7 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
-import * as SidenavActions from 'src/app/state/features/sidenav/actions/sidenav.actions';
-import { State } from 'src/app/state/reducers';
+import * as SidenavActions from 'src/app/sidenav/store/actions/sidenav.actions';
 
 @Component({
   selector: 'ps-sidenav-link',
@@ -12,7 +11,7 @@ export class SidenavLinkComponent implements OnInit {
   @Input() label = '';
   @Input() path = '';
 
-  constructor(private store: Store<State>) {}
+  constructor(private store: Store) {}
 
   ngOnInit(): void {}
 

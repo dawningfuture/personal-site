@@ -6,11 +6,12 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { RouterModule } from '@angular/router';
-import { SidenavButtonComponent } from 'src/app/sidenav/button/sidenav-button.component';
-import { SidenavDrawerComponent } from 'src/app/sidenav/drawer/sidenav-drawer.component';
-import { SidenavLinkComponent } from 'src/app/sidenav/link/sidenav-link.component';
+import { SidenavButtonComponent } from 'src/app/sidenav/components/button/sidenav-button.component';
+import { SidenavDrawerComponent } from 'src/app/sidenav/components/drawer/sidenav-drawer.component';
+import { SidenavLinkComponent } from 'src/app/sidenav/components/link/sidenav-link.component';
+import { SidenavVersionComponent } from 'src/app/sidenav/components/version/sidenav-version.component';
 import { SidenavComponent } from 'src/app/sidenav/sidenav.component';
-import { SidenavVersionComponent } from 'src/app/sidenav/version/sidenav-version.component';
+import { SidenavStoreModule } from 'src/app/sidenav/store/sidenav-store.module';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { SidenavVersionComponent } from 'src/app/sidenav/version/sidenav-version
   ],
   imports: [
     CommonModule,
+    SidenavStoreModule,
     RouterModule,
     MatButtonModule,
     MatIconModule,

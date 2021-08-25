@@ -1,7 +1,7 @@
 import {
   initialState,
   reducer,
-} from 'src/app/state/features/sidenav/reducers/sidenav.reducer';
+} from 'src/app/sidenav/store/reducers/sidenav.reducer';
 
 describe('Sidenav Reducer', () => {
   describe('an unknown action', () => {

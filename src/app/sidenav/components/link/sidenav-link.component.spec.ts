@@ -1,21 +1,21 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { appImports } from 'src/app/app.module';
-import { SidenavDrawerComponent } from 'src/app/sidenav/drawer/sidenav-drawer.component';
+import { SidenavLinkComponent } from 'src/app/sidenav/components/link/sidenav-link.component';
 import { SidenavModule } from 'src/app/sidenav/sidenav.module';
 
-describe('SidenavDrawerComponent', () => {
-  let component: SidenavDrawerComponent;
-  let fixture: ComponentFixture<SidenavDrawerComponent>;
+describe('SidenavLinkComponent', () => {
+  let component: SidenavLinkComponent;
+  let fixture: ComponentFixture<SidenavLinkComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [...appImports, SidenavModule],
-      declarations: [SidenavDrawerComponent],
+      declarations: [SidenavLinkComponent],
     }).compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(SidenavDrawerComponent);
+    fixture = TestBed.createComponent(SidenavLinkComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

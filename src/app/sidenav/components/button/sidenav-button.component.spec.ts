@@ -1,21 +1,21 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { appImports } from 'src/app/app.module';
-import { SidenavLinkComponent } from 'src/app/sidenav/link/sidenav-link.component';
+import { SidenavButtonComponent } from 'src/app/sidenav/components/button/sidenav-button.component';
 import { SidenavModule } from 'src/app/sidenav/sidenav.module';
 
-describe('SidenavLinkComponent', () => {
-  let component: SidenavLinkComponent;
-  let fixture: ComponentFixture<SidenavLinkComponent>;
+describe('SidenavButtonComponent', () => {
+  let component: SidenavButtonComponent;
+  let fixture: ComponentFixture<SidenavButtonComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [...appImports, SidenavModule],
-      declarations: [SidenavLinkComponent],
+      declarations: [SidenavButtonComponent],
     }).compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(SidenavLinkComponent);
+    fixture = TestBed.createComponent(SidenavButtonComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -7,9 +7,9 @@ interface AppRouteData {
     order: number; // NOTE: 0-indexed descending sort order
     path: string;
   };
-  hero: {
+  hero?: {
     imageUrl?: string;
-    video?: {
+    videoSources?: {
       mp4Url: string;
       hlsTsUrl: string;
       hlsFmp4Url: string;
@@ -71,7 +71,7 @@ export const appRoutes: AppRoute[] = [
         path: '/dance',
       },
       hero: {
-        video: {
+        videoSources: {
           mp4Url:
             'https://media.matthewthompson.us/personal-site/dance-hero-background/dance-hero-background.mp4',
           hlsTsUrl:

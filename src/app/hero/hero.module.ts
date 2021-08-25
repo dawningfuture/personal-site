@@ -1,4 +1,3 @@
-import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
@@ -9,12 +8,6 @@ import { HeroVideoGuard } from 'src/app/hero/hero-video.guard';
 import { HeroVideoService } from 'src/app/hero/hero-video.service';
 import { VideoModule } from 'src/app/video/video.module';
 
-/**
- * NOTE: These imports have been extracted into an exported
- * `const` Array so that they can be imported in tests
- */
-export const heroImports = [MatSnackBarModule, HttpClientModule, VideoModule];
-
 @NgModule({
   providers: [
     HeroImageResolverService,
@@ -23,6 +16,6 @@ export const heroImports = [MatSnackBarModule, HttpClientModule, VideoModule];
     HeroHlsjsVideoService,
     HeroNativeVideoService,
   ],
-  imports: [CommonModule, ...heroImports],
+  imports: [VideoModule, HttpClientModule, MatSnackBarModule],
 })
 export class HeroModule {}
