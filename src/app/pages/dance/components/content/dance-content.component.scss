@@ -1,0 +1,26 @@
+@use "material";
+@use "text";
+@use "variables";
+
+.ps-dance-content {
+  background-color: material.$ps-primary-default-color;
+  text-align: center;
+
+  .content {
+    &-headline {
+      @include text.headline-2;
+    }
+
+    &-panel {
+      padding: variables.$ps-padding;
+
+      &-headline {
+        @include material.headline;
+      }
+
+      &-body {
+        @include material.body-2;
+      }
+    }
+  }
+}

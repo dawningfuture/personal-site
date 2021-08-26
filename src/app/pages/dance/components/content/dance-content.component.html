@@ -1,0 +1,81 @@
+<div class="ps-dance-content">
+  <ps-content-container>
+    <div class="content" fxLayout="column" fxLayoutGap>
+      <div class="content-headline" fxFlex>
+        Dancing is my hobby, my outlet, my passion...
+      </div>
+
+      <ps-content-panel fxFlex>
+        <div class="content-panel">
+          <div class="content-panel-headline">
+            ...but it does take a lot of my time.
+          </div>
+        </div>
+      </ps-content-panel>
+
+      <div fxLayout.gt-xs="row" fxLayout.xs="column" fxLayoutGap fxFlex>
+        <ps-content-panel fxFlex>
+          <div
+            class="content-panel"
+            fxLayout="column"
+            fxLayoutAlign="space-around"
+            fxLayoutGap
+            fxFill
+          >
+            <div class="content-panel-body" fxFlex="0 1 auto">
+              Between persuing my mission, finding joy through code, dance, and
+              connection, time has run short. So I have to put a placeholder
+              here.
+            </div>
+
+            <div class="content-panel-body" fxFlex="0 1 auto">
+              I cannot wait to show you more of my love for dance. Pictures,
+              collages, videos - I've got big plans.
+            </div>
+
+            <div class="content-panel-body" fxFlex="0 1 auto">
+              This placeholder is temporary - consider it a promise of cool
+              stuff to come.
+            </div>
+
+            <div class="content-panel-body" fxFlex="0 1 auto">
+              In the meantime, I've put some content on my Instagram - check it
+              out if you'd like.
+            </div>
+          </div>
+        </ps-content-panel>
+
+        <ps-content-panel fxFlex fxFlex.gt-xs="33%">
+          <div
+            class="content-panel link"
+            fxLayout="column"
+            fxLayoutGap
+            (click)="onSocialContentPanelClick()"
+          >
+            <img fxFill src="/assets/instagram.png" />
+
+            <div
+              class="content-panel-body"
+              fxLayout="row"
+              fxLayoutAlign="center end"
+              fxLayoutGap
+              fxFlex
+            >
+              <div fxFlex="0 1 auto">@immattthompson</div>
+              <mat-icon fxFlex="0 1 auto">open_in_new</mat-icon>
+            </div>
+          </div>
+        </ps-content-panel>
+      </div>
+
+      <ps-content-panel fxFlex>
+        <div class="content-panel">
+          <div class="content-panel-headline">
+            Much more is coming soon. Until then, I'll see you on the dance
+            floor.
+          </div>
+        </div>
+      </ps-content-panel>
+    </div>
+  </ps-content-container>
+</div>

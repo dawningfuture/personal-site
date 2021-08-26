@@ -163,8 +163,6 @@ export class ConnectFormComponent implements AfterViewInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
-    this.recaptcha.reset();
-
     this.destroyed$.next();
     this.destroyed$.complete();
   }

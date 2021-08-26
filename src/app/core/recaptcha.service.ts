@@ -14,26 +14,27 @@ export class RecaptchaService {
   }
 
   render(
-    container: string | HTMLElement,
-    params?: ReCaptchaV2.Parameters
+    container: HTMLElement,
+    params: Required<
+      Pick<
+        ReCaptchaV2.Parameters,
+        'callback' | 'error-callback' | 'expired-callback'
+      >
+    >
   ): void {
     this.recaptcha$.pipe(take(1)).subscribe((recaptcha) => {
       recaptcha.render(container, {
-        ...params,
+        callback: params.callback,
+        'expired-callback': params['expired-callback'],
+        'error-callback': params['error-callback'],
         sitekey: environment.pages.connect.recaptchaSiteKey,
       });
     });
   }
 
-  reset(): void {
-    this.recaptcha$.pipe(take(1)).subscribe((recaptcha) => {
-      recaptcha.reset();
-    });
-  }
-
   private loadScript(): void {
     (window as any).onRecaptchaLoadCallback = () => {
-      this.recaptcha$.next(window.grecaptcha);
+      this.recaptcha$.next(grecaptcha);
     };
 
     const script = document.createElement('script');

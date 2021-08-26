@@ -5,6 +5,8 @@
 
 @include mat.all-component-themes(material.$ps-theme);
 
+@import "utilities";
+
 html,
 body {
   height: 100%;

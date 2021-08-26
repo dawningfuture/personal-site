@@ -3,7 +3,7 @@
 
 $ps-typography: mat.define-typography-config(
   $font-family: "Montserrat",
-  $body-2: mat.define-typography-level(18px),
+  $body-2: mat.define-typography-level(18px, 1.25em),
 );
 
 $ps-primary: mat.define-palette(mat.$blue-palette);
