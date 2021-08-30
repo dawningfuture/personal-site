@@ -36,7 +36,7 @@ export const appRoutes: AppRoute[] = [
       },
       hero: {
         imageUrl:
-          'https://media.matthewthompson.us/personal-site/mission-hero-background.jpg',
+          'https://media.matthewthompson.us/personal-site/pages/mission/mission-hero-background.jpg',
       },
     },
   },
@@ -54,7 +54,7 @@ export const appRoutes: AppRoute[] = [
       },
       hero: {
         imageUrl:
-          'https://media.matthewthompson.us/personal-site/code-hero-background.jpg',
+          'https://media.matthewthompson.us/personal-site/pages/code/code-hero-background.jpg',
       },
     },
   },
@@ -73,12 +73,12 @@ export const appRoutes: AppRoute[] = [
       hero: {
         videoSources: {
           mp4Url:
-            'https://media.matthewthompson.us/personal-site/dance-hero-background/dance-hero-background.mp4',
+            'https://media.matthewthompson.us/personal-site/pages/dance/dance-hero-background/dance-hero-background.mp4',
           hlsTsUrl:
-            'https://media.matthewthompson.us/personal-site/dance-hero-background/ts/dance-hero-background.m3u8',
+            'https://media.matthewthompson.us/personal-site/pages/dance/dance-hero-background/ts/dance-hero-background.m3u8',
 
           hlsFmp4Url:
-            'https://media.matthewthompson.us/personal-site/dance-hero-background/fmp4/dance-hero-background.m3u8',
+            'https://media.matthewthompson.us/personal-site/pages/dance/dance-hero-background/fmp4/dance-hero-background.m3u8',
         },
       },
     },
@@ -97,7 +97,7 @@ export const appRoutes: AppRoute[] = [
       },
       hero: {
         imageUrl:
-          'https://media.matthewthompson.us/personal-site/connect-hero-background.jpg',
+          'https://media.matthewthompson.us/personal-site/pages/connect/connect-hero-background.jpg',
       },
     },
   },
@@ -115,7 +115,7 @@ export const appRoutes: AppRoute[] = [
       },
       hero: {
         imageUrl:
-          'https://media.matthewthompson.us/personal-site/home-hero-background.jpg',
+          'https://media.matthewthompson.us/personal-site/pages/home/home-hero-background.jpg',
       },
     },
   },

@@ -8,11 +8,11 @@
     text-align: center;
 
     &-gt-xs {
-      @include text.headline-3;
+      @include text.display-3-contrast;
     }
 
     &-xs {
-      @include text.headline-2;
+      @include text.display-2-contrast;
     }
   }
 }

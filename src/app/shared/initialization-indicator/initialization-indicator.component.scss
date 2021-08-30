@@ -3,12 +3,13 @@
 
 .ps-initialization-indicator {
   background-color: material.$ps-primary-default-color;
+  text-align: center;
 
   .headline-gt-xs {
-    @include text.headline-4;
+    @include text.display-4-contrast;
   }
 
   .headline-xs {
-    @include text.headline-3;
+    @include text.display-3-contrast;
   }
 }

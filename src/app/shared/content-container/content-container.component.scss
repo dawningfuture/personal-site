@@ -1,5 +1,5 @@
-@use 'variables';
+@use "variables";
 
-.ps-content-container {
+:host(.padded) {
   padding: variables.$ps-padding;
 }

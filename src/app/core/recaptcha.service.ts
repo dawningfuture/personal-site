@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, NgZone } from '@angular/core';
 import { ReplaySubject } from 'rxjs';
 import { take } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
@@ -9,7 +9,7 @@ import { environment } from 'src/environments/environment';
 export class RecaptchaService {
   private recaptcha$ = new ReplaySubject<ReCaptchaV2.ReCaptcha>(1);
 
-  constructor() {
+  constructor(private zone: NgZone) {
     this.loadScript();
   }
 
@@ -24,9 +24,9 @@ export class RecaptchaService {
   ): void {
     this.recaptcha$.pipe(take(1)).subscribe((recaptcha) => {
       recaptcha.render(container, {
-        callback: params.callback,
-        'expired-callback': params['expired-callback'],
-        'error-callback': params['error-callback'],
+        callback: () => this.zone.run(params.callback),
+        'expired-callback': () => this.zone.run(params['expired-callback']),
+        'error-callback': () => this.zone.run(params['error-callback']),
         sitekey: environment.pages.connect.recaptchaSiteKey,
       });
     });
