@@ -6,18 +6,19 @@
   position: relative;
 
   .image {
-    @include images.hero-image;
+    @include images.feature;
   }
 
   .headline {
     @include position.absolute-fill;
+    text-align: center;
 
     &-gt-xs {
-      @include text.headline-4;
+      @include text.display-4-contrast;
     }
 
     &-xs {
-      @include text.headline-3;
+      @include text.display-3-contrast;
     }
   }
 }

@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { PagePanelComponent } from 'src/app/page/panel/page-panel.component';
+import { ContentPanelComponent } from './content-panel.component';
 
-describe('PagePanelComponent', () => {
-  let component: PagePanelComponent;
-  let fixture: ComponentFixture<PagePanelComponent>;
+describe('ContentPanelComponent', () => {
+  let component: ContentPanelComponent;
+  let fixture: ComponentFixture<ContentPanelComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [PagePanelComponent],
+      declarations: [ContentPanelComponent],
     }).compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(PagePanelComponent);
+    fixture = TestBed.createComponent(ContentPanelComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

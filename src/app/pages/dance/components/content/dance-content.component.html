@@ -1,0 +1,90 @@
+<div class="ps-dance-content" fxLayout="column">
+  <ps-content-container fxFlex>
+    <div class="headline">Dancing is my hobby, my outlet, my passion...</div>
+  </ps-content-container>
+
+  <ps-content-panel fxFlex color="accent">
+    <div class="panel-headline">...but it does take a lot of my time.</div>
+  </ps-content-panel>
+
+  <ps-content-container fxFlex>
+    <div fxLayout.gt-xs="row" fxLayout.xs="column" fxLayoutGap>
+      <ps-content-panel fxFlex [raised]="false" color="none">
+        <div fxLayout="column" fxLayoutAlign="space-around" fxLayoutGap fxFill>
+          <div class="panel-body" fxFlex="0 1 auto">
+            Between persuing my mission, finding joy through code, dance, and
+            connection, time has run short. So I have to put a placeholder here.
+          </div>
+
+          <div class="panel-body" fxFlex="0 1 auto">
+            This placeholder is temporary - consider it a promise of cool stuff
+            to come.
+          </div>
+        </div>
+      </ps-content-panel>
+
+      <ps-content-panel fxFlex fxFlex.gt-xs="33%" [padded]="false">
+        <img
+          fxFill
+          class="panel-image link"
+          src="https://media.matthewthompson.us/personal-site/pages/dance/dance-panel-1.jpg"
+        />
+      </ps-content-panel>
+    </div>
+  </ps-content-container>
+
+  <ps-content-panel fxFlex color="accent">
+    <div class="panel-headline">And cool stuff is coming.</div>
+  </ps-content-panel>
+
+  <ps-content-container fxFlex>
+    <div fxLayout.gt-xs="row-reverse" fxLayout.xs="column" fxLayoutGap>
+      <ps-content-panel fxFlex [raised]="false" color="none">
+        <div fxLayout="column" fxLayoutAlign="space-around" fxLayoutGap fxFill>
+          <div class="panel-body" fxFlex="0 1 auto">
+            I cannot wait to show you more of my love for dance. Pictures,
+            collages, videos - I've got big plans.
+          </div>
+
+          <div class="panel-body" fxFlex="0 1 auto">
+            In the meantime, I've put some content on my Instagram - check it
+            out if you'd like.
+          </div>
+        </div>
+      </ps-content-panel>
+
+      <ps-content-panel fxFlex fxFlex.gt-xs="33%">
+        <div
+          class="link"
+          fxLayout="column"
+          fxLayoutGap
+          (click)="onSocialContentPanelClick()"
+        >
+          <img
+            fxFlex
+            fxFill
+            class="panel-image"
+            src="https://media.matthewthompson.us/personal-site/pages/dance/dance-panel-2.png"
+          />
+
+          <div
+            class="panel-caption"
+            fxLayout="row"
+            fxLayoutAlign="center center"
+            fxLayoutGap
+            fxFlex
+          >
+            <div fxFlex="0 1 auto">@immattthompson</div>
+            <mat-icon fxFlex="0 1 auto">open_in_new</mat-icon>
+          </div>
+        </div>
+      </ps-content-panel>
+    </div>
+  </ps-content-container>
+
+  <ps-content-panel fxFlex color="accent">
+    <div class="panel-headline">
+      Much more is coming soon. Until then, I'll see you on the dance floor.
+    </div>
+  </ps-content-panel>
+</div>

@@ -3,7 +3,7 @@
 
 $ps-typography: mat.define-typography-config(
   $font-family: "Montserrat",
-  $body-2: mat.define-typography-level(18px),
+  $body-2: mat.define-typography-level(18px, 1.25em),
 );
 
 $ps-primary: mat.define-palette(mat.$blue-palette);
@@ -22,37 +22,6 @@ $ps-theme: mat.define-light-theme(
 );
 
 $ps-background: map.get($ps-theme, background);
-
-// ********************
-// VARIABLES AND MIXINS
-// ********************
-
-// **********
-// TYPOGRAPHY
-// **********
-@mixin display-4 {
-  @include mat.typography-level($ps-typography, "display-4");
-}
-
-@mixin display-3 {
-  @include mat.typography-level($ps-typography, "display-3");
-}
-
-@mixin display-2 {
-  @include mat.typography-level($ps-typography, "display-2");
-}
-
-@mixin display-1 {
-  @include mat.typography-level($ps-typography, "display-1");
-}
-
-@mixin headline {
-  @include mat.typography-level($ps-typography, "headline");
-}
-
-@mixin body-2 {
-  @include mat.typography-level($ps-typography, "body-2");
-}
 
 // ******
 // COLORS

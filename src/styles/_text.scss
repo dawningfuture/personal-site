@@ -1,37 +1,82 @@
+@use '~@angular/material' as mat;
 @use 'material';
+@use "variables";
 
-@mixin headline-4 {
-  @include material.display-4;
-  text-shadow: 0px 3px 3px #5a5a5a;
-  text-align: center;
-  color: #ffffff;
+@mixin display-4 {
+  @include mat.typography-level(material.$ps-typography, "display-4");
+  text-shadow: variables.$ps-shadow;
 }
 
-@mixin headline-3 {
-  @include material.display-3;
-  text-shadow: 0px 3px 3px #5a5a5a;
-  text-align: center;
-  color: #ffffff;
+@mixin display-4-contrast {
+  @include display-4;
+  @include contrast;
 }
 
-@mixin headline-2 {
-  @include material.display-2;
-  text-shadow: 0px 3px 3px #5a5a5a;
-  text-align: center;
-  color: #ffffff;
+@mixin display-3 {
+  @include mat.typography-level(material.$ps-typography, "display-3");
+  text-shadow: variables.$ps-shadow;
 }
 
-@mixin headline-1 {
-  @include material.display-1;
-  text-shadow: 0px 3px 3px #5a5a5a;
-  text-align: center;
-  color: #ffffff;
+@mixin display-3-contrast {
+  @include display-3;
+  @include contrast;
 }
 
-@mixin text-primary {
+@mixin display-2 {
+  @include mat.typography-level(material.$ps-typography, "display-2");
+  text-shadow: variables.$ps-shadow;
+}
+
+@mixin display-2-contrast {
+  @include display-2;
+  @include contrast;
+}
+
+@mixin display-1 {
+  @include mat.typography-level(material.$ps-typography, "display-1");
+  text-shadow: variables.$ps-shadow;
+}
+
+@mixin display-1-contrast {
+  @include display-1;
+  @include contrast;
+}
+
+@mixin headline {
+  @include mat.typography-level(material.$ps-typography, "headline");
+}
+
+@mixin headline-contrast {
+  @include headline;
+  @include contrast;
+}
+
+@mixin title {
+  @include mat.typography-level(material.$ps-typography, "title");
+}
+
+@mixin title-contrast {
+  @include title;
+  @include contrast;
+}
+
+@mixin body {
+  @include mat.typography-level(material.$ps-typography, "body-2");
+}
+
+@mixin body-contrast {
+  @include body;
+  @include contrast;
+}
+
+@mixin primary {
   color: material.$ps-primary-default-color;
 }
 
-@mixin text-accent {
+@mixin accent {
   color: material.$ps-accent-default-color;
+}
+
+@mixin contrast {
+  color: white;
 }

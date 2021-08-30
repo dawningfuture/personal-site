@@ -1,10 +1,9 @@
 @use "text";
-@use "material";
 @use "variables";
 
 .ps-sidenav-version {
-  @include material.headline;
-  @include text.text-primary;
+  @include text.headline;
+  @include text.primary;
   text-align: center;
   padding: variables.$ps-padding;
 }

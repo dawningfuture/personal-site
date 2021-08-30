@@ -1,13 +1,15 @@
-<div class="ps-connect-content">
-  <ps-page-content-container>
+<div class="ps-connect-content" fxLayout="column">
+  <ps-content-container fxFlex>
     <div fxLayout="column" fxLayoutGap>
-      <div ngClass.gt-xs="headline-gt-xs" ngClass.xs="headline-xs" fxFlex>
-        So let's create some joy...
-      </div>
+      <ps-content-panel fxFlex color="none">
+        <div ngClass.gt-xs="headline-gt-xs" ngClass.xs="headline-xs">
+          So let's create some joy...
+        </div>
+      </ps-content-panel>
 
-      <ps-page-panel fxFlex>
+      <ps-content-panel fxFlex>
         <ps-connect-form></ps-connect-form>
-      </ps-page-panel>
+      </ps-content-panel>
     </div>
-  </ps-page-content-container>
+  </ps-content-container>
 </div>

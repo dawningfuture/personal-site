@@ -1,6 +1,6 @@
 @use "variables";
 
-@mixin hero-image {
+@mixin feature {
   object-fit: cover;
   object-position: bottom center;
   filter: drop-shadow(#{variables.$ps-shadow});

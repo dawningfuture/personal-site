@@ -1,22 +1,19 @@
-@use "variables";
-@use "material";
+@use "text";
 
 .ps-connect-form {
-  padding: variables.$ps-padding;
-
   .headline {
-    @include material.headline;
+    @include text.headline;
   }
 
   .submitted {
     text-align: center;
 
     &-headline {
-      @include material.display-2;
+      @include text.headline;
     }
 
     &-body {
-      @include material.body-2;
+      @include text.body;
     }
   }
 }

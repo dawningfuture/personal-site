@@ -1,0 +1,22 @@
+@use "variables";
+@use "material";
+
+:host(.padded) {
+  padding: variables.$ps-padding;
+}
+
+:host(.raised) {
+  filter: drop-shadow(#{variables.$ps-shadow});
+}
+
+:host[color="default"] {
+  background-color: material.$ps-background-color;
+}
+
+:host[color="primary"] {
+  background-color: material.$ps-primary-default-color;
+}
+
+:host[color="accent"] {
+  background-color: material.$ps-accent-default-color;
+}

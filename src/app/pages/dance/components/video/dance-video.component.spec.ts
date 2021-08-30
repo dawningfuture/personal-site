@@ -1,21 +1,21 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { appImports } from 'src/app/app.module';
+import { DanceVideoComponent } from 'src/app/pages/dance/components/video/dance-video.component';
 import { DancePageModule } from 'src/app/pages/dance/dance-page.module';
-import { DanceHeroComponent } from 'src/app/pages/dance/hero/dance-hero.component';
 
-describe('DanceHeroComponent', () => {
-  let component: DanceHeroComponent;
-  let fixture: ComponentFixture<DanceHeroComponent>;
+describe('DanceVideoComponent', () => {
+  let component: DanceVideoComponent;
+  let fixture: ComponentFixture<DanceVideoComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [...appImports, DancePageModule],
-      declarations: [DanceHeroComponent],
+      declarations: [DanceVideoComponent],
     }).compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(DanceHeroComponent);
+    fixture = TestBed.createComponent(DanceVideoComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
