@@ -2,7 +2,6 @@ import {
   AfterViewInit,
   Component,
   OnDestroy,
-  OnInit,
   ViewChild,
   ViewEncapsulation,
 } from '@angular/core';
@@ -19,14 +18,12 @@ import * as SidenavActions from 'src/app/sidenav/store/actions/sidenav.actions';
   styleUrls: ['./sidenav.component.scss'],
   encapsulation: ViewEncapsulation.None,
 })
-export class SidenavComponent implements OnInit, AfterViewInit, OnDestroy {
+export class SidenavComponent implements AfterViewInit, OnDestroy {
   @ViewChild('sidenav') sidenav!: MatSidenav;
 
   private destroyed$ = new Subject<void>();
 
   constructor(private actions$: ActionsSubject, private store: Store) {}
-
-  ngOnInit(): void {}
 
   ngAfterViewInit(): void {
     this.actions$

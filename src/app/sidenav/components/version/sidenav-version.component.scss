@@ -5,5 +5,5 @@
   @include text.headline;
   @include text.primary;
   text-align: center;
-  padding: variables.$ps-padding;
+  padding: variables.$ps-spacing;
 }

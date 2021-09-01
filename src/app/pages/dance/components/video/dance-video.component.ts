@@ -3,7 +3,6 @@ import {
   Component,
   ElementRef,
   OnDestroy,
-  OnInit,
   ViewChild,
 } from '@angular/core';
 import { HeroVideoService } from 'src/app/hero/hero-video.service';
@@ -13,12 +12,10 @@ import { HeroVideoService } from 'src/app/hero/hero-video.service';
   templateUrl: './dance-video.component.html',
   styleUrls: ['./dance-video.component.scss'],
 })
-export class DanceVideoComponent implements OnInit, AfterViewInit, OnDestroy {
+export class DanceVideoComponent implements AfterViewInit, OnDestroy {
   @ViewChild('psDanceVideo') danceVideo!: ElementRef<HTMLVideoElement>;
 
   constructor(private heroVideo: HeroVideoService) {}
-
-  ngOnInit(): void {}
 
   ngAfterViewInit(): void {
     this.heroVideo.loadVideo(this.danceVideo.nativeElement);

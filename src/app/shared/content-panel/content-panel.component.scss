@@ -2,7 +2,7 @@
 @use "material";
 
 :host(.padded) {
-  padding: variables.$ps-padding;
+  padding: variables.$ps-spacing;
 }
 
 :host(.raised) {

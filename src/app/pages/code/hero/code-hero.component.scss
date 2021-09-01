@@ -1,9 +1,11 @@
 @use "text";
 @use "images";
 @use "position";
+@use "variables";
 
 .ps-code-hero {
   position: relative;
+  box-shadow: variables.$ps-shadow;
 
   .image {
     @include images.feature;
@@ -11,7 +13,8 @@
 
   .headline {
     @include position.absolute-fill;
-    text-align: center;
+    @include text.shadow;
+    @include text.center;
 
     &-top {
       &-gt-xs {

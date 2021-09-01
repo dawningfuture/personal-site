@@ -4,7 +4,6 @@
 
 @mixin display-4 {
   @include mat.typography-level(material.$ps-typography, "display-4");
-  text-shadow: variables.$ps-shadow;
 }
 
 @mixin display-4-contrast {
@@ -14,7 +13,6 @@
 
 @mixin display-3 {
   @include mat.typography-level(material.$ps-typography, "display-3");
-  text-shadow: variables.$ps-shadow;
 }
 
 @mixin display-3-contrast {
@@ -24,7 +22,6 @@
 
 @mixin display-2 {
   @include mat.typography-level(material.$ps-typography, "display-2");
-  text-shadow: variables.$ps-shadow;
 }
 
 @mixin display-2-contrast {
@@ -34,7 +31,6 @@
 
 @mixin display-1 {
   @include mat.typography-level(material.$ps-typography, "display-1");
-  text-shadow: variables.$ps-shadow;
 }
 
 @mixin display-1-contrast {
@@ -79,4 +75,12 @@
 
 @mixin contrast {
   color: white;
+}
+
+@mixin shadow {
+  text-shadow: variables.$ps-shadow;
+}
+
+@mixin center {
+  text-align: center;
 }

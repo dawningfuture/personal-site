@@ -19,7 +19,7 @@ export class PsLayoutGapStyleBuilder extends LayoutGapStyleBuilder {
     styles: StyleDefinition,
     parent: LayoutGapParent
   ): void {
-    // NOTE: This value should be the same as the `$ps-padding` style variable
+    // NOTE: This value should be the same as the `$ps-spacing` style variable
     const defaultLayoutGap = '20px';
 
     super.sideEffect(gapValue || defaultLayoutGap, styles, parent);

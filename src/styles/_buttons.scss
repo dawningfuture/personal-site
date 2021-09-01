@@ -3,6 +3,7 @@
 
 @mixin call-to-action {
   @include text.headline;
-  padding: variables.$ps-padding;
+  padding: variables.$ps-spacing;
   border-radius: 10px;
+  box-shadow: variables.$ps-shadow;
 }

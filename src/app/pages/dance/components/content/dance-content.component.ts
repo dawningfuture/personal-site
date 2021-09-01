@@ -1,14 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'ps-dance-content',
   templateUrl: './dance-content.component.html',
   styleUrls: ['./dance-content.component.scss'],
 })
-export class DanceContentComponent implements OnInit {
+export class DanceContentComponent {
   constructor() {}
-
-  ngOnInit(): void {}
 
   onSocialContentPanelClick(): void {
     window.open('https://www.instagram.com/immattthompson/', '_blank');
