@@ -1,4 +1,4 @@
-<div class="ps-home-hero" fxFill cdkScrollable>
+<div class="ps-home-hero" fxFill>
   <img fxFill class="image" [src]="imageUrl$ | async" />
 
   <div class="headline" fxLayout="column" fxLayoutAlign="center center">
@@ -10,7 +10,7 @@
     >
       Hello, I'm Matthew.
     </div>
-    <div fxFlex>
+    <div fxFlex="0 1 auto" matRipple class="cta-button-container">
       <ps-home-cta-button></ps-home-cta-button>
     </div>
     <div fxFlex></div>

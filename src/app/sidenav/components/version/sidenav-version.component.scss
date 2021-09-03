@@ -4,6 +4,6 @@
 .ps-sidenav-version {
   @include text.headline;
   @include text.primary;
-  text-align: center;
+  @include text.center;
   padding: variables.$ps-spacing;
 }

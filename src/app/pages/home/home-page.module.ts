@@ -1,4 +1,3 @@
-import { ScrollingModule } from '@angular/cdk/scrolling';
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FlexLayoutModule } from '@angular/flex-layout';
@@ -21,7 +20,6 @@ import { HomePageStoreModule } from 'src/app/pages/home/store/home-page-store.mo
     MatButtonModule,
     MatRippleModule,
     HeroModule,
-    ScrollingModule,
   ],
 })
 export class HomePageModule {}

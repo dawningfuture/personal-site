@@ -24,4 +24,9 @@
       @include text.display-3-contrast;
     }
   }
+
+  .cta-button-container {
+    border-radius: 10px;
+    padding: variables.$ps-spacing;
+  }
 }
