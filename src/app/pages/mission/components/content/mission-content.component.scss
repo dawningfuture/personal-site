@@ -1,0 +1,14 @@
+@use "text";
+
+.headline {
+  @include text.display-2;
+  @include text.center;
+}
+
+.body {
+  @include text.body;
+}
+
+header {
+  @include text.headline;
+}

@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { appImports } from 'src/app/app.module';
-import { MissionHeroComponent } from 'src/app/pages/mission/hero/mission-hero.component';
+import { MissionHeroComponent } from 'src/app/pages/mission/components/hero/mission-hero.component';
 import { MissionPageModule } from 'src/app/pages/mission/mission-page.module';
 
 describe('MissionHeroComponent', () => {
