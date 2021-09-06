@@ -1,8 +1,10 @@
 @use "material";
 @use "text";
+@use "variables";
 
 .ps-connect-content {
   background-color: material.$ps-primary-default-color;
+  padding: variables.$ps-spacing 0;
 
   .headline {
     &-gt-xs {
