@@ -20,6 +20,4 @@ export class InitializationIndicatorComponent {
   showHeadline$ = of(false).pipe(
     mergeMap(() => timer(2000).pipe(map(() => true)))
   );
-
-  constructor() {}
 }

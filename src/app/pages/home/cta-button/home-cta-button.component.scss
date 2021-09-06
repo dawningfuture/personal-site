@@ -1,7 +1,6 @@
 @use "buttons";
+@use "variables";
 
 .ps-home-cta-button {
-  .cta-button {
-    @include buttons.call-to-action;
-  }
+  @include buttons.call-to-action;
 }

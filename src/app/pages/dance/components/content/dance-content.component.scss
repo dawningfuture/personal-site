@@ -5,20 +5,15 @@
 
 .ps-dance-content {
   background-color: material.$ps-primary-default-color;
+  padding: variables.$ps-spacing 0;
   text-align: center;
 
   .headline {
-    @include text.display-2-contrast;
+    @include text.display-2;
   }
 
-  .panel {
-    &-headline,
-    &-caption {
-      @include text.headline;
-    }
-
-    &-body {
-      @include text.headline-contrast;
-    }
+  .body,
+  .caption {
+    @include text.headline;
   }
 }

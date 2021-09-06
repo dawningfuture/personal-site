@@ -4,8 +4,6 @@ import { Injectable } from '@angular/core';
 export class NativeVideoService {
   protected videoEl?: HTMLVideoElement;
 
-  constructor() {}
-
   setVideo(el: HTMLVideoElement): void {
     this.videoEl = el;
   }

@@ -1,5 +1,5 @@
 @use "variables";
 
-:host(.padded) {
-  padding: variables.$ps-padding;
+.ps-content-container {
+  margin: 0 variables.$ps-spacing;
 }

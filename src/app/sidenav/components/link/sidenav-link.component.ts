@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Store } from '@ngrx/store';
 import * as SidenavActions from 'src/app/sidenav/store/actions/sidenav.actions';
 
@@ -7,13 +7,11 @@ import * as SidenavActions from 'src/app/sidenav/store/actions/sidenav.actions';
   templateUrl: './sidenav-link.component.html',
   styleUrls: ['./sidenav-link.component.scss'],
 })
-export class SidenavLinkComponent implements OnInit {
+export class SidenavLinkComponent {
   @Input() label = '';
   @Input() path = '';
 
   constructor(private store: Store) {}
-
-  ngOnInit(): void {}
 
   onClick(): void {
     this.store.dispatch(

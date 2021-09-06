@@ -1,15 +1,19 @@
 @use "text";
 @use "material";
+@use "position";
 
 .ps-initialization-indicator {
   background-color: material.$ps-primary-default-color;
-  text-align: center;
 
-  .headline-gt-xs {
-    @include text.display-4-contrast;
-  }
+  .headline {
+    &-gt-xs {
+      @include text.display-4-contrast;
+      @include text.shadow;
+    }
 
-  .headline-xs {
-    @include text.display-3-contrast;
+    &-xs {
+      @include text.display-3-contrast;
+      @include text.shadow;
+    }
   }
 }

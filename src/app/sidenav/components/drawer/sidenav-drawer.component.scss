@@ -2,5 +2,5 @@
 @use "~@angular/material/button/button-base";
 
 .ps-sidenav-drawer {
-  padding-top: calc(2 * #{variables.$ps-padding} + #{button-base.$fab-size});
+  padding-top: calc(2 * #{variables.$ps-spacing} + #{button-base.$fab-size});
 }

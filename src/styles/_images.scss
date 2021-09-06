@@ -3,5 +3,8 @@
 @mixin feature {
   object-fit: cover;
   object-position: bottom center;
+}
+
+@mixin shadow {
   filter: drop-shadow(#{variables.$ps-shadow});
 }
