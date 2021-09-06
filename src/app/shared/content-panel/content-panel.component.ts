@@ -13,6 +13,4 @@ export class ContentPanelComponent {
     | 'accent'
     | 'default'
     | 'none' = 'default';
-
-  constructor() {}
 }

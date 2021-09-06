@@ -15,8 +15,6 @@ export enum PlatformTypes {
 export class BrowserDetectorService {
   private parser = Bowser.getParser(window.navigator.userAgent);
 
-  constructor() {}
-
   isBrowserName(browserName: BrowserNames): boolean {
     return this.parser.getBrowserName() === browserName;
   }

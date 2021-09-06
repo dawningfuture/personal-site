@@ -47,8 +47,7 @@ export class AppComponent implements OnDestroy {
       ofType(routerNavigatedAction),
       map(() => true),
       take(1),
-      startWith(false),
-      takeUntil(this.destroyed$)
+      startWith(false)
     );
 
     this.navigating$ = merge(

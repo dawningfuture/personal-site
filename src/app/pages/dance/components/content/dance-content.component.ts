@@ -6,8 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./dance-content.component.scss'],
 })
 export class DanceContentComponent {
-  constructor() {}
-
   onSocialContentPanelClick(): void {
     window.open('https://www.instagram.com/immattthompson/', '_blank');
   }

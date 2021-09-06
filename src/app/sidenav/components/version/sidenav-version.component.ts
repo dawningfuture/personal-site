@@ -8,6 +8,4 @@ import { environment } from 'src/environments/environment';
 })
 export class SidenavVersionComponent {
   readonly version = environment.version;
-
-  constructor() {}
 }

@@ -12,6 +12,4 @@ export class SidenavDrawerComponent {
       appRoute.data?.sidenavLink ? appRoute.data.sidenavLink : []
     )
     .sort((a, b) => (a.order > b.order ? 1 : -1));
-
-  constructor() {}
 }
