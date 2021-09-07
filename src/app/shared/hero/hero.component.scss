@@ -1,0 +1,6 @@
+@use "variables";
+
+.ps-hero {
+  position: relative;
+  box-shadow: variables.$ps-shadow;
+}

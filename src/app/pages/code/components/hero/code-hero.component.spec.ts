@@ -1,7 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { appImports } from 'src/app/app.module';
 import { CodePageModule } from 'src/app/pages/code/code-page.module';
-import { CodeHeroComponent } from 'src/app/pages/code/hero/code-hero.component';
+import { CodeHeroComponent } from 'src/app/pages/code/components/hero/code-hero.component';
 
 describe('CodeHeroComponent', () => {
   let component: CodeHeroComponent;

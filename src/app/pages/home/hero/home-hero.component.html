@@ -1,18 +1,16 @@
-<div class="ps-home-hero" fxFill>
+<ps-hero>
   <img fxFill class="image" [src]="imageUrl$ | async" />
 
-  <div class="headline" fxLayout="column" fxLayoutAlign="center center">
-    <div fxFlex></div>
+  <div class="display" fxLayout="column" fxLayoutAlign="center center" fxFill>
     <div
       fxFlex="0 1 auto"
-      ngClass.xs="headline-xs"
-      ngClass.gt-xs="headline-gt-xs"
+      ngClass.xs="display-xs"
+      ngClass.gt-xs="display-gt-xs"
     >
       Hello, I'm Matthew.
     </div>
     <div fxFlex="0 1 auto" matRipple class="cta-button-container">
       <ps-home-cta-button></ps-home-cta-button>
     </div>
-    <div fxFlex></div>
   </div>
-</div>
+</ps-hero>

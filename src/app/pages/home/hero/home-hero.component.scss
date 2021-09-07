@@ -3,30 +3,25 @@
 @use "position";
 @use "variables";
 
-.ps-home-hero {
-  position: relative;
-  box-shadow: variables.$ps-shadow;
+.image {
+  @include images.feature;
+}
 
-  .image {
-    @include images.feature;
+.display {
+  @include position.absolute-fill;
+  @include text.shadow;
+  @include text.center;
+
+  &-gt-xs {
+    @include text.display-4-contrast;
   }
 
-  .headline {
-    @include position.absolute-fill;
-    @include text.shadow;
-    @include text.center;
-
-    &-gt-xs {
-      @include text.display-4-contrast;
-    }
-
-    &-xs {
-      @include text.display-3-contrast;
-    }
+  &-xs {
+    @include text.display-3-contrast;
   }
+}
 
-  .cta-button-container {
-    border-radius: 10px;
-    padding: variables.$ps-spacing;
-  }
+.cta-button-container {
+  border-radius: 10px;
+  padding: variables.$ps-spacing;
 }

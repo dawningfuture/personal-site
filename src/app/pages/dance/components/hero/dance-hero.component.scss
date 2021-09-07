@@ -1,35 +1,28 @@
 @use "text";
-@use "images";
 @use "position";
-@use "variables";
 
-.ps-dance-hero {
-  position: relative;
-  box-shadow: variables.$ps-shadow;
+.display {
+  @include position.absolute-fill;
+  @include text.shadow;
+  @include text.center;
 
-  .headline {
-    @include position.absolute-fill;
-    @include text.shadow;
-    @include text.center;
-
-    &-top {
-      &-gt-xs {
-        @include text.display-2-contrast;
-      }
-
-      &-xs {
-        @include text.display-1-contrast;
-      }
+  &-top {
+    &-gt-xs {
+      @include text.display-2-contrast;
     }
 
-    &-bottom {
-      &-gt-xs {
-        @include text.display-4-contrast;
-      }
+    &-xs {
+      @include text.display-1-contrast;
+    }
+  }
 
-      &-xs {
-        @include text.display-3-contrast;
-      }
+  &-bottom {
+    &-gt-xs {
+      @include text.display-4-contrast;
+    }
+
+    &-xs {
+      @include text.display-3-contrast;
     }
   }
 }
