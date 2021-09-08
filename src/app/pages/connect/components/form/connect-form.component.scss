@@ -1,6 +1,8 @@
 @use "text";
 
 .ps-connect-form {
+  overflow: hidden;
+
   .headline {
     @include text.headline;
   }

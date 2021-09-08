@@ -1,13 +1,13 @@
 @use "text";
 
-.headline {
+.display {
   &-gt-xs {
-    @include text.display-3;
+    @include text.display-2;
     @include text.center;
   }
 
   &-xs {
-    @include text.display-2;
+    @include text.display-1;
     @include text.center;
   }
 }

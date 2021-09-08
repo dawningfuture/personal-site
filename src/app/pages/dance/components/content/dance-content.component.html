@@ -48,7 +48,7 @@
       </ps-content-panel>
 
       <ps-content-panel
-        class="link"
+        [link]="true"
         fxFlex
         fxFlex.gt-xs="33%"
         fxLayout="column"
@@ -61,15 +61,9 @@
           src="https://media.matthewthompson.us/personal-site/pages/dance/dance-panel-2.png"
         />
 
-        <div
-          class="caption"
-          fxLayout="row"
-          fxLayoutAlign="center center"
-          fxLayoutGap
-          fxFlex
-        >
-          <div fxFlex="0 1 auto">@immattthompson</div>
-          <mat-icon fxFlex="0 1 auto">open_in_new</mat-icon>
+        <div class="caption" fxFlex>
+          @immattthompson
+          <mat-icon>open_in_new</mat-icon>
         </div>
       </ps-content-panel>
     </div>

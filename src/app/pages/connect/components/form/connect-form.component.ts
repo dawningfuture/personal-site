@@ -1,10 +1,4 @@
-import {
-  animate,
-  state,
-  style,
-  transition,
-  trigger,
-} from '@angular/animations';
+import { animate, style, transition, trigger } from '@angular/animations';
 import {
   AfterViewInit,
   Component,
@@ -59,7 +53,6 @@ export interface ConnectFormValue {
   templateUrl: './connect-form.component.html',
   styleUrls: ['./connect-form.component.scss'],
   animations: [
-    trigger('container', [state('*', style({ overflow: 'hidden' }))]),
     trigger('slideFadeIn', [
       transition(':enter', [
         style({

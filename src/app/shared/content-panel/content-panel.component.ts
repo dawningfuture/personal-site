@@ -8,6 +8,7 @@ import { Component, HostBinding, Input } from '@angular/core';
 export class ContentPanelComponent {
   @Input() @HostBinding('class.raised') raised = true;
   @Input() @HostBinding('class.padded') padded = true;
+  @Input() @HostBinding('class.link') link = false;
   @Input() @HostBinding('attr.color') color:
     | 'primary'
     | 'accent'

@@ -1,6 +1,7 @@
 @use '~@angular/material' as mat;
 @use 'material';
 @use "variables";
+@use "utilities";
 
 @mixin display-4 {
   @include mat.typography-level(material.$ps-typography, "display-4");
@@ -56,6 +57,15 @@
   @include contrast;
 }
 
+@mixin subheading-2 {
+  @include mat.typography-level(material.$ps-typography, "subheading-2");
+}
+
+@mixin subheading-2-contrast {
+  @include subheading-2;
+  @include contrast;
+}
+
 @mixin body {
   @include mat.typography-level(material.$ps-typography, "body-2");
 }
@@ -83,4 +93,9 @@
 
 @mixin center {
   text-align: center;
+}
+
+@mixin link {
+  @include primary;
+  @include utilities.link;
 }
