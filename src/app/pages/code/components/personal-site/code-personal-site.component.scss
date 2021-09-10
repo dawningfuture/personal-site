@@ -1,0 +1,14 @@
+@use "text";
+
+.headline {
+  @include text.level("headline");
+  @include text.center;
+}
+
+.body {
+  @include text.level("body-2");
+
+  &-link {
+    @include text.link;
+  }
+}

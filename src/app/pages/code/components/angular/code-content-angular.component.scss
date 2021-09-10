@@ -1,0 +1,22 @@
+@use "text";
+
+.title {
+  @include text.level("title");
+  @include text.center;
+}
+
+.body {
+  @include text.level("body-2");
+
+  &-link {
+    @include text.link;
+  }
+}
+
+.panel {
+  &-link {
+    @include text.link;
+    @include text.level("subheading-2");
+    @include text.contrast;
+  }
+}

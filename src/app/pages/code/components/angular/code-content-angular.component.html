@@ -1,0 +1,223 @@
+<ps-content-panel fxLayout="column" fxLayoutGap>
+  <div fxFlex class="title">Angular Frontend</div>
+
+  <mat-divider fxFlex></mat-divider>
+
+  <div fxFlex fxLayout="column" fxLayout.gt-xs="row-reverse" fxLayoutGap>
+    <img
+      fxFlex
+      fxFlex.gt-xs="20%"
+      fxFill
+      class="body-image"
+      src="https://media.matthewthompson.us/personal-site/pages/code/code-angular-logo.png"
+    />
+
+    <div fxFlex fxLayout="column" fxLayoutGap>
+      <div fxFlex="0 1 auto" class="body">
+        I built this site using
+        <a
+          class="body-link"
+          href="https://github.com/dawningfuture/personal-site"
+          target="_blank"
+          >Angular <mat-icon>open_in_new</mat-icon></a
+        >, which I have been using to build projects since 2017. Everyone has
+        their favorite tools; I chose Angular for this project because of its
+        modularity (see the libraries I chose to use), its features (such as the
+        lazy-loading capability of the Router library), and the familarity I
+        have gained with it after 4+ years of using it.
+      </div>
+
+      <div fxFlex="0 1 auto" class="body">
+        I did my best to show the Angular best practices that I have learned
+        over the years on this site. The code is
+        <a
+          class="body-link"
+          href="https://github.com/dawningfuture/personal-site"
+          target="_blank"
+          >publicly available on Github <mat-icon>open_in_new</mat-icon></a
+        >, and I did my best as I was developing the site to document my
+        thoughts on the best practices and methodoligies I was using in code
+        comments.
+      </div>
+
+      <div fxFlex="0 1 auto" class="body">
+        I used several libraries from both the Angular team and the community
+        that let me achieve many of the site's features, such as:
+      </div>
+    </div>
+  </div>
+
+  <div fxFlex fxLayout="column" fxLayout.gt-xs="row-reverse" fxLayoutGap>
+    <img
+      fxFlex
+      fxFlex.gt-xs="20%"
+      fxFill
+      class="body-image"
+      src="https://media.matthewthompson.us/personal-site/pages/code/code-ngrx-logo.png"
+    />
+
+    <div fxFlex fxLayout="column" fxLayoutGap>
+      <ps-content-panel
+        fxFlex="0 1 auto"
+        fxLayout="row"
+        fxLayoutAlign="center"
+        color="primary"
+      >
+        <a class="panel-link" href="https://ngrx.io/" target="_blank"
+          >@ngrx/[store | effects | router-store | store-devtools]
+          <mat-icon>open_in_new</mat-icon></a
+        >
+      </ps-content-panel>
+
+      <div fxFlex="0 1 auto" class="body">
+        When I discovered NgRx, I fell in love with the library's reactive store
+        approach to state management. One of the most impactful lessons I have
+        learned from working on frontend projects is the need for a consistent,
+        cohesive, and modular way to communciate between services and
+        components, and maintain a centralized state for the application. You
+        can see it in action using the
+        <a
+          class="body-link"
+          href="https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd?hl=en"
+          target="_blank"
+          >Redux DevTools Chrome extenstion <mat-icon>open_in_new</mat-icon></a
+        >.
+      </div>
+    </div>
+  </div>
+
+  <div fxFlex fxLayout="column" fxLayout.gt-xs="row-reverse" fxLayoutGap>
+    <img
+      fxFlex
+      fxFlex.gt-xs="20%"
+      fxFill
+      class="body-image"
+      src="https://media.matthewthompson.us/personal-site/pages/code/code-angular-material-logo.png"
+    />
+
+    <div fxFlex fxLayout="column" fxLayoutGap>
+      <ps-content-panel
+        fxFlex="0 1 auto"
+        fxLayout="row"
+        fxLayoutAlign="center"
+        color="primary"
+      >
+        <a
+          class="panel-link"
+          href="https://material.angular.io/"
+          target="_blank"
+          >@angular/material <mat-icon>open_in_new</mat-icon></a
+        >
+      </ps-content-panel>
+
+      <div fxFlex="0 1 auto" class="body">
+        This library gives me the basic styles of this site, which I override to
+        incorporate my own design. When I'm developing, I try not to reinvent
+        the wheel. Angular Material provides a styling system that sets the
+        baseline for the look of the site's components, but gives me the freedom
+        to make the site my own.
+      </div>
+    </div>
+  </div>
+
+  <div fxFlex fxLayout="column" fxLayout.gt-xs="row-reverse" fxLayoutGap>
+    <img
+      fxFlex
+      fxFlex.gt-xs="20%"
+      fxFill
+      class="body-image"
+      src="https://media.matthewthompson.us/personal-site/pages/code/code-angular-router-logo.png"
+    />
+
+    <div fxFlex fxLayout="column" fxLayoutGap>
+      <ps-content-panel
+        fxFlex="0 1 auto"
+        fxLayout="row"
+        fxLayoutAlign="center"
+        color="primary"
+      >
+        <a
+          class="panel-link"
+          href="https://material.angular.io/"
+          target="_blank"
+          >@angular/router <mat-icon>open_in_new</mat-icon></a
+        >
+      </ps-content-panel>
+
+      <div fxFlex="0 1 auto" class="body">
+        I really enjoy using Flexbox CSS to design my layouts; this library
+        allows me to integrate a responsive Flexbox API into Angular to make my
+        site optimized for whatever screen it's being viewed on. I especially
+        enjoy its breakpoint system, which makes mobile optimization much
+        easier.
+      </div>
+    </div>
+  </div>
+
+  <div fxFlex fxLayout="column" fxLayout.gt-xs="row-reverse" fxLayoutGap>
+    <img
+      fxFlex
+      fxFlex.gt-xs="20%"
+      fxFill
+      class="body-image"
+      src="https://media.matthewthompson.us/personal-site/pages/code/code-angular-animations-logo.png"
+    />
+
+    <div fxFlex fxLayout="column" fxLayoutGap>
+      <ps-content-panel
+        fxFlex="0 1 auto"
+        fxLayout="row"
+        fxLayoutAlign="center"
+        color="primary"
+      >
+        <a
+          class="panel-link"
+          href="https://material.angular.io/"
+          target="_blank"
+          >@angular/animations <mat-icon>open_in_new</mat-icon></a
+        >
+      </ps-content-panel>
+
+      <div fxFlex="0 1 auto" class="body">
+        I want the projects I work on to bring joy to people, and I find that is
+        helped greatly when I can create an appealing experience. I use this
+        library to more easily add the animations that make the site more
+        enjoyable to interact with.
+      </div>
+    </div>
+  </div>
+
+  <div fxFlex fxLayout="column" fxLayout.gt-xs="row-reverse" fxLayoutGap>
+    <img
+      fxFlex
+      fxFlex.gt-xs="20%"
+      fxFill
+      class="body-image"
+      src="https://media.matthewthompson.us/personal-site/pages/code/code-angular-material-logo.png"
+    />
+
+    <div fxFlex fxLayout="column" fxLayoutGap>
+      <ps-content-panel
+        fxFlex="0 1 auto"
+        fxLayout="row"
+        fxLayoutAlign="center"
+        color="primary"
+      >
+        <a
+          class="panel-link"
+          href="https://material.angular.io/"
+          target="_blank"
+          >@angular/flex-layout <mat-icon>open_in_new</mat-icon></a
+        >
+      </ps-content-panel>
+
+      <div fxFlex="0 1 auto" class="body">
+        I really enjoy using Flexbox CSS to design my layouts; this library
+        allows me to integrate a responsive Flexbox API into Angular to make my
+        site optimized for whatever screen it's being viewed on. I especially
+        enjoy its breakpoint system, which makes mobile optimization much
+        easier.
+      </div>
+    </div>
+  </div>
+</ps-content-panel>

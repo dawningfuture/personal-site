@@ -1,39 +1,21 @@
 @use "text";
-@use "images";
 
 .display {
   &-gt-xs {
-    @include text.display-2;
+    @include text.level("display-2");
     @include text.center;
   }
 
   &-xs {
-    @include text.display-1;
+    @include text.level("display-1");
     @include text.center;
   }
 }
 
-.headline {
-  @include text.headline;
-  @include text.center;
-}
-
-.title {
-  @include text.title;
-  @include text.center;
-}
-
 .body {
-  @include text.body;
+  @include text.level("body-2");
 
   &-link {
     @include text.link;
-  }
-}
-
-.panel {
-  &-link {
-    @include text.link;
-    @include text.subheading-2-contrast;
   }
 }
