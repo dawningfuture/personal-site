@@ -11,16 +11,18 @@
   @include position.absolute-fill;
   @include text.shadow;
   @include text.center;
+  @include text.contrast;
 
   &-gt-xs {
-    @include text.display-4-contrast;
+    @include text.level("display-4");
   }
 
   &-xs {
-    @include text.display-3-contrast;
+    @include text.level("display-3");
   }
 }
 
+// NOTE: This gives the CTA button room to ripple
 .cta-button-container {
   border-radius: 10px;
   padding: variables.$ps-spacing;

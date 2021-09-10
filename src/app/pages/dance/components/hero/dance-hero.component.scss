@@ -5,24 +5,25 @@
   @include position.absolute-fill;
   @include text.shadow;
   @include text.center;
+  @include text.contrast;
 
   &-top {
     &-gt-xs {
-      @include text.display-2-contrast;
+      @include text.level("display-2");
     }
 
     &-xs {
-      @include text.display-1-contrast;
+      @include text.level("display-1");
     }
   }
 
   &-bottom {
     &-gt-xs {
-      @include text.display-4-contrast;
+      @include text.level("display-4");
     }
 
     &-xs {
-      @include text.display-3-contrast;
+      @include text.level("display-3");
     }
   }
 }

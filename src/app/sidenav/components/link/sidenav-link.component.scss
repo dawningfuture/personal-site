@@ -2,7 +2,7 @@
 @use "utilities";
 
 .ps-sidenav-link {
-  @include text.display-2;
+  @include text.level("display-2");
   @include text.center;
   @include utilities.link;
 }

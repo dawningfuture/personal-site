@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
-import { routerRequestAction } from '@ngrx/router-store';
+import { routerNavigatedAction } from '@ngrx/router-store';
 import { timer } from 'rxjs';
 import { mergeMap, switchMap, takeUntil } from 'rxjs/operators';
 import * as HomePageActions from 'src/app/pages/home/store/actions/home-page.actions';
@@ -23,7 +23,7 @@ export class HomePageEffects {
           takeUntil(
             this.actions$.pipe(
               ofType(
-                routerRequestAction,
+                routerNavigatedAction,
                 SidenavActions.openedDrawer,
                 SidenavActions.toggledDrawer
               )

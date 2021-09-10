@@ -2,12 +2,12 @@
 
 .display {
   &-gt-xs {
-    @include text.display-2;
+    @include text.level("display-2");
     @include text.center;
   }
 
   &-xs {
-    @include text.display-1;
+    @include text.level("display-1");
     @include text.center;
   }
 }

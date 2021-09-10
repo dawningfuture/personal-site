@@ -6,12 +6,18 @@ import { MatIconModule } from '@angular/material/icon';
 import { HeroModule } from 'src/app/hero/hero.module';
 import { CodePageRoutingModule } from 'src/app/pages/code/code-page-routing.module';
 import { CodePageComponent } from 'src/app/pages/code/code-page.component';
+import { CodeContentAngularComponent } from 'src/app/pages/code/components/content/angular/code-content-angular.component';
 import { CodeContentComponent } from 'src/app/pages/code/components/content/code-content.component';
 import { CodeHeroComponent } from 'src/app/pages/code/components/hero/code-hero.component';
 import { SharedModule } from 'src/app/shared/shared.module';
 
 @NgModule({
-  declarations: [CodePageComponent, CodeHeroComponent, CodeContentComponent],
+  declarations: [
+    CodePageComponent,
+    CodeHeroComponent,
+    CodeContentComponent,
+    CodeContentAngularComponent,
+  ],
   imports: [
     CommonModule,
     CodePageRoutingModule,

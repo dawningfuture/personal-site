@@ -2,7 +2,7 @@
 @use "variables";
 
 .ps-sidenav-version {
-  @include text.headline;
+  @include text.level("headline");
   @include text.primary;
   @include text.center;
   padding: variables.$ps-spacing;

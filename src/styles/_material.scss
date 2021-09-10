@@ -29,8 +29,3 @@ $ps-background: map.get($ps-theme, background);
 $ps-primary-default-color: mat.get-color-from-palette($ps-primary, "default");
 $ps-accent-default-color: mat.get-color-from-palette($ps-accent, "default");
 $ps-background-color: mat.get-color-from-palette($ps-background, background);
-
-mat-icon {
-  font-size: inherit;
-  line-height: inherit;
-}

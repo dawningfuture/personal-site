@@ -1,12 +1,12 @@
 @use "text";
 
 .headline {
-  @include text.display-2;
+  @include text.level("display-2");
   @include text.center;
 }
 
 .body,
 .caption {
-  @include text.headline;
+  @include text.level("headline");
   @include text.center;
 }
