@@ -109,6 +109,4 @@ I resisted them for years, but I finally learned: there's a reason all those bes
 
 At this point, I (and hopefully you) know what I want to do, and how I plan to do it. So let's do it.
 
-I'm going to treat the rest of this README like a journal. As I develop the project, I'm going to add entries for what I'm doing, and my process behind doing it, in the hope that reflecting and it down helps me reinforce good habits, correct bad ones, and discover chances to improve I didn't even think about before.
-
 If you've made it this far, thanks for letting me tell the story of how I'm going to tell my story. Here's to the adventure ahead.

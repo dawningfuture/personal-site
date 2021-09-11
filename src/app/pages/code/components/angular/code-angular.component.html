@@ -15,10 +15,7 @@
     <div fxFlex fxLayout="column" fxLayoutGap>
       <div fxFlex="0 1 auto" class="body">
         I built this site using
-        <a
-          class="body-link"
-          href="https://github.com/dawningfuture/personal-site"
-          target="_blank"
+        <a class="body-link" href="https://material.angular.io/" target="_blank"
           >Angular <mat-icon>open_in_new</mat-icon></a
         >, which I have been using to build projects since 2017. Everyone has
         their favorite tools; I chose Angular for this project because of its
@@ -138,18 +135,17 @@
       >
         <a
           class="panel-link"
-          href="https://material.angular.io/"
+          href="https://angular.io/guide/router"
           target="_blank"
           >@angular/router <mat-icon>open_in_new</mat-icon></a
         >
       </ps-content-panel>
 
       <div fxFlex="0 1 auto" class="body">
-        I really enjoy using Flexbox CSS to design my layouts; this library
-        allows me to integrate a responsive Flexbox API into Angular to make my
-        site optimized for whatever screen it's being viewed on. I especially
-        enjoy its breakpoint system, which makes mobile optimization much
-        easier.
+        One feature I wanted the site to have was lazy-loaded pages. The Angular
+        Router library includes this out-of-the-box. It's an example of why I so
+        enjoy building projects with Angular: while initially there may be a lot
+        learn, eventually you learn how much there is to benefit from.
       </div>
     </div>
   </div>
@@ -193,10 +189,36 @@
       fxFlex.gt-xs="20%"
       fxFill
       class="body-image"
-      src="https://media.matthewthompson.us/personal-site/pages/code/code-angular-material-logo.png"
+      src="https://media.matthewthompson.us/personal-site/pages/code/code-angular-forms-logo.png"
     />
 
     <div fxFlex fxLayout="column" fxLayoutGap>
+      <ps-content-panel
+        fxFlex="0 1 auto"
+        fxLayout="row"
+        fxLayoutAlign="center"
+        color="primary"
+      >
+        <a
+          class="panel-link"
+          href="https://angular.io/guide/reactive-forms"
+          target="_blank"
+          >@angular/forms <mat-icon>open_in_new</mat-icon></a
+        >
+      </ps-content-panel>
+
+      <div fxFlex="0 1 auto" class="body">
+        I know some people despise building forms, but I've come to love it.
+        This library makes common, yet difficult, form tasks like validation and
+        error messaging easy. I use it to create the form on the
+        <a class="body-link" [routerLink]="['/connect']">Connect page</a>
+        ; feel free to play with it to see what I'm talking about!
+      </div>
+    </div>
+  </div>
+
+  <div fxFlex fxLayout="column" fxLayout.gt-xs="row" fxLayoutGap>
+    <div fxFlex fxFlex.gt-xs="80%" fxLayout="column" fxLayoutGap>
       <ps-content-panel
         fxFlex="0 1 auto"
         fxLayout="row"

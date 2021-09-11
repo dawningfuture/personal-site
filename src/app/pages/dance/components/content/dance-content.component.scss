@@ -5,8 +5,12 @@
   @include text.center;
 }
 
-.body,
-.caption {
+.body {
   @include text.level("headline");
+  @include text.center;
+}
+
+.caption {
+  @include text.level("subheading-2");
   @include text.center;
 }

@@ -1,0 +1,87 @@
+<ps-content-panel fxLayout="column" fxLayoutGap>
+  <div fxFlex class="title">AWS Infrastructure</div>
+
+  <mat-divider fxFlex></mat-divider>
+
+  <div fxFlex fxLayout="column" fxLayout.gt-xs="row-reverse" fxLayoutGap>
+    <img
+      fxFlex
+      fxFlex.gt-xs="20%"
+      fxFill
+      class="body-image"
+      src="https://media.matthewthompson.us/personal-site/pages/code/code-aws-logo.png"
+    />
+
+    <div fxFlex fxLayout="column" fxLayoutGap>
+      <div fxFlex="0 1 auto" class="body">
+        When I considered how I wanted to deploy my personal site, I decided I
+        wanted to bolster my
+        <a class="body-link" href="AWS" target="_blank"
+          >AWS <mat-icon>open_in_new</mat-icon></a
+        >
+        skills and learn some of the services I had seen, but hadn't had the
+        opportunity to use. I first used AWS back in college for my
+        entreprenurial pursuits, and had more learned about it from some of my
+        colleagues. When I built my personal site, I decided I wanted to learn
+        it for myself.
+      </div>
+
+      <div fxFlex="0 1 auto" class="body">
+        I want to make the design of my AWS infrastructure more transparent, but
+        for now, I'm going to describe how I used various AWS services below.
+        Together, they enable the website's delivery, from domain registration,
+        to edge caching, to hosting. They also allow me to create a simple API
+        for sending email from the
+        <a class="body-link" [routerLink]="['/connect']">Connect form</a>.
+      </div>
+    </div>
+  </div>
+
+  <dix fxFlex fxLayout="column" fxLayoutGap>
+    <div fxFlex class="title">Hosting</div>
+
+    <div fxFlex="0 1 auto" class="body">
+      Ordered chronologically from browser request to response, here's some of
+      the AWS services I used to host and deliver this site:
+    </div>
+  </dix>
+
+  <div fxFlex fxLayout="column" fxLayout.gt-xs="row-reverse" fxLayoutGap>
+    <img
+      fxFlex
+      fxFlex.gt-xs="20%"
+      fxFill
+      class="body-image"
+      src="https://media.matthewthompson.us/personal-site/pages/code/code-ngrx-logo.png"
+    />
+
+    <div fxFlex fxLayout="column" fxLayoutGap>
+      <ps-content-panel
+        fxFlex="0 1 auto"
+        fxLayout="row"
+        fxLayoutAlign="center"
+        color="primary"
+      >
+        <a class="panel-link" href="https://ngrx.io/" target="_blank"
+          >@ngrx/[store | effects | router-store | store-devtools]
+          <mat-icon>open_in_new</mat-icon></a
+        >
+      </ps-content-panel>
+
+      <div fxFlex="0 1 auto" class="body">
+        When I discovered NgRx, I fell in love with the library's reactive store
+        approach to state management. One of the most impactful lessons I have
+        learned from working on frontend projects is the need for a consistent,
+        cohesive, and modular way to communciate between services and
+        components, and maintain a centralized state for the application. You
+        can see it in action using the
+        <a
+          class="body-link"
+          href="https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd?hl=en"
+          target="_blank"
+          >Redux DevTools Chrome extenstion <mat-icon>open_in_new</mat-icon></a
+        >.
+      </div>
+    </div>
+  </div>
+</ps-content-panel>
