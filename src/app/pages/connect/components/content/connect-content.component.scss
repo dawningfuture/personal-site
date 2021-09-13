@@ -1,6 +1,6 @@
 @use "text";
 
-.display {
+.headline {
   &-gt-xs {
     @include text.level("display-2");
     @include text.center;
