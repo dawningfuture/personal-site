@@ -1,5 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { appImports } from 'src/app/app.module';
+import { CodePageModule } from 'src/app/pages/code/code-page.module';
 import { CodeAwsComponent } from './code-aws.component';
 
 describe('CodeAwsComponent', () => {
@@ -8,9 +9,9 @@ describe('CodeAwsComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CodeAwsComponent ]
-    })
-    .compileComponents();
+      imports: [...appImports, CodePageModule],
+      declarations: [CodeAwsComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {

@@ -1,4 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { appImports } from 'src/app/app.module';
+import { CodePageModule } from 'src/app/pages/code/code-page.module';
 import { CodePersonalSiteComponent } from './code-personal-site.component';
 
 describe('CodePersonalSiteComponent', () => {
@@ -7,6 +9,7 @@ describe('CodePersonalSiteComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
+      imports: [...appImports, CodePageModule],
       declarations: [CodePersonalSiteComponent],
     }).compileComponents();
   });
