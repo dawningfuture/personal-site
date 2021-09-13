@@ -4,11 +4,6 @@
 @use "variables";
 @use "utilities";
 
-// display-*
-//
-// Should be used once at the top of a page (e.g. in a hero)
-// Ensure text wraps as desired on mobile given the very large size
-
 @mixin level($typography-level) {
   @include mat.typography-level(material.$ps-typography, $typography-level);
 

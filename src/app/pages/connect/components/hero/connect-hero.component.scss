@@ -1,7 +1,6 @@
 @use "text";
 @use "images";
 @use "position";
-@use "variables";
 
 .image {
   @include images.feature;

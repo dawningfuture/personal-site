@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { appImports } from 'src/app/app.module';
-import { SharedModule } from 'src/app/shared/shared.module';
+import { MissionPageModule } from 'src/app/pages/mission/mission-page.module';
 import { MissionContentComponent } from './mission-content.component';
 
 describe('MissionContentComponent', () => {
@@ -9,7 +9,7 @@ describe('MissionContentComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [...appImports, SharedModule],
+      imports: [...appImports, MissionPageModule],
       declarations: [MissionContentComponent],
     }).compileComponents();
   });
