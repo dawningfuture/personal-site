@@ -4,7 +4,7 @@
 
 When I decided to rebuild my personal website, I saw it as an opportunity to really think about how I build a project. A new project is really exciting, as it gives me the chance to implement what I have learned since the last one, from the beginning. And there is a lot that I have learned.
 
-I'm using this project not only to implement those lessons, but to document them. My goal is to create a reference I can use to make starting the next new projects faster and better planned. And since this is Github, I'd be thrilled if others found value in it as well. Others, possibly, including you.
+I'm using this project not only to implement those lessons, but to document them. My goal is to create a reference I can use to make starting the next new projects faster and better planned. And since this is GitHub, I'd be thrilled if others found value in it as well. Others, possibly, including you.
 
 ## Roadmap
 
@@ -108,7 +108,5 @@ I resisted them for years, but I finally learned: there's a reason all those bes
 ## And now, let's code
 
 At this point, I (and hopefully you) know what I want to do, and how I plan to do it. So let's do it.
-
-I'm going to treat the rest of this README like a journal. As I develop the project, I'm going to add entries for what I'm doing, and my process behind doing it, in the hope that reflecting and it down helps me reinforce good habits, correct bad ones, and discover chances to improve I didn't even think about before.
 
 If you've made it this far, thanks for letting me tell the story of how I'm going to tell my story. Here's to the adventure ahead.

@@ -1,5 +1,6 @@
 @use "variables";
 @use "material";
+@use "utilities";
 
 :host(.padded) {
   padding: variables.$ps-spacing;
@@ -7,6 +8,10 @@
 
 :host(.raised) {
   filter: drop-shadow(#{variables.$ps-shadow});
+}
+
+:host(.link) {
+  @include utilities.link;
 }
 
 :host[color="default"] {

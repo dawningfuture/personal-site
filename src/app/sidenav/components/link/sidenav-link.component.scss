@@ -1,5 +1,8 @@
+@use "text";
+@use "utilities";
+
 .ps-sidenav-link {
-  text-align: center;
-  font-size: 40px;
-  cursor: pointer;
+  @include text.level("display-2");
+  @include text.center;
+  @include utilities.link;
 }

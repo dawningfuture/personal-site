@@ -1,68 +1,19 @@
 @use '~@angular/material' as mat;
+@use 'sass:map';
 @use 'material';
 @use "variables";
+@use "utilities";
 
-@mixin display-4 {
-  @include mat.typography-level(material.$ps-typography, "display-4");
-}
+@mixin level($typography-level) {
+  @include mat.typography-level(material.$ps-typography, $typography-level);
 
-@mixin display-4-contrast {
-  @include display-4;
-  @include contrast;
-}
-
-@mixin display-3 {
-  @include mat.typography-level(material.$ps-typography, "display-3");
-}
-
-@mixin display-3-contrast {
-  @include display-3;
-  @include contrast;
-}
-
-@mixin display-2 {
-  @include mat.typography-level(material.$ps-typography, "display-2");
-}
-
-@mixin display-2-contrast {
-  @include display-2;
-  @include contrast;
-}
-
-@mixin display-1 {
-  @include mat.typography-level(material.$ps-typography, "display-1");
-}
-
-@mixin display-1-contrast {
-  @include display-1;
-  @include contrast;
-}
-
-@mixin headline {
-  @include mat.typography-level(material.$ps-typography, "headline");
-}
-
-@mixin headline-contrast {
-  @include headline;
-  @include contrast;
-}
-
-@mixin title {
-  @include mat.typography-level(material.$ps-typography, "title");
-}
-
-@mixin title-contrast {
-  @include title;
-  @include contrast;
-}
-
-@mixin body {
-  @include mat.typography-level(material.$ps-typography, "body-2");
-}
-
-@mixin body-contrast {
-  @include body;
-  @include contrast;
+  mat-icon {
+    font-size: mat.font-size(material.$ps-typography, $typography-level);
+    height: mat.font-size(material.$ps-typography, $typography-level);
+    width: mat.font-size(material.$ps-typography, $typography-level);
+    line-height: mat.line-height(material.$ps-typography, $typography-level);
+    vertical-align: top;
+  }
 }
 
 @mixin primary {
@@ -83,4 +34,29 @@
 
 @mixin center {
   text-align: center;
+}
+
+@mixin link {
+  @include primary;
+  @include utilities.link;
+}
+
+// NOTE: This is meant to style short code snippets within text blocks
+// without affecting the line height of the surrounding text
+@mixin code {
+  // NOTE: I use `inline-block` so that `vertical-align` takes effect on
+  // the element's height
+  display: inline-block;
+  vertical-align: bottom;
+
+  // NOTE: This shrinks the font and adds spacing so the background is more apparent
+  font-family: monospace;
+  font-size: 0.75em;
+  padding-left: 0.75em;
+  padding-right: 0.75em;
+
+  // NOTE: This sets the background of the code block to distinguish it from
+  // surrounding text
+  background-color: map.get(mat.$grey-palette, 400);
+  border-radius: 3px;
 }

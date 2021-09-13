@@ -1,0 +1,7 @@
+@use "material";
+@use "variables";
+
+:host {
+  background-color: material.$ps-primary-default-color;
+  padding: variables.$ps-spacing 0;
+}

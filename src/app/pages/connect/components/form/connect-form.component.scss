@@ -1,19 +1,21 @@
 @use "text";
 
 .ps-connect-form {
+  overflow: hidden;
+
   .headline {
-    @include text.headline;
+    @include text.level("headline");
   }
 
   .submitted {
     text-align: center;
 
     &-headline {
-      @include text.headline;
+      @include text.level("headline");
     }
 
     &-body {
-      @include text.body;
+      @include text.level("body-2");
     }
   }
 }

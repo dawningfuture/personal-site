@@ -9,6 +9,7 @@ import { HomeHeroComponent } from 'src/app/pages/home/hero/home-hero.component';
 import { HomePageRoutingModule } from 'src/app/pages/home/home-page-routing.module';
 import { HomePageComponent } from 'src/app/pages/home/home-page.component';
 import { HomePageStoreModule } from 'src/app/pages/home/store/home-page-store.module';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 @NgModule({
   declarations: [HomePageComponent, HomeHeroComponent, HomeCtaButtonComponent],
@@ -19,6 +20,7 @@ import { HomePageStoreModule } from 'src/app/pages/home/store/home-page-store.mo
     FlexLayoutModule,
     MatButtonModule,
     MatRippleModule,
+    SharedModule,
     HeroModule,
   ],
 })

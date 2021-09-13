@@ -3,30 +3,27 @@
 @use "position";
 @use "variables";
 
-.ps-home-hero {
-  position: relative;
-  box-shadow: variables.$ps-shadow;
+.image {
+  @include images.feature;
+}
 
-  .image {
-    @include images.feature;
+.display {
+  @include position.absolute-fill;
+  @include text.shadow;
+  @include text.center;
+  @include text.contrast;
+
+  &-gt-xs {
+    @include text.level("display-4");
   }
 
-  .headline {
-    @include position.absolute-fill;
-    @include text.shadow;
-    @include text.center;
-
-    &-gt-xs {
-      @include text.display-4-contrast;
-    }
-
-    &-xs {
-      @include text.display-3-contrast;
-    }
+  &-xs {
+    @include text.level("display-3");
   }
+}
 
-  .cta-button-container {
-    border-radius: 10px;
-    padding: variables.$ps-spacing;
-  }
+// NOTE: This gives the CTA button room to ripple
+.cta-button-container {
+  border-radius: 10px;
+  padding: variables.$ps-spacing;
 }

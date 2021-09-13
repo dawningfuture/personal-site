@@ -1,0 +1,31 @@
+<ps-content fxLayout="column" fxLayoutGap>
+  <ps-content-panel fxFlex color="accent">
+    <div ngClass.gt-xs="headline-gt-xs" ngClass.xs="headline-xs">
+      Projects become my passions.
+    </div>
+  </ps-content-panel>
+
+  <ps-content-container fxFlex>
+    <ps-content-panel fxLayout="column" fxLayoutGap>
+      <div fxFlex class="body">
+        When I work on a project, I am passionate about it. It is important to
+        me that the projects I work on pursue my mission: whatever I work on, I
+        want it to create joy. The projects I've recently created have brought
+        me a lot of joy, and I hope, others as well.
+      </div>
+
+      <div fxFlex class="body">
+        Below, I'm going to nerd out about my recent projects that I'm most
+        proud of. I love talking about them; if you would like to know more
+        about them, or think we might be able to connect around another project,
+        please use the
+        <a class="body-link" [routerLink]="['/connect']">Connect page</a> and
+        reach out to me.
+      </div>
+    </ps-content-panel>
+  </ps-content-container>
+
+  <ps-code-personal-site></ps-code-personal-site>
+
+  <ps-code-coming-soon></ps-code-coming-soon>
+</ps-content>

@@ -1,19 +1,16 @@
-@use "material";
 @use "text";
-@use "variables";
-@use "images";
 
-.ps-dance-content {
-  background-color: material.$ps-primary-default-color;
-  padding: variables.$ps-spacing 0;
-  text-align: center;
+.headline {
+  @include text.level("display-2");
+  @include text.center;
+}
 
-  .headline {
-    @include text.display-2;
-  }
+.body {
+  @include text.level("headline");
+  @include text.center;
+}
 
-  .body,
-  .caption {
-    @include text.headline;
-  }
+.caption {
+  @include text.level("subheading-2");
+  @include text.center;
 }

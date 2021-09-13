@@ -1,20 +1,13 @@
-@use "material";
 @use "text";
-@use "variables";
 
-.ps-connect-content {
-  background-color: material.$ps-primary-default-color;
-  padding: variables.$ps-spacing 0;
+.headline {
+  &-gt-xs {
+    @include text.level("display-2");
+    @include text.center;
+  }
 
-  .headline {
-    &-gt-xs {
-      @include text.display-3;
-      @include text.center;
-    }
-
-    &-xs {
-      @include text.display-2;
-      @include text.center;
-    }
+  &-xs {
+    @include text.level("display-1");
+    @include text.center;
   }
 }
