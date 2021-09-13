@@ -1,6 +1,4 @@
-@use "variables";
-
 @mixin feature {
   object-fit: cover;
-  object-position: bottom center;
+  object-position: center center;
 }

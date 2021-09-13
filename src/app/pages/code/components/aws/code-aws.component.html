@@ -41,8 +41,10 @@
     <div fxFlex class="title">Hosting</div>
 
     <div fxFlex="0 1 auto" class="body">
-      Ordered chronologically from browser request to response, here's some of
-      the AWS services I used to host and deliver this site:
+      When I designed the architecture for hosting my site, I realized it was
+      probably going to be more than I needed to deliver a personal website.
+      Either way, I wanted to use the opportunity to learn some new AWS
+      services. Here's the ones I ended up using:
     </div>
   </dix>
 
@@ -52,7 +54,7 @@
       fxFlex.gt-xs="20%"
       fxFill
       class="body-image"
-      src="https://media.matthewthompson.us/personal-site/pages/code/code-ngrx-logo.png"
+      src="https://media.matthewthompson.us/personal-site/pages/code/code-aws-route-53-logo.png"
     />
 
     <div fxFlex fxLayout="column" fxLayoutGap>
@@ -62,25 +64,98 @@
         fxLayoutAlign="center"
         color="primary"
       >
-        <a class="panel-link" href="https://ngrx.io/" target="_blank"
-          >@ngrx/[store | effects | router-store | store-devtools]
-          <mat-icon>open_in_new</mat-icon></a
+        <a
+          class="panel-link"
+          href="https://aws.amazon.com/route53/"
+          target="_blank"
+          >Route 53 <mat-icon>open_in_new</mat-icon></a
         >
       </ps-content-panel>
 
       <div fxFlex="0 1 auto" class="body">
-        When I discovered NgRx, I fell in love with the library's reactive store
-        approach to state management. One of the most impactful lessons I have
-        learned from working on frontend projects is the need for a consistent,
-        cohesive, and modular way to communciate between services and
-        components, and maintain a centralized state for the application. You
-        can see it in action using the
+        I started building my AWS infrastructure by transfering my domain to
+        Route 53. I had seen how it enabled streamlined connection of AWS
+        services from DNS records, and wanted to leverage that as I built out
+        the rest of my infrastructure. I ended up being a big fan of how simple
+        it was to configure my DNS records, and how quickly they propogated as I
+        was developing.
+      </div>
+    </div>
+  </div>
+
+  <div fxFlex fxLayout="column" fxLayout.gt-xs="row-reverse" fxLayoutGap>
+    <img
+      fxFlex
+      fxFlex.gt-xs="20%"
+      fxFill
+      class="body-image"
+      src="https://media.matthewthompson.us/personal-site/pages/code/code-aws-cloudfront-logo.png"
+    />
+
+    <div fxFlex fxLayout="column" fxLayoutGap>
+      <ps-content-panel
+        fxFlex="0 1 auto"
+        fxLayout="row"
+        fxLayoutAlign="center"
+        color="primary"
+      >
         <a
-          class="body-link"
-          href="https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd?hl=en"
+          class="panel-link"
+          href="https://aws.amazon.com/cloudfront/"
           target="_blank"
-          >Redux DevTools Chrome extenstion <mat-icon>open_in_new</mat-icon></a
-        >.
+          >CloudFront <mat-icon>open_in_new</mat-icon></a
+        >
+      </ps-content-panel>
+
+      <div fxFlex="0 1 auto" class="body">
+        Previously, I had delivered my resources from AWS using a CNAME to an S3
+        bucket. When I built this site, I decided I wanted to experiment with
+        CloudFront and learn how edge-caching worked.
+      </div>
+
+      <div fxFlex="0 1 auto" class="body">
+        In the end, I built a distribution that uses Amazon's CDN to cache the
+        site's resources at their edge servers. What really excited me was
+        measuring the load time improvement over using a Route 53 CNAME to
+        redirect traffic to an S3 bucket directly.
+      </div>
+    </div>
+  </div>
+
+  <div fxFlex fxLayout="column" fxLayout.gt-xs="row-reverse" fxLayoutGap>
+    <img
+      fxFlex
+      fxFlex.gt-xs="20%"
+      fxFill
+      class="body-image"
+      src="https://media.matthewthompson.us/personal-site/pages/code/code-aws-s3-logo.png"
+    />
+
+    <div fxFlex fxLayout="column" fxLayoutGap>
+      <ps-content-panel
+        fxFlex="0 1 auto"
+        fxLayout="row"
+        fxLayoutAlign="center"
+        color="primary"
+      >
+        <a
+          class="panel-link"
+          href="https://aws.amazon.com/cloudfront/"
+          target="_blank"
+          >S3 <mat-icon>open_in_new</mat-icon></a
+        >
+      </ps-content-panel>
+
+      <div fxFlex="0 1 auto" class="body">
+        I had worked with S3 to host other projects, but this time, I wanted to
+        better understand how to interact with the service using the AWS CLI. In
+        the end, this resulted in a GitHub Action that uses the
+        <div class="body-code">aws s3 sync</div>
+        CLI command to upload build artifacts to the CloudFront distribution's
+        origin S3 bucket. I also used the AWS CLI to invalidate the site's
+        <div class="body-code">index.html</div>
+        file in the CloudFront distribution so that deployments propogate faster
+        through the CDN.
       </div>
     </div>
   </div>

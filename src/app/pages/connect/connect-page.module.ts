@@ -8,6 +8,7 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { HeroModule } from 'src/app/hero/hero.module';
 import { ConnectContentComponent } from 'src/app/pages/connect/components/content/connect-content.component';
 import { ConnectFormComponent } from 'src/app/pages/connect/components/form/connect-form.component';
 import { ConnectHeroComponent } from 'src/app/pages/connect/components/hero/connect-hero.component';
@@ -31,6 +32,7 @@ import { SharedModule } from 'src/app/shared/shared.module';
     ConnectPageStoreModule,
     FlexLayoutModule,
     SharedModule,
+    HeroModule,
     ReactiveFormsModule,
     MatFormFieldModule,
     MatButtonModule,

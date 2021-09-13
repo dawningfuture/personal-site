@@ -1,4 +1,5 @@
 @use '~@angular/material' as mat;
+@use 'sass:map';
 @use 'material';
 @use "variables";
 @use "utilities";
@@ -43,4 +44,24 @@
 @mixin link {
   @include primary;
   @include utilities.link;
+}
+
+// NOTE: This is meant to style short code snippets within text blocks
+// without affecting the line height of the surrounding text
+@mixin code {
+  // NOTE: I use `inline-block` so that `vertical-align` takes effect on
+  // the element's height
+  display: inline-block;
+  vertical-align: bottom;
+
+  // NOTE: This shrinks the font and adds spacing so the background is more apparent
+  font-family: monospace;
+  font-size: 0.75em;
+  padding-left: 0.75em;
+  padding-right: 0.75em;
+
+  // NOTE: This sets the background of the code block to distinguish it from
+  // surrounding text
+  background-color: map.get(mat.$grey-palette, 400);
+  border-radius: 3px;
 }

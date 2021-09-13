@@ -4,7 +4,7 @@
 
 When I decided to rebuild my personal website, I saw it as an opportunity to really think about how I build a project. A new project is really exciting, as it gives me the chance to implement what I have learned since the last one, from the beginning. And there is a lot that I have learned.
 
-I'm using this project not only to implement those lessons, but to document them. My goal is to create a reference I can use to make starting the next new projects faster and better planned. And since this is Github, I'd be thrilled if others found value in it as well. Others, possibly, including you.
+I'm using this project not only to implement those lessons, but to document them. My goal is to create a reference I can use to make starting the next new projects faster and better planned. And since this is GitHub, I'd be thrilled if others found value in it as well. Others, possibly, including you.
 
 ## Roadmap
 

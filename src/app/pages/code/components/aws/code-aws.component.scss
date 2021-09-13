@@ -16,6 +16,10 @@
   &-link {
     @include text.link;
   }
+
+  &-code {
+    @include text.code;
+  }
 }
 
 .panel {
