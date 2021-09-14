@@ -1,4 +1,5 @@
 @use "text";
+@use "images";
 
 .title {
   @include text.level("title");
@@ -19,6 +20,10 @@
 
   &-code {
     @include text.code;
+  }
+
+  &-image {
+    @include images.contain;
   }
 }
 
