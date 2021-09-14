@@ -1,37 +1,62 @@
+@use '~@angular/material' as mat;
+@use 'sass:map';
 @use 'material';
+@use "variables";
+@use "utilities";
 
-@mixin headline-4 {
-  @include material.display-4;
-  text-shadow: 0px 3px 3px #5a5a5a;
-  text-align: center;
-  color: #ffffff;
+@mixin level($typography-level) {
+  @include mat.typography-level(material.$ps-typography, $typography-level);
+
+  mat-icon {
+    font-size: mat.font-size(material.$ps-typography, $typography-level);
+    height: mat.font-size(material.$ps-typography, $typography-level);
+    width: mat.font-size(material.$ps-typography, $typography-level);
+    line-height: mat.line-height(material.$ps-typography, $typography-level);
+    vertical-align: top;
+  }
 }
 
-@mixin headline-3 {
-  @include material.display-3;
-  text-shadow: 0px 3px 3px #5a5a5a;
-  text-align: center;
-  color: #ffffff;
-}
-
-@mixin headline-2 {
-  @include material.display-2;
-  text-shadow: 0px 3px 3px #5a5a5a;
-  text-align: center;
-  color: #ffffff;
-}
-
-@mixin headline-1 {
-  @include material.display-1;
-  text-shadow: 0px 3px 3px #5a5a5a;
-  text-align: center;
-  color: #ffffff;
-}
-
-@mixin text-primary {
+@mixin primary {
   color: material.$ps-primary-default-color;
 }
 
-@mixin text-accent {
+@mixin accent {
   color: material.$ps-accent-default-color;
+}
+
+@mixin contrast {
+  color: white;
+}
+
+@mixin shadow {
+  text-shadow: variables.$ps-shadow;
+}
+
+@mixin center {
+  text-align: center;
+}
+
+@mixin link {
+  @include primary;
+  @include utilities.link;
+}
+
+// NOTE: This is meant to style short code snippets within text blocks
+// without affecting the line height of the surrounding text
+@mixin code {
+  // NOTE: I use `inline-block` so that `vertical-align` takes effect on
+  // the element's height
+  display: inline-block;
+  vertical-align: bottom;
+
+  // NOTE: This shrinks the font and adds spacing so the background is more apparent
+  font-family: monospace;
+  font-size: 0.75em;
+  padding-left: 0.75em;
+  padding-right: 0.75em;
+
+  // NOTE: This sets the background of the code block to distinguish it from
+  // surrounding text
+  background-color: map.get(mat.$grey-palette, 400);
+  border-radius: 3px;
 }

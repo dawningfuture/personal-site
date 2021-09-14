@@ -1,26 +1,32 @@
 import { Injectable } from '@angular/core';
+import { filter } from 'rxjs/operators';
+import { BrowserDetectorService } from 'src/app/core/browser-detector.service';
+import {
+  VisibilityService,
+  VisibilityStates,
+} from 'src/app/core/visibility.service';
+import { VideoRendererService } from 'src/app/video/video-renderer.service';
 
 @Injectable()
-export class NativeVideoService {
-  protected videoEl?: HTMLVideoElement;
+export class NativeVideoService extends VideoRendererService {
+  constructor(
+    protected browserDetector: BrowserDetectorService,
+    private visibility: VisibilityService
+  ) {
+    super(browserDetector);
 
-  constructor() {}
+    this.visibility.visibilityChange$
+      .pipe(
+        filter(
+          (visibilityState) => visibilityState === VisibilityStates.VISIBLE
+        )
+      )
+      .subscribe(() => {
+        if (this.videoEl) {
+          this.videoEl.currentTime = 0;
 
-  setVideo(el: HTMLVideoElement): void {
-    this.videoEl = el;
-  }
-
-  loadSource(url: string): void {
-    if (this.videoEl) {
-      this.videoEl.src = url;
-    }
-  }
-
-  destroy(): void {
-    if (this.videoEl) {
-      this.videoEl.src = '';
-    }
-
-    this.videoEl = undefined;
+          this.videoEl.play();
+        }
+      });
   }
 }

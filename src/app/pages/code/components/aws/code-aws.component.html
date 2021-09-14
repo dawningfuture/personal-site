@@ -1,0 +1,149 @@
+<ps-content-panel fxLayout="column" fxLayoutGap>
+  <div fxFlex class="title">AWS Infrastructure</div>
+
+  <mat-divider fxFlex></mat-divider>
+
+  <div fxFlex fxLayout="column" fxLayout.gt-xs="row-reverse" fxLayoutGap>
+    <img
+      fxFlex
+      fxFlex.gt-xs="20%"
+      fxFill
+      class="body-image"
+      src="https://media.matthewthompson.us/personal-site/pages/code/code-aws-logo.png"
+    />
+
+    <div fxFlex fxLayout="column" fxLayoutGap>
+      <div fxFlex="0 1 auto" class="body">
+        When I considered how I wanted to deploy my personal site, I decided I
+        wanted to bolster my
+        <a class="body-link" href="AWS" target="_blank"
+          >AWS <mat-icon>open_in_new</mat-icon></a
+        >
+        skills and learn some of the services I had seen, but hadn't had the
+        opportunity to use. I first used AWS back in college for my
+        entreprenurial pursuits, and had more learned about it from some of my
+        colleagues. When I built my personal site, I decided I wanted to learn
+        it for myself.
+      </div>
+
+      <div fxFlex="0 1 auto" class="body">
+        I want to make the design of my AWS infrastructure more transparent, but
+        for now, I'm going to describe how I used various AWS services below.
+        Together, they enable the website's delivery, from domain registration,
+        to edge caching, to hosting. They also allow me to create a simple API
+        for sending email from the
+        <a class="body-link" [routerLink]="['/connect']">Connect form</a>.
+        Here's the ones I ended up using:
+      </div>
+    </div>
+  </div>
+
+  <div fxFlex fxLayout="column" fxLayout.gt-xs="row-reverse" fxLayoutGap>
+    <img
+      fxFlex
+      fxFlex.gt-xs="20%"
+      fxFill
+      class="body-image"
+      src="https://media.matthewthompson.us/personal-site/pages/code/code-aws-route-53-logo.png"
+    />
+
+    <div fxFlex fxLayout="column" fxLayoutGap>
+      <ps-content-panel
+        fxFlex="0 1 auto"
+        fxLayout="row"
+        fxLayoutAlign="center"
+        color="primary"
+      >
+        <a
+          class="panel-link"
+          href="https://aws.amazon.com/route53/"
+          target="_blank"
+          >Route 53 <mat-icon>open_in_new</mat-icon></a
+        >
+      </ps-content-panel>
+
+      <div fxFlex="0 1 auto" class="body">
+        I started building my AWS infrastructure by transfering my domain to
+        Route 53. I had seen how it enabled streamlined connection of AWS
+        services from DNS records, and wanted to leverage that as I built out
+        the rest of my infrastructure. I ended up being a big fan of how simple
+        it was to configure my DNS records, and how quickly they propogated as I
+        was developing.
+      </div>
+    </div>
+  </div>
+
+  <div fxFlex fxLayout="column" fxLayout.gt-xs="row-reverse" fxLayoutGap>
+    <img
+      fxFlex
+      fxFlex.gt-xs="20%"
+      fxFill
+      class="body-image"
+      src="https://media.matthewthompson.us/personal-site/pages/code/code-aws-cloudfront-logo.png"
+    />
+
+    <div fxFlex fxLayout="column" fxLayoutGap>
+      <ps-content-panel
+        fxFlex="0 1 auto"
+        fxLayout="row"
+        fxLayoutAlign="center"
+        color="primary"
+      >
+        <a
+          class="panel-link"
+          href="https://aws.amazon.com/cloudfront/"
+          target="_blank"
+          >CloudFront <mat-icon>open_in_new</mat-icon></a
+        >
+      </ps-content-panel>
+
+      <div fxFlex="0 1 auto" class="body">
+        Previously, I had delivered my resources from AWS using a CNAME to an S3
+        bucket. When I built this site, I decided I wanted to experiment with
+        CloudFront and learn how edge-caching worked.
+      </div>
+
+      <div fxFlex="0 1 auto" class="body">
+        In the end, I built a distribution that uses Amazon's CDN to cache the
+        site's resources at their edge servers. What really excited me was
+        measuring the load time improvement over using a Route 53 CNAME to
+        redirect traffic to an S3 bucket directly.
+      </div>
+    </div>
+  </div>
+
+  <div fxFlex fxLayout="column" fxLayout.gt-xs="row-reverse" fxLayoutGap>
+    <img
+      fxFlex
+      fxFlex.gt-xs="20%"
+      fxFill
+      class="body-image"
+      src="https://media.matthewthompson.us/personal-site/pages/code/code-aws-s3-logo.png"
+    />
+
+    <div fxFlex fxLayout="column" fxLayoutGap>
+      <ps-content-panel
+        fxFlex="0 1 auto"
+        fxLayout="row"
+        fxLayoutAlign="center"
+        color="primary"
+      >
+        <a class="panel-link" href="https://aws.amazon.com/s3/" target="_blank"
+          >S3 <mat-icon>open_in_new</mat-icon></a
+        >
+      </ps-content-panel>
+
+      <div fxFlex="0 1 auto" class="body">
+        I had worked with S3 to host other projects, but this time, I wanted to
+        better understand how to interact with the service using the AWS CLI. In
+        the end, this resulted in a GitHub Action that uses the
+        <div class="body-code">aws s3 sync</div>
+        CLI command to upload build artifacts to the CloudFront distribution's
+        origin S3 bucket. I also used the AWS CLI to invalidate the site's
+        <div class="body-code">index.html</div>
+        file in the CloudFront distribution so that deployments propogate faster
+        through the CDN.
+      </div>
+    </div>
+  </div>
+</ps-content-panel>

@@ -1,0 +1,29 @@
+@use "text";
+@use "position";
+
+.display {
+  @include position.absolute-fill;
+  @include text.shadow;
+  @include text.center;
+  @include text.contrast;
+
+  &-top {
+    &-gt-xs {
+      @include text.level("display-2");
+    }
+
+    &-xs {
+      @include text.level("display-1");
+    }
+  }
+
+  &-bottom {
+    &-gt-xs {
+      @include text.level("display-4");
+    }
+
+    &-xs {
+      @include text.level("display-3");
+    }
+  }
+}

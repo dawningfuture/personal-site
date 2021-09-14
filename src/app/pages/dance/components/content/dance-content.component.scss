@@ -1,0 +1,16 @@
+@use "text";
+
+.headline {
+  @include text.level("display-2");
+  @include text.center;
+}
+
+.body {
+  @include text.level("headline");
+  @include text.center;
+}
+
+.caption {
+  @include text.level("subheading-2");
+  @include text.center;
+}

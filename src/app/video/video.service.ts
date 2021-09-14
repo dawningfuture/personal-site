@@ -1,81 +1,46 @@
-import { Injectable } from '@angular/core';
-import {
-  BrowserDetectorService,
-  BrowserNames,
-  PlatformTypes,
-} from 'src/app/core/browser-detector.service';
+import { Provider } from '@angular/core';
+import { Observable } from 'rxjs';
 import { HlsjsVideoService } from 'src/app/video/hlsjs-video.service';
 import { NativeVideoService } from 'src/app/video/native-video.service';
+import {
+  VideoConfig,
+  VideoRendererService,
+} from 'src/app/video/video-renderer.service';
 import { environment } from 'src/environments/environment';
 
-export interface VideoConfig {
-  sources: {
-    mp4Url: string;
-    hlsTsUrl: string;
-    hlsFmp4Url: string;
-  };
-}
-
-@Injectable()
 export class VideoService {
-  protected config?: VideoConfig;
+  constructor(private videoRenderer: VideoRendererService) {}
 
-  constructor(
-    protected hlsjsVideo: HlsjsVideoService,
-    protected nativeVideo: NativeVideoService,
-    protected browserDetector: BrowserDetectorService
-  ) {}
-
-  init(config: VideoConfig): void {
-    this.config = config;
+  prefetch(config: VideoConfig): Observable<void> {
+    return this.videoRenderer.prefetch(config);
   }
 
-  setVideo(el: HTMLVideoElement): void {
-    if (this.useHlsjs()) {
-      this.hlsjsVideo.setVideo(el);
-    } else {
-      this.nativeVideo.setVideo(el);
-    }
-  }
+  autoplay(videoEl: HTMLVideoElement, config?: VideoConfig): Observable<void> {
+    videoEl.muted = true;
+    videoEl.autoplay = true;
+    videoEl.playsInline = true;
 
-  loadSource(): void {
-    const sourceUrl = this.getSourceUrl();
-
-    if (this.useHlsjs()) {
-      this.hlsjsVideo.loadSource(sourceUrl);
-    } else {
-      this.nativeVideo.loadSource(sourceUrl);
-    }
+    return this.videoRenderer.autoplay(videoEl);
   }
 
   destroy(): void {
-    if (this.useHlsjs()) {
-      this.hlsjsVideo.destroy();
-    } else {
-      this.nativeVideo.destroy();
-    }
-  }
-
-  protected useHlsjs(): boolean {
-    return (
-      HlsjsVideoService.isSupported &&
-      environment.useHlsjs &&
-      !!this.config?.sources.hlsTsUrl
-    );
-  }
-
-  protected getSourceUrl(): string {
-    if (this.useHlsjs()) {
-      return this.config?.sources.hlsTsUrl || '';
-    }
-
-    if (
-      this.browserDetector.isBrowserName(BrowserNames.SAFARI) &&
-      this.browserDetector.isPlatformType(PlatformTypes.MOBILE)
-    ) {
-      return this.config?.sources.hlsFmp4Url || '';
-    }
-
-    return this.config?.sources.mp4Url || '';
+    this.videoRenderer.destroy();
   }
 }
+
+const videoServiceFactory = (
+  hlsjsVideo: HlsjsVideoService,
+  nativeVideo: NativeVideoService
+) => {
+  const useHlsjs = HlsjsVideoService.isSupported && environment.useHlsjs;
+
+  const videoRendererService = useHlsjs ? hlsjsVideo : nativeVideo;
+
+  return new VideoService(videoRendererService);
+};
+
+export const videoServiceProvider: Provider = {
+  provide: VideoService,
+  useFactory: videoServiceFactory,
+  deps: [HlsjsVideoService, NativeVideoService],
+};

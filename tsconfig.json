@@ -18,7 +18,10 @@
     "module": "es2020",
     "lib": ["es2019", "dom"],
     "resolveJsonModule": true,
-    "allowSyntheticDefaultImports": true
+    "allowSyntheticDefaultImports": true,
+    "paths": {
+      "hls.js": ["node_modules/hls.js/dist/hls.light.min"]
+    }
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,

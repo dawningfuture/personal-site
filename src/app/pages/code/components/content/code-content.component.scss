@@ -1,0 +1,21 @@
+@use "text";
+
+.headline {
+  &-gt-xs {
+    @include text.level("display-2");
+    @include text.center;
+  }
+
+  &-xs {
+    @include text.level("display-1");
+    @include text.center;
+  }
+}
+
+.body {
+  @include text.level("body-2");
+
+  &-link {
+    @include text.link;
+  }
+}

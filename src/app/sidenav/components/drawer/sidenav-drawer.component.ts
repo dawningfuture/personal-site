@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { appRoutes } from 'src/app/app-routing.module';
 
 @Component({
@@ -6,14 +6,10 @@ import { appRoutes } from 'src/app/app-routing.module';
   templateUrl: './sidenav-drawer.component.html',
   styleUrls: ['./sidenav-drawer.component.scss'],
 })
-export class SidenavDrawerComponent implements OnInit {
+export class SidenavDrawerComponent {
   sidenavLinks = appRoutes
     .flatMap((appRoute) =>
       appRoute.data?.sidenavLink ? appRoute.data.sidenavLink : []
     )
     .sort((a, b) => (a.order > b.order ? 1 : -1));
-
-  constructor() {}
-
-  ngOnInit(): void {}
 }

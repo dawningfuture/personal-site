@@ -1,0 +1,16 @@
+<div class="ps-dance-video">
+  <ps-loading-indicator
+    *ngIf="!(autoplayed$ | async)"
+    @autoplayed
+  ></ps-loading-indicator>
+
+  <video
+    #danceVideo
+    fxFill
+    class="dance-video"
+    loop
+    muted
+    autoplay
+    playsinline
+  ></video>
+</div>

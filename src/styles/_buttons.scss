@@ -1,8 +1,9 @@
-@use "material";
+@use "text";
 @use "variables";
 
 @mixin call-to-action {
-  @include material.display-1;
-  padding: variables.$ps-padding;
+  @include text.level("headline");
+  padding: variables.$ps-spacing;
   border-radius: 10px;
+  box-shadow: variables.$ps-shadow;
 }

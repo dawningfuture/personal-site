@@ -1,20 +1,21 @@
-@use "variables";
-@use "material";
+@use "text";
 
 .ps-connect-form {
+  overflow: hidden;
+
   .headline {
-    @include material.headline;
+    @include text.level("headline");
   }
 
   .submitted {
     text-align: center;
 
     &-headline {
-      @include material.display-2;
+      @include text.level("headline");
     }
 
     &-body {
-      @include material.body-2;
+      @include text.level("body-2");
     }
   }
 }

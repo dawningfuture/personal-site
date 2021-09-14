@@ -1,0 +1,22 @@
+@use "text";
+@use "material";
+@use "position";
+
+.ps-loading-indicator {
+  background-color: material.$ps-primary-default-color;
+
+  .headline {
+    // TODO: Figure out how to not duplicate `shadow` and `contrast`
+    &-gt-xs {
+      @include text.level("display-4");
+      @include text.shadow;
+      @include text.contrast;
+    }
+
+    &-xs {
+      @include text.level("display-3");
+      @include text.shadow;
+      @include text.contrast;
+    }
+  }
+}

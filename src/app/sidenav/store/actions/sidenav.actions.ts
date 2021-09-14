@@ -2,6 +2,8 @@ import { createAction, props } from '@ngrx/store';
 
 export const clickedButton = createAction('[Sidenav Button] Clicked');
 
+export const rippleButton = createAction('[Sidenav Button] Ripple');
+
 export const clickedLink = createAction(
   '[Sidenav Link] Clicked',
   props<{ path: string }>()

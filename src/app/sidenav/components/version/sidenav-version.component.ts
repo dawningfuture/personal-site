@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { environment } from 'src/environments/environment';
 
 @Component({
@@ -6,10 +6,6 @@ import { environment } from 'src/environments/environment';
   templateUrl: './sidenav-version.component.html',
   styleUrls: ['./sidenav-version.component.scss'],
 })
-export class SidenavVersionComponent implements OnInit {
+export class SidenavVersionComponent {
   readonly version = environment.version;
-
-  constructor() {}
-
-  ngOnInit(): void {}
 }

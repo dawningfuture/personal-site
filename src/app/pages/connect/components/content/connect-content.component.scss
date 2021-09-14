@@ -1,18 +1,13 @@
-@use "material";
 @use "text";
 
-.ps-connect-content {
-  background-color: material.$ps-primary-default-color;
+.headline {
+  &-gt-xs {
+    @include text.level("display-2");
+    @include text.center;
+  }
 
-  .headline {
-    text-align: center;
-
-    &-gt-xs {
-      @include text.headline-3;
-    }
-
-    &-xs {
-      @include text.headline-2;
-    }
+  &-xs {
+    @include text.level("display-1");
+    @include text.center;
   }
 }

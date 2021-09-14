@@ -1,20 +1,18 @@
 import { TestBed } from '@angular/core/testing';
-import { BrowserDetectorService } from 'src/app/core/browser-detector.service';
-import { HlsjsVideoService } from 'src/app/video/hlsjs-video.service';
-import { NativeVideoService } from 'src/app/video/native-video.service';
-import { VideoService } from 'src/app/video/video.service';
+import { appImports } from 'src/app/app.module';
+import { VideoModule } from 'src/app/video/video.module';
+import {
+  VideoService,
+  videoServiceProvider,
+} from 'src/app/video/video.service';
 
 describe('VideoService', () => {
   let service: VideoService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [
-        VideoService,
-        HlsjsVideoService,
-        NativeVideoService,
-        BrowserDetectorService,
-      ],
+      imports: [...appImports, VideoModule],
+      providers: [videoServiceProvider],
     });
     service = TestBed.inject(VideoService);
   });

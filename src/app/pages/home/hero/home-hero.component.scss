@@ -1,23 +1,29 @@
 @use "text";
 @use "images";
 @use "position";
+@use "variables";
 
-.ps-home-hero {
-  position: relative;
+.image {
+  @include images.feature;
+}
 
-  .image {
-    @include images.hero-image;
+.display {
+  @include position.absolute-fill;
+  @include text.shadow;
+  @include text.center;
+  @include text.contrast;
+
+  &-gt-xs {
+    @include text.level("display-4");
   }
 
-  .headline {
-    @include position.absolute-fill;
-
-    &-gt-xs {
-      @include text.headline-4;
-    }
-
-    &-xs {
-      @include text.headline-3;
-    }
+  &-xs {
+    @include text.level("display-3");
   }
+}
+
+// NOTE: This gives the CTA button room to ripple
+.cta-button-container {
+  border-radius: 10px;
+  padding: variables.$ps-spacing;
 }
