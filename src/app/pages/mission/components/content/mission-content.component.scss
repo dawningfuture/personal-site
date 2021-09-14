@@ -7,4 +7,13 @@
 
 .body {
   @include text.level("body-2");
+
+  &-link {
+    @include text.link;
+  }
+}
+
+.footer {
+  @include text.level("headline");
+  @include text.center;
 }
