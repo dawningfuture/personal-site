@@ -1,21 +1,21 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { appImports } from 'src/app/app.module';
-import { InitializationIndicatorComponent } from 'src/app/shared/initialization-indicator/initialization-indicator.component';
+import { LoadingIndicatorComponent } from 'src/app/shared/loading-indicator/loading-indicator.component';
 import { SharedModule } from 'src/app/shared/shared.module';
 
-describe('InitializationIndicatorComponent', () => {
-  let component: InitializationIndicatorComponent;
-  let fixture: ComponentFixture<InitializationIndicatorComponent>;
+describe('LoadingIndicatorComponent', () => {
+  let component: LoadingIndicatorComponent;
+  let fixture: ComponentFixture<LoadingIndicatorComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [...appImports, SharedModule],
-      declarations: [InitializationIndicatorComponent],
+      declarations: [LoadingIndicatorComponent],
     }).compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(InitializationIndicatorComponent);
+    fixture = TestBed.createComponent(LoadingIndicatorComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

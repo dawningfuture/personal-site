@@ -1,3 +1,4 @@
+import { trigger } from '@angular/animations';
 import {
   AfterViewInit,
   Component,
@@ -5,23 +6,31 @@ import {
   OnDestroy,
   ViewChild,
 } from '@angular/core';
-import { HeroVideoService } from 'src/app/hero/hero-video.service';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
+import { animateChildrenOnLeave } from 'src/app/animations/utility.animations';
+import { VideoService } from 'src/app/video/video.service';
 
 @Component({
   selector: 'ps-dance-video',
   templateUrl: './dance-video.component.html',
   styleUrls: ['./dance-video.component.scss'],
+  animations: [trigger('autoplayed', [animateChildrenOnLeave()])],
 })
 export class DanceVideoComponent implements AfterViewInit, OnDestroy {
-  @ViewChild('psDanceVideo') danceVideo!: ElementRef<HTMLVideoElement>;
+  @ViewChild('danceVideo') danceVideo!: ElementRef<HTMLVideoElement>;
 
-  constructor(private heroVideo: HeroVideoService) {}
+  autoplayed$?: Observable<boolean>;
+
+  constructor(private video: VideoService) {}
 
   ngAfterViewInit(): void {
-    this.heroVideo.loadVideo(this.danceVideo.nativeElement);
+    this.autoplayed$ = this.video
+      .autoplay(this.danceVideo.nativeElement)
+      .pipe(map(() => true));
   }
 
   ngOnDestroy(): void {
-    this.heroVideo.destroy();
+    this.video.destroy();
   }
 }

@@ -1,9 +1,10 @@
 <ps-navigation-indicator *ngIf="navigating$ | async"></ps-navigation-indicator>
 
-<ps-initialization-indicator
+<ps-loading-indicator
   *ngIf="!(hasNavigated$ | async)"
-  @fadeOut
-></ps-initialization-indicator>
+  [headline]="'One sec...'"
+  @initialized
+></ps-loading-indicator>
 
 <ps-sidenav *ngIf="hasNavigated$ | async">
   <router-outlet></router-outlet>

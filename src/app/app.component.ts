@@ -1,4 +1,4 @@
-import { animate, style, transition, trigger } from '@angular/animations';
+import { trigger } from '@angular/animations';
 import { Component, OnDestroy } from '@angular/core';
 import { Actions, ofType } from '@ngrx/effects';
 import {
@@ -9,32 +9,13 @@ import {
 } from '@ngrx/router-store';
 import { merge, Observable, Subject } from 'rxjs';
 import { map, startWith, take, takeUntil } from 'rxjs/operators';
+import { animateChildrenOnLeave } from 'src/app/animations/utility.animations';
 
 @Component({
   selector: 'ps-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
-  animations: [
-    trigger('fadeOut', [
-      transition(':leave', [
-        style({
-          opacity: 1,
-          position: 'absolute',
-          top: '0',
-          left: '0',
-          bottom: '0',
-          right: '0',
-          zIndex: 2,
-        }),
-        animate(
-          '500ms ease-out',
-          style({
-            opacity: 0,
-          })
-        ),
-      ]),
-    ]),
-  ],
+  animations: [trigger('initialized', [animateChildrenOnLeave()])],
 })
 export class AppComponent implements OnDestroy {
   hasNavigated$: Observable<boolean>;

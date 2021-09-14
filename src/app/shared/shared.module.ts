@@ -6,14 +6,14 @@ import { ContentContainerComponent } from 'src/app/shared/content-container/cont
 import { ContentPanelComponent } from 'src/app/shared/content-panel/content-panel.component';
 import { ContentComponent } from 'src/app/shared/content/content.component';
 import { FooterComponent } from 'src/app/shared/footer/footer.component';
-import { InitializationIndicatorComponent } from 'src/app/shared/initialization-indicator/initialization-indicator.component';
+import { LoadingIndicatorComponent } from 'src/app/shared/loading-indicator/loading-indicator.component';
 import { NavigationIndicatorComponent } from 'src/app/shared/navigation-indicator/navigation-indicator.component';
 import { HeroComponent } from './hero/hero.component';
 
 @NgModule({
   declarations: [
     NavigationIndicatorComponent,
-    InitializationIndicatorComponent,
+    LoadingIndicatorComponent,
     ContentContainerComponent,
     ContentPanelComponent,
     FooterComponent,
@@ -23,7 +23,7 @@ import { HeroComponent } from './hero/hero.component';
   imports: [CommonModule, MatProgressBarModule, FlexLayoutModule],
   exports: [
     NavigationIndicatorComponent,
-    InitializationIndicatorComponent,
+    LoadingIndicatorComponent,
     HeroComponent,
     ContentComponent,
     ContentContainerComponent,

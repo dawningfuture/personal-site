@@ -1,5 +1,6 @@
 <div
-  class="ps-initialization-indicator"
+  class="ps-loading-indicator"
+  @fadeOut
   fxFill
   fxLayout="column"
   fxLayoutAlign="center center"
@@ -10,6 +11,6 @@
     ngClass.xs="headline-xs"
     ngClass.gt-xs="headline-gt-xs"
   >
-    One sec...
+    {{ headline }}
   </div>
 </div>

@@ -5,8 +5,10 @@ import { ActivatedRouteSnapshot, Resolve } from '@angular/router';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-@Injectable()
-export class HeroImageResolverService implements Resolve<SafeUrl> {
+@Injectable({
+  providedIn: 'root',
+})
+export class HeroImageResolver implements Resolve<SafeUrl> {
   constructor(
     private httpClient: HttpClient,
     private sanitizer: DomSanitizer

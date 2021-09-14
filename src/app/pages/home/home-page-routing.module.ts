@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HeroImageResolverService } from 'src/app/hero/hero-image-resolver.service';
+import { HeroImageResolver } from 'src/app/core/resolvers/hero-image.resolver';
 import { HomePageComponent } from 'src/app/pages/home/home-page.component';
 
 const routes: Routes = [
@@ -8,7 +8,7 @@ const routes: Routes = [
     path: '',
     component: HomePageComponent,
     resolve: {
-      heroImageUrl: HeroImageResolverService,
+      heroImageUrl: HeroImageResolver,
     },
   },
 ];

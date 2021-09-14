@@ -1,20 +1,17 @@
 import { TestBed } from '@angular/core/testing';
 import { appImports } from 'src/app/app.module';
 import { VideoModule } from 'src/app/video/video.module';
-import {
-  VideoService,
-  videoServiceProvider,
-} from 'src/app/video/video.service';
+import { VideoRendererService } from './video-renderer.service';
 
-describe('VideoService', () => {
-  let service: VideoService;
+describe('VideoRendererService', () => {
+  let service: VideoRendererService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
       imports: [...appImports, VideoModule],
-      providers: [videoServiceProvider],
+      providers: [VideoRendererService],
     });
-    service = TestBed.inject(VideoService);
+    service = TestBed.inject(VideoRendererService);
   });
 
   it('should be created', () => {

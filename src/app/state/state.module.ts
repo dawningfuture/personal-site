@@ -5,7 +5,6 @@ import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { RouterEffects } from 'src/app/state/effects/router.effects';
 import { reducers } from 'src/app/state/reducers';
-import { environment } from 'src/environments/environment';
 
 @NgModule({
   imports: [
@@ -16,7 +15,7 @@ import { environment } from 'src/environments/environment';
     }),
     EffectsModule.forRoot([RouterEffects]),
     StoreRouterConnectingModule.forRoot(),
-    !environment.production ? StoreDevtoolsModule.instrument() : [],
+    StoreDevtoolsModule.instrument(),
   ],
 })
 export class StateModule {}
