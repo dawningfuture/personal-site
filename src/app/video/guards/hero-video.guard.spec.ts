@@ -1,14 +1,15 @@
 import { TestBed } from '@angular/core/testing';
 import { appImports } from 'src/app/app.module';
-import { HeroVideoGuard } from 'src/app/hero/hero-video.guard';
-import { HeroModule } from 'src/app/hero/hero.module';
+import { HeroVideoGuard } from 'src/app/video/guards/hero-video.guard';
+import { VideoModule } from 'src/app/video/video.module';
 
 describe('HeroVideoGuard', () => {
   let guard: HeroVideoGuard;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [...appImports, HeroModule],
+      imports: [...appImports, VideoModule],
+      providers: [HeroVideoGuard],
     });
     guard = TestBed.inject(HeroVideoGuard);
   });

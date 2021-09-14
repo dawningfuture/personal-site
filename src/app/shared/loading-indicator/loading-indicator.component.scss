@@ -2,7 +2,7 @@
 @use "material";
 @use "position";
 
-.ps-initialization-indicator {
+.ps-loading-indicator {
   background-color: material.$ps-primary-default-color;
 
   .headline {

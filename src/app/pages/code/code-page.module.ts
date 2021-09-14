@@ -3,7 +3,6 @@ import { NgModule } from '@angular/core';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatIconModule } from '@angular/material/icon';
-import { HeroModule } from 'src/app/hero/hero.module';
 import { CodePageRoutingModule } from 'src/app/pages/code/code-page-routing.module';
 import { CodePageComponent } from 'src/app/pages/code/code-page.component';
 import { CodeAngularComponent } from 'src/app/pages/code/components/angular/code-angular.component';
@@ -29,7 +28,6 @@ import { SharedModule } from 'src/app/shared/shared.module';
     CodePageRoutingModule,
     FlexLayoutModule,
     SharedModule,
-    HeroModule,
     MatIconModule,
     MatDividerModule,
   ],

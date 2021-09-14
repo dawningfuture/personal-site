@@ -1,7 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { HeroModule } from 'src/app/hero/hero.module';
 import { MissionContentComponent } from 'src/app/pages/mission/components/content/mission-content.component';
 import { MissionHeroComponent } from 'src/app/pages/mission/components/hero/mission-hero.component';
 import { MissionPageRoutingModule } from 'src/app/pages/mission/mission-page-routing.module';
@@ -19,7 +18,6 @@ import { SharedModule } from 'src/app/shared/shared.module';
     MissionPageRoutingModule,
     FlexLayoutModule,
     SharedModule,
-    HeroModule,
   ],
 })
 export class MissionPageModule {}
