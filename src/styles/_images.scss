@@ -1,4 +1,9 @@
-@mixin feature {
+@mixin cover {
   object-fit: cover;
+  object-position: center center;
+}
+
+@mixin contain {
+  object-fit: contain;
   object-position: center center;
 }
