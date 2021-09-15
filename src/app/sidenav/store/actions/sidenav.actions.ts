@@ -25,3 +25,5 @@ export const openedDrawer = createAction('[Sidenav Drawer] Opened');
 export const closeDrawer = createAction('[Sidenav Drawer] Close');
 
 export const closedDrawer = createAction('[Sidenav Drawer] Closed');
+
+export const scrollTopContent = createAction('[Sidenav Content] Scroll Top');

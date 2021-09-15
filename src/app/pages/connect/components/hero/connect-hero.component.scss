@@ -3,7 +3,7 @@
 @use "position";
 
 .image {
-  @include images.feature;
+  @include images.cover;
 }
 
 .display {

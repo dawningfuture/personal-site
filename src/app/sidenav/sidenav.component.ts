@@ -5,7 +5,7 @@ import {
   ViewChild,
   ViewEncapsulation,
 } from '@angular/core';
-import { MatSidenav } from '@angular/material/sidenav';
+import { MatSidenav, MatSidenavContent } from '@angular/material/sidenav';
 import { ofType } from '@ngrx/effects';
 import { ActionsSubject, Store } from '@ngrx/store';
 import { from, Subject } from 'rxjs';
@@ -20,6 +20,7 @@ import * as SidenavActions from 'src/app/sidenav/store/actions/sidenav.actions';
 })
 export class SidenavComponent implements AfterViewInit, OnDestroy {
   @ViewChild('sidenav') sidenav!: MatSidenav;
+  @ViewChild('sidenavContent') sidenavContent!: MatSidenavContent;
 
   private destroyed$ = new Subject<void>();
 
@@ -56,6 +57,12 @@ export class SidenavComponent implements AfterViewInit, OnDestroy {
       )
       .subscribe(() => {
         this.store.dispatch(SidenavActions.closedDrawer());
+      });
+
+    this.actions$
+      .pipe(ofType(SidenavActions.scrollTopContent), takeUntil(this.destroyed$))
+      .subscribe(() => {
+        this.sidenavContent.scrollTo({ top: 0 });
       });
   }
 

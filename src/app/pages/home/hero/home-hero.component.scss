@@ -4,7 +4,7 @@
 @use "variables";
 
 .image {
-  @include images.feature;
+  @include images.cover;
 }
 
 .display {
