@@ -7,6 +7,6 @@ import { Component } from '@angular/core';
 })
 export class DanceContentComponent {
   onSocialContentPanelClick(): void {
-    window.open('https://www.instagram.com/immattthompson/', '_blank');
+    window.open('https://www.instagram.com/gyngrboi/', '_blank');
   }
 }
