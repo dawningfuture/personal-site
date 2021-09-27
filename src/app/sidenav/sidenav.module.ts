@@ -13,6 +13,7 @@ import { SidenavLinkComponent } from 'src/app/sidenav/components/link/sidenav-li
 import { SidenavVersionComponent } from 'src/app/sidenav/components/version/sidenav-version.component';
 import { SidenavComponent } from 'src/app/sidenav/sidenav.component';
 import { SidenavStoreModule } from 'src/app/sidenav/store/sidenav-store.module';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { SidenavStoreModule } from 'src/app/sidenav/store/sidenav-store.module';
     MatDividerModule,
     MatRippleModule,
     FlexLayoutModule,
+    SharedModule,
   ],
   exports: [SidenavComponent],
 })
