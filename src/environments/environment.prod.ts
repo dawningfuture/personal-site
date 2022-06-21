@@ -6,6 +6,7 @@ export const environment: Environment = {
   version: packageJson.version,
   origin: 'https://awholevibe.us',
   useHlsjs: true,
+  blogUrl: 'https://blog.awholevibe.us',
   pages: {
     connect: {
       recaptchaSiteKey: '6LcUARIcAAAAAGM-W8K6BJsOpd4jJjamAVEo4ltI',

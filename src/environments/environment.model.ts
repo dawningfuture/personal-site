@@ -22,6 +22,11 @@ export interface Environment {
   useHlsjs: boolean;
 
   /**
+   * Whether to use hls.js for video streaming
+   */
+  blogUrl: string ;
+
+  /**
    * Page-specific configurations
    */
   pages: {

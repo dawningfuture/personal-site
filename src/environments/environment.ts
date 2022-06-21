@@ -8,6 +8,7 @@ export const environment: Environment = {
   // is being served from the desired origin
   origin: '',
   useHlsjs: true,
+  blogUrl: 'https://blog.awholevibe.us',
   pages: {
     connect: {
       recaptchaSiteKey: '6LcUARIcAAAAAGM-W8K6BJsOpd4jJjamAVEo4ltI',
