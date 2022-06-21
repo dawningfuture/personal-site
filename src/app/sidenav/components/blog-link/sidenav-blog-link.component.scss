@@ -1,0 +1,8 @@
+@use "text";
+@use "utilities";
+
+.ps-sidenav-blog-link {
+  @include text.level("display-2");
+  @include text.center;
+  @include utilities.link;
+}
