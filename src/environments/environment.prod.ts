@@ -4,7 +4,7 @@ import { Environment } from './environment.model';
 export const environment: Environment = {
   production: true,
   version: packageJson.version,
-  origin: 'https://matthewthompson.us',
+  origin: 'https://awholevibe.us',
   useHlsjs: true,
   pages: {
     connect: {
