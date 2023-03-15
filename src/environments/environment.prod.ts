@@ -4,9 +4,9 @@ import { Environment } from './environment.model';
 export const environment: Environment = {
   production: true,
   version: packageJson.version,
-  origin: 'https://awholevibe.us',
+  origin: 'https://matthewthompson.us',
   useHlsjs: true,
-  blogUrl: 'https://blog.awholevibe.us',
+  blogUrl: 'https://blog.matthewthompson.us',
   pages: {
     connect: {
       recaptchaSiteKey: '6LcUARIcAAAAAGM-W8K6BJsOpd4jJjamAVEo4ltI',
