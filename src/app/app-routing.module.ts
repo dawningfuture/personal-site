@@ -58,31 +58,31 @@ export const appRoutes: AppRoute[] = [
       },
     },
   },
-  {
-    path: 'dance',
-    loadChildren: () =>
-      import('./pages/dance/dance-page.module').then(
-        (module) => module.DancePageModule
-      ),
-    data: {
-      sidenavLink: {
-        label: 'Dance',
-        order: 3,
-        path: '/dance',
-      },
-      hero: {
-        videoSources: {
-          mp4Url:
-            'https://media.matthewthompson.us/personal-site/pages/dance/dance-hero-background/dance-hero-background.mp4',
-          hlsTsUrl:
-            'https://media.matthewthompson.us/personal-site/pages/dance/dance-hero-background/ts/dance-hero-background.m3u8',
+  // {
+  //   path: 'dance',
+  //   loadChildren: () =>
+  //     import('./pages/dance/dance-page.module').then(
+  //       (module) => module.DancePageModule
+  //     ),
+  //   data: {
+  //     sidenavLink: {
+  //       label: 'Dance',
+  //       order: 3,
+  //       path: '/dance',
+  //     },
+  //     hero: {
+  //       videoSources: {
+  //         mp4Url:
+  //           'https://media.matthewthompson.us/personal-site/pages/dance/dance-hero-background/dance-hero-background.mp4',
+  //         hlsTsUrl:
+  //           'https://media.matthewthompson.us/personal-site/pages/dance/dance-hero-background/ts/dance-hero-background.m3u8',
 
-          hlsFmp4Url:
-            'https://media.matthewthompson.us/personal-site/pages/dance/dance-hero-background/fmp4/dance-hero-background.m3u8',
-        },
-      },
-    },
-  },
+  //         hlsFmp4Url:
+  //           'https://media.matthewthompson.us/personal-site/pages/dance/dance-hero-background/fmp4/dance-hero-background.m3u8',
+  //       },
+  //     },
+  //   },
+  // },
   {
     path: 'connect',
     loadChildren: () =>
@@ -115,7 +115,7 @@ export const appRoutes: AppRoute[] = [
       },
       hero: {
         imageUrl:
-          'https://media.matthewthompson.us/personal-site/pages/home/home-hero-background.jpg',
+          'https://media.matthewthompson.us/personal-site/pages/connect/connect-hero-background.jpg',
       },
     },
   },
