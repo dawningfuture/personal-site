@@ -13,17 +13,17 @@
   },
   "private": true,
   "dependencies": {
-    "@angular/animations": "~14.3.0",
+    "@angular/animations": "~15.2.4",
     "@angular/cdk": "~14.3.0",
-    "@angular/common": "~14.3.0",
-    "@angular/compiler": "~14.3.0",
-    "@angular/core": "~14.3.0",
+    "@angular/common": "~15.2.4",
+    "@angular/compiler": "~15.2.4",
+    "@angular/core": "~15.2.4",
     "@angular/flex-layout": "~14.3.0",
-    "@angular/forms": "~14.3.0",
+    "@angular/forms": "~15.2.4",
     "@angular/material": "~14.3.0",
-    "@angular/platform-browser": "~14.3.0",
-    "@angular/platform-browser-dynamic": "~14.3.0",
-    "@angular/router": "~14.3.0",
+    "@angular/platform-browser": "~15.2.4",
+    "@angular/platform-browser-dynamic": "~15.2.4",
+    "@angular/router": "~15.2.4",
     "@ngrx/effects": "~14.9.9",
     "@ngrx/entity": "~14.9.9",
     "@ngrx/router-store": "~14.9.9",
@@ -37,8 +37,8 @@
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~14.9.9",
-    "@angular/cli": "~14.3.0",
-    "@angular/compiler-cli": "~14.3.0",
+    "@angular/cli": "^15.2.4",
+    "@angular/compiler-cli": "~15.2.4",
     "@ngrx/store-devtools": "^14.9.9",
     "@types/grecaptcha": "^3.0.3",
     "@types/jasmine": "~3.6.0",
@@ -59,7 +59,7 @@
     "ts-node": "~8.3.0",
     "tslint": "~6.1.0",
     "tslint-config-prettier": "^1.18.0",
-    "typescript": "~4.6.4"
+    "typescript": "~4.9.5"
   },
   "config": {
     "commitizen": {
