@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - "delivery"
+      - "#114/deploy-aws-email-api"
 
 jobs:
   deploy:
