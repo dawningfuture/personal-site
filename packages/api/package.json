@@ -1,0 +1,9 @@
+{
+    "name": "@ps/api",
+    "version": "2.2.2",
+    "scripts": {},
+    "private": true,
+    "dependencies": {
+        "serverless": "^3.30.1"
+    }
+}

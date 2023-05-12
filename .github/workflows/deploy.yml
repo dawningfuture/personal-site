@@ -22,16 +22,16 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v2
         with:
-          node-version: "12"
+          node-version: "14.x"
 
       - name: NPM Install
-        run: npm install
+        run: yarn
 
       - name: Build app
-        run: npm run build:prod
+        run: yarn workspace @ps/web run build:prod
 
       - name: Deploy static site to S3 bucket
-        run: aws s3 sync ./dist/personal-site/ s3://matthewthompson.us --delete
+        run: yarn workspace @ps/web run deploy
 
       - name: Invalidate CloudFront index.html
         run: |

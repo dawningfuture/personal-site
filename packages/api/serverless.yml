@@ -1,0 +1,19 @@
+service: personal-site-email
+
+configValidationMode: error
+
+provider:
+  name: aws
+  region: us-east-1
+  stage: production
+  stackName: ${self:service}
+  runtime: nodejs14.x
+  versionFunctions: false
+  deploymentBucket:
+    name: ${self:stackName}-artifacts
+  environment:
+    NODE_OPTIONS: --enable-source-maps
+  iam:
+    role:
+      name: ${self:custom.globals.stacks.services.listener.stackName}-role
+      statements: ${file(./resources/role.js)}
