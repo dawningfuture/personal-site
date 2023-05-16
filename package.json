@@ -6,12 +6,20 @@
         "packages/**"
     ],
     "scripts": {
+        "start": "npm-run-all -p start:api start:web",
+        "start:api": "yarn workspace @ps/api start",
+        "start:web": "yarn workspace @ps/web start",
         "commit": "cz"
     },
     "devDependencies": {
         "commitizen": "^4.2.3",
         "cz-customizable": "^6.3.0",
-        "husky": "^4.0.0"
+        "eslint": "^8.36.0",
+        "eslint-config-prettier": "^8.8.0",
+        "eslint-plugin-prettier": "^4.2.1",
+        "husky": "^4.0.0",
+        "npm-run-all": "^4.1.5",
+        "prettier": "^2.8.6"
     },
     "config": {
         "commitizen": {

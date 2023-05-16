@@ -1,4 +1,4 @@
-name: Deploy To S3
+name: Deploy
 
 on:
   push:
@@ -18,7 +18,7 @@ jobs:
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-region: us-west-2
+          aws-region: ${{ secrets.AWS_REGION }}
 
       - name: Setup Node
         uses: actions/setup-node@v2
