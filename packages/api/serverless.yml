@@ -4,16 +4,43 @@ configValidationMode: error
 
 provider:
   name: aws
-  region: us-east-1
-  stage: production
-  stackName: ${self:service}
+  region: ${file(./src/config.js):AWS_REGION}
+  stage: ${opt:stage, 'local'}
+  stackName: ${self:custom.baseName}
   runtime: nodejs14.x
   versionFunctions: false
   deploymentBucket:
-    name: ${self:stackName}-artifacts
+    name: ${self:provider.stackName}-artifacts
   environment:
     NODE_OPTIONS: --enable-source-maps
-  iam:
-    role:
-      name: ${self:custom.globals.stacks.services.listener.stackName}-role
-      statements: ${file(./resources/role.js)}
+  httpApi:
+    disableDefaultEndpoint: true
+    shouldStartNameWithService: true
+    cors: true
+
+package:
+  individually: true
+
+custom:
+  baseName: ${self:service}-${self:provider.stage}
+  webpack:
+    webpackConfig: './webpack.config.js'
+    packager: yarn
+  serverless-offline:
+    httpPort: 4000
+    useChildProcesses: true
+
+functions:
+  sendConnectEmail:
+    handler: src/functions/sendConnectEmail.sendConnectEmail
+    name: ${self:custom.baseName}-sendConnectEmailFunction
+    events:
+      - httpApi:
+          method: GET
+          path: /sendConnectEmail
+
+plugins:
+  - serverless-deployment-bucket
+  - serverless-domain-manager
+  - serverless-webpack
+  - serverless-offline

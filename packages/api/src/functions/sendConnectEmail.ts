@@ -1,7 +1,12 @@
-import { APIGatewayProxyHandlerV2 } from 'aws-lambda';
 import * as SourceMapSupport from 'source-map-support';
 import { SES } from '@aws-sdk/client-ses';
-import { config } from '@ps/api/config';
+import * as config from '@ps/api/config';
+import {
+  ConfirmationEmailBody,
+  NotificationEmailBody,
+} from '@ps/api/types/sendConnectEmail.types';
+import { LambdaUtils } from '@ps/api/utils/lambda.utils';
+import { validateSendConnectEmailRequest } from '@ps/api/validators/sendConnectEmailRequest.validator';
 
 SourceMapSupport.install({
   environment: 'node',
@@ -9,90 +14,54 @@ SourceMapSupport.install({
 
 const ses = new SES({ region: config.AWS_REGION });
 
-const sendConfirmationEmail = (body) => {
-  const params = {
+const sendConfirmationEmail = (body: ConfirmationEmailBody) => {
+  return ses.sendTemplatedEmail({
     Destination: {
       ToAddresses: [body.email],
     },
     Source: process.env.FROM_ADDRESS,
     Template: 'ConnectConfirmation',
     TemplateData: `{"name": "${body.name}", "email": "${body.email}"}`,
-  };
-
-  return ses.sendTemplatedEmail(params).promise();
+  });
 };
 
-const sendNotificationEmail = (body) => {
-  const params = {
+const sendNotificationEmail = (body: NotificationEmailBody) => {
+  return ses.sendTemplatedEmail({
     Destination: {
-      ToAddresses: [process.env.TO_ADDRESS],
+      ToAddresses: [body.email],
     },
     Source: process.env.FROM_ADDRESS,
     Template: 'ConnectNotification',
     TemplateData: `{"name": "${body.name}", "email": "${body.email}", "organization": "${body.organization}", "message": "${body.message}"}`,
-  };
-
-  return ses.sendTemplatedEmail(params).promise();
-};
-
-const sendConnectEmail: APIGatewayProxyHandlerV2 = (
-  event,
-  context,
-  callback
-) => {
-  if (event.requestContext.http.method === 'OPTIONS') {
-    return callback(null, {
-      statusCode: 200,
-      body: '{"success":true}',
-      headers: {
-        'Content-Type': 'application/json',
-        'Access-Control-Allow-Origin': '*',
-        'Access-Control-Allow-Methods': 'POST, OPTIONS',
-        'Access-Control-Allow-Headers': '*',
-      },
-    });
-  }
-
-  if (event.requestContext.http.method === 'POST') {
-    let body = {};
-
-    try {
-      body = JSON.parse(event.body);
-    } catch (error) {
-      return callback(null, {
-        statusCode: 500,
-        body: 'Failure',
-      });
-    }
-
-    return Promise.all([
-      sendNotificationEmail(body),
-      sendConfirmationEmail(body),
-    ])
-      .then(() => {
-        callback(null, {
-          statusCode: 200,
-          body: '{"success":true}',
-          headers: {
-            'Content-Type': 'application/json',
-            'Access-Control-Allow-Origin': '*',
-            'Access-Control-Allow-Methods': 'POST, OPTIONS',
-            'Access-Control-Allow-Headers': '*',
-          },
-        });
-      })
-      .catch((error) => {
-        callback(null, {
-          statusCode: 500,
-          body: 'Failure',
-        });
-      });
-  }
-
-  return callback(null, {
-    statusCode: 500,
-    body: 'Failure',
   });
 };
+
+const sendConnectEmail = LambdaUtils.createApiGatewayProxyHandler(
+  async (event) => {
+    const request = validateSendConnectEmailRequest(event.body);
+
+    const { email, name, organization, message } = request;
+
+    return await Promise.all([
+      sendNotificationEmail({
+        email,
+        name,
+        organization,
+        message,
+      }),
+      sendConfirmationEmail({ email, name }),
+    ])
+      .then(() => {
+        return {
+          message: 'Success',
+        };
+      })
+      .catch(() => {
+        return {
+          message: 'Failure',
+        };
+      });
+  }
+);
 
 export { sendConnectEmail };

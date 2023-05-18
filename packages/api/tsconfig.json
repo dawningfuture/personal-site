@@ -1,28 +1,15 @@
 {
-    "extends": [
-        "../../tsconfig.base.json"
-    ],
+    "extends": "../../tsconfig.base.json",
     "compilerOptions": {
         "lib": [
             "esnext"
         ],
-        "baseUrl": ".",
-        "strict": true,
-        "noImplicitReturns": true,
-        "noFallthroughCasesInSwitch": true,
-        "noUnusedLocals": true,
-        "forceConsistentCasingInFileNames": true,
-        "skipLibCheck": true,
         "isolatedModules": true,
         "sourceMap": true,
-        "allowJs": true,
-        "paths": {
-            "@ps/api/*": [
-                "src/*"
-            ],
-        }
+        "allowJs": true
     },
     "include": [
-        "**/*.ts"
+        "**/*.ts",
+        "**/*.js"
     ]
 }
