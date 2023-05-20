@@ -15,10 +15,8 @@ export class ConnectPageService {
   constructor(private http: HttpClient) {}
 
   sendConnectEmail(email: ConnectEmail): Observable<any> {
-    return this.http.get(environment.pages.connect.sendConnectEmailEndpoint, {
-      params: {
-        ...email,
-      },
+    return this.http.post(environment.pages.connect.sendConnectEmailEndpoint, {
+      email,
     });
   }
 }
