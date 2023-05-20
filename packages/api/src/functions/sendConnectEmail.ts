@@ -1,6 +1,6 @@
 import * as SourceMapSupport from 'source-map-support';
 import { SES } from '@aws-sdk/client-ses';
-import * as config from '@ps/api/config';
+import { config } from '@ps/api/config';
 import {
   ConfirmationEmailBody,
   NotificationEmailBody,
@@ -38,7 +38,10 @@ const sendNotificationEmail = (body: NotificationEmailBody) => {
 
 const sendConnectEmail = LambdaUtils.createApiGatewayProxyHandler(
   async (event) => {
-    const request = validateSendConnectEmailRequest(event.body);
+    console.log(event);
+    const request = validateSendConnectEmailRequest(
+      event.queryStringParameters
+    );
 
     const { email, name, organization, message } = request;
 
@@ -50,17 +53,11 @@ const sendConnectEmail = LambdaUtils.createApiGatewayProxyHandler(
         message,
       }),
       sendConfirmationEmail({ email, name }),
-    ])
-      .then(() => {
-        return {
-          message: 'Success',
-        };
-      })
-      .catch(() => {
-        return {
-          message: 'Failure',
-        };
-      });
+    ]).then(() => {
+      return {
+        message: 'Successfully sent connect email',
+      };
+    });
   }
 );
 

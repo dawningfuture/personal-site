@@ -42,6 +42,8 @@ const validateSendConnectEmailRequest = (candidate: unknown) => {
     error.message ? [error.message] : []
   );
 
+  console.log(invalidations);
+
   return ErrorUtils.throwError(
     new PsValidationError({
       message: 'Invalid SendConnectEmail Request',

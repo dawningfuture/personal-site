@@ -6,7 +6,6 @@
         ],
         "isolatedModules": true,
         "sourceMap": true,
-        "allowJs": true
     },
     "include": [
         "**/*.ts",

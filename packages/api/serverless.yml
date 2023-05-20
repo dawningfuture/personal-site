@@ -4,7 +4,7 @@ configValidationMode: error
 
 provider:
   name: aws
-  region: ${file(./src/config.js):AWS_REGION}
+  region: ${self:custom.config.AWS_REGION}
   stage: ${opt:stage, 'local'}
   stackName: ${self:custom.baseName}
   runtime: nodejs14.x
@@ -17,12 +17,13 @@ provider:
     disableDefaultEndpoint: true
     shouldStartNameWithService: true
     cors: true
-
+   
 package:
   individually: true
 
 custom:
   baseName: ${self:service}-${self:provider.stage}
+  config: ${file(./serverless.config.js):config}
   webpack:
     webpackConfig: './webpack.config.js'
     packager: yarn
@@ -37,10 +38,35 @@ functions:
     events:
       - httpApi:
           method: GET
-          path: /sendConnectEmail
+          path: /personal-site/connect
+    environment:
+      FROM_ADDRESS: ${self:custom.config.AWS_SES_FROM_ADDRESS}
+
+resources:
+  Resources:
+    sendConnectEmailRole:
+      Type: AWS::IAM::Role
+      Properties:
+        RoleName: ${self:custom.baseName}-send-connect-email-role
+        AssumeRolePolicyDocument:
+          Version: '2012-10-17'
+          Statement:
+            - Effect: Allow
+              Principal:
+                Service:
+                  - lambda.amazonaws.com
+              Action: sts:AssumeRole
+        Policies:
+          - PolicyName: ${self:custom.baseName}-send-connect-email-policy
+            PolicyDocument:
+              Version: '2012-10-17'
+              Statement:
+                - Effect: "Allow"
+                  Action:
+                    - "ses:SendRawEmail"
+                  Resource: "*"
 
 plugins:
   - serverless-deployment-bucket
-  - serverless-domain-manager
   - serverless-webpack
   - serverless-offline
