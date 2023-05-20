@@ -28,11 +28,11 @@ jobs:
       - name: NPM Install
         run: yarn
 
-      - name: Build app
+      - name: Build web app
         run: yarn workspace @ps/web run build:prod
 
-      - name: Deploy static site to S3 bucket
-        run: yarn workspace @ps/web run deploy
+      - name: Deploy web app to S3 bucket
+        run: yarn workspace @ps/web run deploy:prod
 
       - name: Invalidate CloudFront index.html
         run: |
@@ -40,3 +40,6 @@ jobs:
             --distribution-id ${{ secrets.AWS_CLOUDFRONT_DISTRIBUTION }} \
             --paths "/index.html" \
             > /dev/null
+
+      - name: Deploy
+        run: yarn workspace @ps/api run deploy:prod --region us-west-2

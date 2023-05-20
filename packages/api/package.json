@@ -3,7 +3,7 @@
     "version": "2.2.2",
     "scripts": {
         "start": "sls offline start --verbose --reloadHandler",
-        "lint": "eslint --fix ."
+        "deploy:prod": "sls deploy --stage prod"
     },
     "private": true,
     "dependencies": {

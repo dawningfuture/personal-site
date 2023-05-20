@@ -16,7 +16,9 @@ provider:
   httpApi:
     disableDefaultEndpoint: true
     shouldStartNameWithService: true
-    cors: true
+    cors: 
+      allowedOrigins:
+        - https://matthewthompson.us
    
 package:
   individually: true
@@ -27,6 +29,7 @@ custom:
   webpack:
     webpackConfig: './webpack.config.js'
     packager: yarn
+    keepOutputDirectory: true
   serverless-offline:
     httpPort: 4000
     useChildProcesses: true
@@ -47,7 +50,7 @@ resources:
     sendConnectEmailRole:
       Type: AWS::IAM::Role
       Properties:
-        RoleName: ${self:custom.baseName}-send-connect-email-role
+        RoleName: ${self:custom.baseName}-sendConnectEmailRole
         AssumeRolePolicyDocument:
           Version: '2012-10-17'
           Statement:
@@ -57,7 +60,7 @@ resources:
                   - lambda.amazonaws.com
               Action: sts:AssumeRole
         Policies:
-          - PolicyName: ${self:custom.baseName}-send-connect-email-policy
+          - PolicyName: ${self:custom.baseName}-sendConnectEmailPolicy
             PolicyDocument:
               Version: '2012-10-17'
               Statement:
