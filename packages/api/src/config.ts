@@ -1,6 +1,19 @@
+import { confirmationTemplate } from './aws/ses/templates/sendConnectEmail/confirmationTemplate';
+import { notificationTemplate } from './aws/ses/templates/sendConnectEmail/notificationTemplate';
+
 const config = {
-  AWS_REGION: 'us-west-2',
-  AWS_SES_FROM_ADDRESS: 'connect@matthewthompson.us',
+  aws: {
+    region: 'us-east-1',
+  },
+  handlers: {
+    sendConnectEmail: {
+      ses: {
+        fromAddress: 'connect@matthewthompson.us',
+        notificationTemplate,
+        confirmationTemplate,
+      },
+    },
+  },
 };
 
 export { config };

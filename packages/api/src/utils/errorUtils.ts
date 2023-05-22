@@ -1,4 +1,4 @@
-import { PsError } from '@ps/api/types/error.types';
+import { PsError } from '@ps/api/types/errorTypes';
 
 const throwError = <E extends PsError>(error: E) => {
   console.error(error);

@@ -1,44 +1,45 @@
 import * as SourceMapSupport from 'source-map-support';
 import { SES } from '@aws-sdk/client-ses';
-import { config } from '@ps/api/config';
 import {
   ConfirmationEmailBody,
   NotificationEmailBody,
-} from '@ps/api/types/sendConnectEmail.types';
-import { LambdaUtils } from '@ps/api/utils/lambda.utils';
-import { validateSendConnectEmailRequest } from '@ps/api/validators/sendConnectEmailRequest.validator';
+} from '@ps/api/handlers/sendConnectEmail/types/sendConnectEmailTypes';
+import { LambdaUtils } from '@ps/api/utils/aws/lambdaUtils';
+import { validateSendConnectEmailRequest } from '@ps/api/handlers/sendConnectEmail/validators/sendConnectEmailRequestValidator';
+import { config } from '@ps/api/config';
+import { confirmationTemplate } from '@ps/api/aws/ses/templates/sendConnectEmail/confirmationTemplate';
+import { notificationTemplate } from '@ps/api/aws/ses/templates/sendConnectEmail/notificationTemplate';
 
 SourceMapSupport.install({
   environment: 'node',
 });
 
-const ses = new SES({ region: config.AWS_REGION });
+const sesClient = new SES({ region: config.aws.region });
 
 const sendConfirmationEmail = (body: ConfirmationEmailBody) => {
-  return ses.sendTemplatedEmail({
+  return sesClient.sendTemplatedEmail({
     Destination: {
       ToAddresses: [body.email],
     },
-    Source: process.env.FROM_ADDRESS,
-    Template: 'ConnectConfirmation',
+    Source: config.handlers.sendConnectEmail.ses.fromAddress,
+    Template: confirmationTemplate.TemplateName,
     TemplateData: `{"name": "${body.name}", "email": "${body.email}"}`,
   });
 };
 
 const sendNotificationEmail = (body: NotificationEmailBody) => {
-  return ses.sendTemplatedEmail({
+  return sesClient.sendTemplatedEmail({
     Destination: {
       ToAddresses: [body.email],
     },
-    Source: process.env.FROM_ADDRESS,
-    Template: 'ConnectNotification',
+    Source: config.handlers.sendConnectEmail.ses.fromAddress,
+    Template: notificationTemplate.TemplateName,
     TemplateData: `{"name": "${body.name}", "email": "${body.email}", "organization": "${body.organization}", "message": "${body.message}"}`,
   });
 };
 
 const sendConnectEmail = LambdaUtils.createApiGatewayProxyHandler(
   async (event) => {
-    console.log(event);
     const request = validateSendConnectEmailRequest(
       event.queryStringParameters
     );

@@ -1,7 +1,7 @@
 import Ajv, { JSONSchemaType } from 'ajv';
-import { SendConnectEmailRequest } from '@ps/api/types/sendConnectEmail.types';
-import { ErrorUtils } from '@ps/api/utils/error.utils';
-import { PsValidationError } from '@ps/api/types/error.types';
+import { SendConnectEmailRequest } from '@ps/api/handlers/sendConnectEmail/types/sendConnectEmailTypes';
+import { ErrorUtils } from '@ps/api/utils/errorUtils';
+import { PsValidationError } from '@ps/api/types/errorTypes';
 
 const ajv = new Ajv({
   strict: true,

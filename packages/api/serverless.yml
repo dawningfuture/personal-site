@@ -4,13 +4,13 @@ configValidationMode: error
 
 provider:
   name: aws
-  region: ${self:custom.config.AWS_REGION}
+  region: ${self:custom.config.aws.region}
   stage: ${opt:stage, 'local'}
   stackName: ${self:custom.baseName}
   runtime: nodejs14.x
   versionFunctions: false
   deploymentBucket:
-    name: ${self:provider.stackName}-artifacts
+    name: ${self:provider.stackName}-${self:provider.region}-artifacts
   environment:
     NODE_OPTIONS: --enable-source-maps
   httpApi:
@@ -36,14 +36,12 @@ custom:
 
 functions:
   sendConnectEmail:
-    handler: src/functions/sendConnectEmail.sendConnectEmail
+    handler: src/handlers/sendConnectEmail/sendConnectEmail.sendConnectEmail
     name: ${self:custom.baseName}-sendConnectEmailFunction
     events:
       - httpApi:
           method: GET
           path: /personal-site/connect
-    environment:
-      FROM_ADDRESS: ${self:custom.config.AWS_SES_FROM_ADDRESS}
 
 resources:
   Resources:
@@ -68,6 +66,16 @@ resources:
                   Action:
                     - "ses:SendRawEmail"
                   Resource: "*"
+    
+    sendConnectEmailConfirmationTemplate:
+      Type: AWS::SES::Template
+      Properties:
+        Template: ${self:custom.config.handlers.sendConnectEmail.ses.confirmationTemplate}
+
+    sendConnectEmailNotificationTemplate:
+      Type: AWS::SES::Template
+      Properties:
+        Template: ${self:custom.config.handlers.sendConnectEmail.ses.notificationTemplate}
 
 plugins:
   - serverless-deployment-bucket
