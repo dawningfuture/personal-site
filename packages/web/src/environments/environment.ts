@@ -12,8 +12,7 @@ export const environment: Environment = {
   pages: {
     connect: {
       recaptchaSiteKey: '6LcUARIcAAAAAGM-W8K6BJsOpd4jJjamAVEo4ltI',
-      sendConnectEmailEndpoint:
-        'https://api.matthewthompson.us/personal-site/connect',
+      sendConnectEmailEndpoint: 'http://localhost:4000/personal-site/connect',
     },
   },
 };
