@@ -1,6 +1,6 @@
 {
     "name": "@ps/api",
-    "version": "2.2.2",
+    "version": "1.0.0",
     "scripts": {
         "start": "sls offline start --verbose --reloadHandler",
         "deploy:prod": "sls deploy --stage prod"
