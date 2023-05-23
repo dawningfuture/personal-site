@@ -46,6 +46,8 @@ const sendConnectEmail = LambdaUtils.createApiGatewayProxyHandler(
 
     const { email, name, organization, message } = request;
 
+    console.log(email);
+
     return await Promise.all([
       sendNotificationEmail({
         email,

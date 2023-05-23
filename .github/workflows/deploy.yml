@@ -58,4 +58,4 @@ jobs:
         run: yarn install --frozen-lockfile
 
       - name: Deploy API
-        run: yarn workspace @ps/api run deploy:prod --region us-west-2
+        run: yarn workspace @ps/api run deploy:prod --region ${{ secrets.AWS_REGION }}

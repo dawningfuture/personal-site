@@ -19,6 +19,14 @@ provider:
     cors: 
       allowedOrigins:
         - https://matthewthompson.us
+  iam:
+    role:
+      statements:
+        - Effect: "Allow"
+          Action:
+            - "ses:SendRawEmail"
+          Resource: "*"
+
    
 package:
   individually: true
@@ -45,28 +53,6 @@ functions:
 
 resources:
   Resources:
-    sendConnectEmailRole:
-      Type: AWS::IAM::Role
-      Properties:
-        RoleName: ${self:custom.baseName}-sendConnectEmailRole
-        AssumeRolePolicyDocument:
-          Version: '2012-10-17'
-          Statement:
-            - Effect: Allow
-              Principal:
-                Service:
-                  - lambda.amazonaws.com
-              Action: sts:AssumeRole
-        Policies:
-          - PolicyName: ${self:custom.baseName}-sendConnectEmailPolicy
-            PolicyDocument:
-              Version: '2012-10-17'
-              Statement:
-                - Effect: "Allow"
-                  Action:
-                    - "ses:SendRawEmail"
-                  Resource: "*"
-    
     sendConnectEmailConfirmationTemplate:
       Type: AWS::SES::Template
       Properties:
