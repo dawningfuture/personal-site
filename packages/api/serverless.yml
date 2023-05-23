@@ -24,7 +24,7 @@ provider:
       statements:
         - Effect: "Allow"
           Action:
-            - "ses:SendRawEmail"
+            - "ses:SendTemplatedEmail"
           Resource: "*"
 
    
@@ -41,6 +41,13 @@ custom:
   serverless-offline:
     httpPort: 4000
     useChildProcesses: true
+  customDomain:
+    domainName: 'api.matthewthompson.us'
+    stage: ${self:provider.stage}
+    apiType: http
+    endpointType: REGIONAL
+    basePath: ''
+    autoDomain: true
 
 functions:
   sendConnectEmail:
@@ -65,5 +72,6 @@ resources:
 
 plugins:
   - serverless-deployment-bucket
+  - serverless-domain-manager
   - serverless-webpack
   - serverless-offline
