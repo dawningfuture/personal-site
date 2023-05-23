@@ -1,4 +1,4 @@
-name: Deploy To S3
+name: Deploy
 
 on:
   push:
@@ -6,32 +6,33 @@ on:
       - "delivery"
 
 jobs:
-  deploy:
+  deploy-web:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v1
+        uses: actions/checkout@v3
 
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-region: us-west-2
+          aws-region: ${{ secrets.AWS_REGION }}
 
       - name: Setup Node
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
-          node-version: "12"
+          node-version: "14.x"
+          cache: "yarn"
 
-      - name: NPM Install
-        run: npm install
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile
 
-      - name: Build app
-        run: npm run build:prod
+      - name: Build web app
+        run: yarn workspace @ps/web run build:prod
 
-      - name: Deploy static site to S3 bucket
-        run: aws s3 sync ./dist/personal-site/ s3://matthewthompson.us --delete
+      - name: Deploy web app to S3 bucket
+        run: yarn workspace @ps/web run deploy:prod
 
       - name: Invalidate CloudFront index.html
         run: |
@@ -39,3 +40,28 @@ jobs:
             --distribution-id ${{ secrets.AWS_CLOUDFRONT_DISTRIBUTION }} \
             --paths "/index.html" \
             > /dev/null
+
+  deploy-api:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ secrets.AWS_REGION }}
+
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: "14.x"
+          cache: "yarn"
+
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile
+
+      - name: Deploy API
+        run: yarn workspace @ps/api run deploy:prod --region ${{ secrets.AWS_REGION }}

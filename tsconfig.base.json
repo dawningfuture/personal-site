@@ -1,0 +1,19 @@
+{
+    "compilerOptions": {
+        "baseUrl": ".",
+        "strict": true,
+        "noImplicitReturns": true,
+        "noFallthroughCasesInSwitch": true,
+        "noUnusedLocals": true,
+        "forceConsistentCasingInFileNames": true,
+        "skipLibCheck": true,
+        "paths": {
+            "@ps/api/*": [
+                "packages/api/src/*"
+            ],
+        }
+    },
+    "exclude": [
+        "node_modules"
+    ]
+}

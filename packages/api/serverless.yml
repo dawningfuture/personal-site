@@ -1,0 +1,77 @@
+service: personal-site-api
+
+configValidationMode: error
+
+provider:
+  name: aws
+  region: ${self:custom.config.aws.region}
+  stage: ${opt:stage, 'local'}
+  stackName: ${self:custom.baseName}
+  runtime: nodejs14.x
+  versionFunctions: false
+  deploymentBucket:
+    name: ${self:provider.stackName}-${self:provider.region}-artifacts
+  environment:
+    NODE_OPTIONS: --enable-source-maps
+  httpApi:
+    disableDefaultEndpoint: true
+    shouldStartNameWithService: true
+    cors: 
+      allowedOrigins:
+        - https://matthewthompson.us
+  iam:
+    role:
+      statements:
+        - Effect: "Allow"
+          Action:
+            - "ses:SendTemplatedEmail"
+          Resource: "*"
+
+   
+package:
+  individually: true
+
+custom:
+  baseName: ${self:service}-${self:provider.stage}
+  config: ${file(./serverless.config.js):config}
+  webpack:
+    webpackConfig: './webpack.config.js'
+    packager: yarn
+    keepOutputDirectory: true
+  serverless-offline:
+    httpPort: 4000
+    useChildProcesses: true
+  customDomain:
+    domainName: 'api.matthewthompson.us'
+    stage: ${self:provider.stage}
+    apiType: http
+    endpointType: REGIONAL
+    basePath: ''
+    autoDomain: true
+
+functions:
+  sendConnectEmail:
+    handler: src/handlers/sendConnectEmail/sendConnectEmail.sendConnectEmail
+    name: ${self:custom.baseName}-sendConnectEmailFunction
+    events:
+      - httpApi:
+          method: GET
+          path: /personal-site/connect
+
+resources:
+  Resources:
+    sendConnectEmailConfirmationTemplate:
+      Type: AWS::SES::Template
+      Properties:
+        Template: ${self:custom.config.handlers.sendConnectEmail.ses.confirmationTemplate}
+
+    sendConnectEmailNotificationTemplate:
+      Type: AWS::SES::Template
+      Properties:
+        Template: ${self:custom.config.handlers.sendConnectEmail.ses.notificationTemplate}
+
+plugins:
+  - serverless-deployment-bucket
+  - serverless-domain-manager
+  - serverless-webpack
+  - serverless-offline
