@@ -126,6 +126,7 @@ export const appRoutes: AppRoute[] = [
   imports: [
     RouterModule.forRoot(appRoutes, {
       onSameUrlNavigation: 'reload',
+      anchorScrolling: 'enabled',
     }),
   ],
   exports: [RouterModule],

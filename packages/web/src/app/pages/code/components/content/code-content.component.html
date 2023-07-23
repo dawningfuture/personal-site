@@ -1,4 +1,5 @@
 <ps-content fxLayout="column" fxLayoutGap>
+  <button (click)="onScrollToSection(codePageSections.COMING_SOON)">Test</button>
   <ps-content-panel fxFlex color="accent">
     <div ngClass.gt-xs="headline-gt-xs" ngClass.xs="headline-xs">
       Projects become my passions.
@@ -25,7 +26,7 @@
     </ps-content-panel>
   </ps-content-container>
 
-  <ps-code-personal-site></ps-code-personal-site>
+  <ps-code-personal-site [id]="codePageSections.PERSONAL_SITE"></ps-code-personal-site>
 
   <ps-code-coming-soon></ps-code-coming-soon>
 </ps-content>

@@ -12,6 +12,7 @@ import { CodeContentComponent } from 'src/app/pages/code/components/content/code
 import { CodeHeroComponent } from 'src/app/pages/code/components/hero/code-hero.component';
 import { CodePersonalSiteComponent } from 'src/app/pages/code/components/personal-site/code-personal-site.component';
 import { SharedModule } from 'src/app/shared/shared.module';
+import { CodePageStoreModule } from 'src/app/pages/code/store/code-page-store.module';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { SharedModule } from 'src/app/shared/shared.module';
   imports: [
     CommonModule,
     CodePageRoutingModule,
+    CodePageStoreModule,
     FlexLayoutModule,
     SharedModule,
     MatIconModule,

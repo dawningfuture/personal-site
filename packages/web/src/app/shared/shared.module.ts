@@ -9,6 +9,9 @@ import { FooterComponent } from 'src/app/shared/footer/footer.component';
 import { LoadingIndicatorComponent } from 'src/app/shared/loading-indicator/loading-indicator.component';
 import { NavigationIndicatorComponent } from 'src/app/shared/navigation-indicator/navigation-indicator.component';
 import { HeroComponent } from './hero/hero.component';
+// import { ScrollnavManagerComponent } from './scrollnav/directives/manager/scrollnav-manager.component';
+// import { ScrollnavManagerDirective } from './scrollnav/directives/scrollnav-manager.directive';
+// import { ScrollnavSectionDirective } from './scrollnav/directives/scrollnav-section.directive';
 
 @NgModule({
   declarations: [
@@ -19,6 +22,9 @@ import { HeroComponent } from './hero/hero.component';
     FooterComponent,
     ContentComponent,
     HeroComponent,
+    // ScrollnavManagerComponent,
+    // ScrollnavManagerDirective,
+    // ScrollnavSectionDirective,
   ],
   imports: [CommonModule, MatProgressBarModule, FlexLayoutModule],
   exports: [

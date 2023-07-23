@@ -1,0 +1,8 @@
+@use "variables";
+
+.ps-sidenav-button {
+  position: absolute;
+  top: variables.$ps-spacing;
+  right: variables.$ps-spacing;
+  z-index: 4;
+}
